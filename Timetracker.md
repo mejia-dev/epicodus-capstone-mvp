@@ -60,3 +60,4 @@
 
   * 3:30pm PST - 
     * Begin working on file upload.
+    * Solve file upload and rendering based off of file upload

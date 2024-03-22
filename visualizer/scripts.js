@@ -1,4 +1,28 @@
-window.onload = function () {
+window.onload = function() {
+  document.getElementById('file').addEventListener('change', function (event) {
+
+    var blob = window.URL || window.webkitURL;
+    if (!blob) {
+        console.log('Your browser does not support Blob URLs :(');
+        return;           
+    }
+
+    console.log('change on input#file triggered');
+    var file = this.files[0],
+      fileURL = blob.createObjectURL(file);
+    console.log(file);
+    console.log('File name: ' + file.name);
+    console.log('File type: ' + file.type);
+    console.log('File BlobURL: ' + fileURL);
+    document.getElementById("audioSource").src = fileURL;
+    startTheStuff();
+  
+  });
+}
+ 
+
+
+function startTheStuff() {
   // get context for audio
   const AudioContext = window.AudioContext || window.webkitAudioContext;
   const audioContext = new AudioContext();
@@ -123,18 +147,7 @@ window.onload = function () {
     }
   }
 
-  document.getElementById('file').addEventListener('change', function (event) {
-
-    consolePrint('change on input#file triggered');
-    var file = this.files[0],
-      fileURL = blob.createObjectURL(file);
-    console.log(file);
-    console.log('File name: ' + file.name);
-    console.log('File type: ' + file.type);
-    console.log('File BlobURL: ' + fileURL);
-    document.getElementById("audioSource").src = fileURL;
-
-  });
+  
 
   // Start drawing the visualization
   draw();
