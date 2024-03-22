@@ -57,3 +57,6 @@
     * WIP while looking at different tutorials to find bar generation specifically.
     * Ended up going through tutorials to build [webaudio examples](https://github.com/mdn/webaudio-examples/tree/main/audio-basics) from MDN.
     * After lunch & appointment, will work on trying to get local file upload and playback supported.
+
+  * 3:30pm PST - 
+    * Begin working on file upload.
