@@ -34,6 +34,7 @@ window.onload = function() {
   collectButton.addEventListener(
     "click",
     () => {
+      analyser.getByteTimeDomainData(dataArray);
       console.log(dataArray);
     }
   );
@@ -57,6 +58,51 @@ window.onload = function() {
     },
     false,
   );
+
+
+  const canvas = document.getElementById("visualizer");
+      const canvasCtx = canvas.getContext("2d");
+
+      // Set canvas dimensions
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      // Function to draw the visualization
+      function draw() {
+        requestAnimationFrame(draw);
+
+        analyser.getByteTimeDomainData(dataArray);
+
+        canvasCtx.fillStyle = 'rgb(200, 200, 200)';
+        canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+
+        canvasCtx.lineWidth = 2;
+        canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
+
+        canvasCtx.beginPath();
+
+        var sliceWidth = canvas.width * 1.0 / bufferLength;
+        var x = 0;
+
+        for(var i = 0; i < bufferLength; i++) {
+          var v = dataArray[i] / 128.0;
+          var y = v * canvas.height/2;
+
+          if(i === 0) {
+            canvasCtx.moveTo(x, y);
+          } else {
+            canvasCtx.lineTo(x, y);
+          }
+
+          x += sliceWidth;
+        }
+
+        canvasCtx.lineTo(canvas.width, canvas.height/2);
+        canvasCtx.stroke();
+      }
+
+      // Start drawing the visualization
+      draw();
 
 }
 
