@@ -1,26 +1,26 @@
-window.onload = function() {
+window.onload = function () {
   // get context for audio
   const AudioContext = window.AudioContext || window.webkitAudioContext;
   const audioContext = new AudioContext();
-  
+
   // locate the audio holder
   const audioElement = document.getElementById("audioSource");
   if (audioElement != null) {
     console.log("good!")
   }
-  
+
   // get the track from the audio holder
   const track = audioContext.createMediaElementSource(audioElement);
-  
+
   // connect the track from the source to the destination. 
   track.connect(audioContext.destination);
-  
+
   // play button functionality
-  
+
   const playButton = document.getElementById("playButton");
   const collectButton = document.getElementById("collectButton");
-  
-  
+
+
 
 
   const analyser = audioContext.createAnalyser();
@@ -46,7 +46,7 @@ window.onload = function() {
       if (audioContext.state === "suspended") {
         audioContext.resume();
       }
-  
+
       // Play or pause track depending on state
       if (playButton.dataset.playing === "false") {
         audioElement.play();
@@ -61,70 +61,83 @@ window.onload = function() {
 
 
   const canvas = document.getElementById("visualizer");
-      const canvasCtx = canvas.getContext("2d");
+  const canvasCtx = canvas.getContext("2d");
 
-      // Set canvas dimensions
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+  // Set canvas dimensions
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
 
-      // Function to draw the visualization
-      function drawV1() {
-        requestAnimationFrame(draw);
+  // Function to draw the visualization
+  function drawV1() {
+    requestAnimationFrame(draw);
 
-        analyser.getByteTimeDomainData(dataArray);
+    analyser.getByteTimeDomainData(dataArray);
 
-        canvasCtx.fillStyle = 'rgb(200, 200, 200)';
-        canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+    canvasCtx.fillStyle = 'rgb(200, 200, 200)';
+    canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
 
-        canvasCtx.lineWidth = 2;
-        canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
+    canvasCtx.lineWidth = 2;
+    canvasCtx.strokeStyle = 'rgb(0, 0, 0)';
 
-        canvasCtx.beginPath();
+    canvasCtx.beginPath();
 
-        let sliceWidth = canvas.width * 1.0 / bufferLength;
-        let x = 0;
+    let sliceWidth = canvas.width * 1.0 / bufferLength;
+    let x = 0;
 
-        for(let i = 0; i < bufferLength; i++) {
-          let v = dataArray[i] / 128.0;
-          let y = v * canvas.height/2;
+    for (let i = 0; i < bufferLength; i++) {
+      let v = dataArray[i] / 128.0;
+      let y = v * canvas.height / 2;
 
-          if(i === 0) {
-            canvasCtx.moveTo(x, y);
-          } else {
-            canvasCtx.lineTo(x, y);
-          }
-
-          x += sliceWidth;
-        }
-
-        canvasCtx.lineTo(canvas.width, canvas.height/2);
-        canvasCtx.stroke();
+      if (i === 0) {
+        canvasCtx.moveTo(x, y);
+      } else {
+        canvasCtx.lineTo(x, y);
       }
 
-      function draw() {
-        requestAnimationFrame(draw);
+      x += sliceWidth;
+    }
 
-        analyser.getByteFrequencyData(dataArray);
+    canvasCtx.lineTo(canvas.width, canvas.height / 2);
+    canvasCtx.stroke();
+  }
 
-        canvasCtx.fillStyle = 'rgb(0, 0, 0)';
-        canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+  function draw() {
+    requestAnimationFrame(draw);
 
-        const barWidth = (canvas.width / bufferLength) * 2.5;
-        let barHeight;
-        let x = 0;
+    analyser.getByteFrequencyData(dataArray);
 
-        for(let i = 0; i < bufferLength; i++) {
-          barHeight = dataArray[i];
+    canvasCtx.fillStyle = 'rgb(0, 0, 0)';
+    canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
 
-          canvasCtx.fillStyle = 'rgb(' + (barHeight+100) + ',50,50)';
-          canvasCtx.fillRect(x, canvas.height - barHeight / 2, barWidth, barHeight / 2);
+    const barWidth = (canvas.width / bufferLength) * 2.5;
+    let barHeight;
+    let x = 0;
 
-          x += barWidth + 1;
-        }
-      }
+    for (let i = 0; i < bufferLength; i++) {
+      barHeight = dataArray[i];
 
-      // Start drawing the visualization
-      draw();
+      canvasCtx.fillStyle = 'rgb(' + (barHeight + 100) + ',50,50)';
+      canvasCtx.fillRect(x, canvas.height - barHeight / 2, barWidth, barHeight / 2);
+
+      x += barWidth + 1;
+    }
+  }
+
+  document.getElementById('file').addEventListener('change', function (event) {
+
+    consolePrint('change on input#file triggered');
+    var file = this.files[0],
+      fileURL = blob.createObjectURL(file);
+    console.log(file);
+    console.log('File name: ' + file.name);
+    console.log('File type: ' + file.type);
+    console.log('File BlobURL: ' + fileURL);
+    document.getElementById("audioSource").src = fileURL;
+
+  });
+
+  // Start drawing the visualization
+  draw();
 
 }
 
