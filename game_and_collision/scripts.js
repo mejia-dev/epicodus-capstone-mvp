@@ -1,28 +1,23 @@
+
+
+// Load the window
 window.onload = function() {
+
+  // watch for file upload
   document.getElementById('file').addEventListener('change', function (event) {
-
-    var blob = window.URL || window.webkitURL;
-    if (!blob) {
-        console.log('Your browser does not support Blob URLs :(');
-        return;           
+    let blob = window.URL || window.webkitURL;
+    let file = this.files[0],fileURL = blob.createObjectURL(file);
+    if (file.type.toLowerCase().indexOf("audio") != -1) {
+      console.log("is audio!")
     }
-
-    console.log('change on input#file triggered');
-    var file = this.files[0],
-      fileURL = blob.createObjectURL(file);
-    console.log(file);
-    console.log('File name: ' + file.name);
-    console.log('File type: ' + file.type);
-    console.log('File BlobURL: ' + fileURL);
     document.getElementById("audioSource").src = fileURL;
-    startTheStuff();
-  
+    initializeCanvas();
   });
 }
  
 
 
-function startTheStuff() {
+function initializeCanvas() {
   // get context for audio
   const AudioContext = window.AudioContext || window.webkitAudioContext;
   const audioContext = new AudioContext();
@@ -146,6 +141,9 @@ function startTheStuff() {
       x += barWidth + 1;
     }
   }
+
+
+  
 
   
 
