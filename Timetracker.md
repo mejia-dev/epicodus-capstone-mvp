@@ -55,3 +55,4 @@
   * 10:18am PST - am PST --- Going to attempt to build an audio upload & visualizer.
     * Finding tutorial
     * WIP while looking at different tutorials to find bar generation specifically.
+    * Ended up going through tutorials to build [webaudio examples](https://github.com/mdn/webaudio-examples/tree/main/audio-basics) from MDN.
