@@ -1,12 +1,13 @@
 # Epicodus Capstone Planning Log
 
 ### Thoughts:
-* Python has [pygame](https://www.pygame.org/news) framework.
+* ~~Python has [pygame](https://www.pygame.org/news) framework.~~ Will use JavaScript.
+* How to convert audio to jsonified format. Python? This would likely result in an upload API call though, which isn't desired.
 
 
 ### Time Log:
 * 2024-03-22
-  * 8:00am - 
+  * 8:00am PST - 9:11am PST --- Researching Game Engine
     * Researching gamemaking in Python. 
     * Discovered pygame framework. Researching games built with this framework to see if it seems suitable.
       * Looked through https://www.pygame.org/tags/platformer collection.
@@ -31,3 +32,6 @@
         * No way to test installation on a MacOS system. Having game be browser-based would make this much easier.
       * Looking at [games page](https://api.arcade.academy/en/latest/sample_games.html). None of these appear to have a need for fast-paced precision, so not sure how well this concept works in Arcade.
     * These appear to be the two primary game libraries. Will go with JavaScript.
+
+  * 9:11am PST - am PST --- Researching Audio JSON-ifier
+    * Looking into [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) as it has an analyze method.
