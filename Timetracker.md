@@ -2,7 +2,15 @@
 
 ### Thoughts:
 * ~~Python has [pygame](https://www.pygame.org/news) framework.~~ Will use JavaScript.
-* How to convert audio to jsonified format. Python? This would likely result in an upload API call though, which isn't desired.
+* ~~How to convert audio to jsonified format. Python? This would likely result in an upload API call though, which isn't desired.~~ Web Audio API will be used.
+
+### Resources:
+* Web Audio API:
+  * https://mdn.github.io/webaudio-examples/audio-analyser/
+  * https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API
+  * https://webaudioapi.com/samples/visualizer/
+  * https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
+  * 
 
 
 ### Time Log:
@@ -40,4 +48,6 @@
       * [This example](https://webaudioapi.com/samples/visualizer/) gives me one of the main things I need for the game -- visualizer.
       * MDN has some [useful tutorials](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API).
       * Also found a good list of resources on [this Reddit post](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Using_Web_Audio_API).
-      
+    * A few more examples added to the Resources section above.
+    * Just found the [Web MIDI Api](https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API).
+      * After doing some more research, the Web Audio API still seems better.
