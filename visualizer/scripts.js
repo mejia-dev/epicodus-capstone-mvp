@@ -1,36 +1,53 @@
-// get context for audio
-const AudioContext = window.AudioContext || window.webkitAudioContext;
-const audioContext = new AudioContext();
+window.onload = function() {
+  // get context for audio
+  const AudioContext = window.AudioContext || window.webkitAudioContext;
+  const audioContext = new AudioContext();
+  
+  // locate the audio holder
+  const audioElement = document.getElementById("audioSource");
+  if (audioElement != null) {
+    console.log("good!")
+  }
+  
+  // get the track from the audio holder
+  const track = audioContext.createMediaElementSource(audioElement);
+  
+  // connect the track from the source to the destination. 
+  track.connect(audioContext.destination);
+  
+  // play button functionality
+  
+  const playButton = document.querySelector("button");
+  
+  playButton.addEventListener(
+    "click",
+    () => {
+      // Check if context is in suspended state (autoplay policy)
+      if (audioContext.state === "suspended") {
+        audioContext.resume();
+      }
+  
+      // Play or pause track depending on state
+      if (playButton.dataset.playing === "false") {
+        audioElement.play();
+        playButton.dataset.playing = "true";
+      } else if (playButton.dataset.playing === "true") {
+        audioElement.pause();
+        playButton.dataset.playing = "false";
+      }
+    },
+    false,
+  );
 
-// locate the audio holder
-const audioElement = document.querySelector("audio");
 
-// get the track from the audio holder
-const track = audioContext.createMediaElementSource(audioElement);
+  const analyser = audioContext.createAnalyser();
+  track.connect(analyser);
 
-// connect the track from the source to the destination. 
-track.connect(audioContext.destination);
+  analyser.fftSize = 2048;
+  const bufferLength = analyser.frequencyBinCount;
+  const dataArray = new Uint8Array(bufferLength);
 
-// play button functionality
 
-const playButton = document.querySelector("button");
+}
 
-playButton.addEventListener(
-  "click",
-  () => {
-    // Check if context is in suspended state (autoplay policy)
-    if (audioContext.state === "suspended") {
-      audioContext.resume();
-    }
 
-    // Play or pause track depending on state
-    if (playButton.dataset.playing === "false") {
-      audioElement.play();
-      playButton.dataset.playing = "true";
-    } else if (playButton.dataset.playing === "true") {
-      audioElement.pause();
-      playButton.dataset.playing = "false";
-    }
-  },
-  false,
-);
