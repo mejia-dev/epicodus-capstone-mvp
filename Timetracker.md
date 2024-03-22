@@ -52,7 +52,8 @@
     * Just found the [Web MIDI Api](https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API).
       * After doing some more research, the Web Audio API still seems better.
 
-  * 10:18am PST - am PST --- Going to attempt to build an audio upload & visualizer.
+  * 10:18am PST - 1pm PST --- Going to attempt to build an audio upload & visualizer.
     * Finding tutorial
     * WIP while looking at different tutorials to find bar generation specifically.
     * Ended up going through tutorials to build [webaudio examples](https://github.com/mdn/webaudio-examples/tree/main/audio-basics) from MDN.
+    * After lunch & appointment, will work on trying to get local file upload and playback supported.
