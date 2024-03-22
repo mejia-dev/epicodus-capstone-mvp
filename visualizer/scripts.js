@@ -68,7 +68,7 @@ window.onload = function() {
       canvas.height = window.innerHeight;
 
       // Function to draw the visualization
-      function draw() {
+      function drawV1() {
         requestAnimationFrame(draw);
 
         analyser.getByteTimeDomainData(dataArray);
@@ -81,12 +81,12 @@ window.onload = function() {
 
         canvasCtx.beginPath();
 
-        var sliceWidth = canvas.width * 1.0 / bufferLength;
-        var x = 0;
+        let sliceWidth = canvas.width * 1.0 / bufferLength;
+        let x = 0;
 
-        for(var i = 0; i < bufferLength; i++) {
-          var v = dataArray[i] / 128.0;
-          var y = v * canvas.height/2;
+        for(let i = 0; i < bufferLength; i++) {
+          let v = dataArray[i] / 128.0;
+          let y = v * canvas.height/2;
 
           if(i === 0) {
             canvasCtx.moveTo(x, y);
@@ -99,6 +99,28 @@ window.onload = function() {
 
         canvasCtx.lineTo(canvas.width, canvas.height/2);
         canvasCtx.stroke();
+      }
+
+      function draw() {
+        requestAnimationFrame(draw);
+
+        analyser.getByteFrequencyData(dataArray);
+
+        canvasCtx.fillStyle = 'rgb(0, 0, 0)';
+        canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
+
+        const barWidth = (canvas.width / bufferLength) * 2.5;
+        let barHeight;
+        let x = 0;
+
+        for(let i = 0; i < bufferLength; i++) {
+          barHeight = dataArray[i];
+
+          canvasCtx.fillStyle = 'rgb(' + (barHeight+100) + ',50,50)';
+          canvasCtx.fillRect(x, canvas.height - barHeight / 2, barWidth, barHeight / 2);
+
+          x += barWidth + 1;
+        }
       }
 
       // Start drawing the visualization
