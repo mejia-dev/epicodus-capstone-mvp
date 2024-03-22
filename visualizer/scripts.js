@@ -17,8 +17,27 @@ window.onload = function() {
   
   // play button functionality
   
-  const playButton = document.querySelector("button");
+  const playButton = document.getElementById("playButton");
+  const collectButton = document.getElementById("collectButton");
   
+  
+
+
+  const analyser = audioContext.createAnalyser();
+  track.connect(analyser);
+
+  analyser.fftSize = 2048;
+  const bufferLength = analyser.frequencyBinCount;
+  const dataArray = new Uint8Array(bufferLength);
+  // console.log(dataArray);
+
+  collectButton.addEventListener(
+    "click",
+    () => {
+      console.log(dataArray);
+    }
+  );
+
   playButton.addEventListener(
     "click",
     () => {
@@ -38,15 +57,6 @@ window.onload = function() {
     },
     false,
   );
-
-
-  const analyser = audioContext.createAnalyser();
-  track.connect(analyser);
-
-  analyser.fftSize = 2048;
-  const bufferLength = analyser.frequencyBinCount;
-  const dataArray = new Uint8Array(bufferLength);
-
 
 }
 
