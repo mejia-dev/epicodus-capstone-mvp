@@ -54,3 +54,4 @@
 
   * 10:18am PST - am PST --- Going to attempt to build an audio upload & visualizer.
     * Finding tutorial
+    * WIP while looking at different tutorials to find bar generation specifically.
