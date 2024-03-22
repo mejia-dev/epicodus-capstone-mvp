@@ -41,7 +41,7 @@
       * Looking at [games page](https://api.arcade.academy/en/latest/sample_games.html). None of these appear to have a need for fast-paced precision, so not sure how well this concept works in Arcade.
     * These appear to be the two primary game libraries. Will go with JavaScript.
 
-  * 9:11am PST - am PST --- Researching Audio JSON-ifier
+  * 9:11am PST - 10:18am PST --- Researching Audio JSON-ifier
     * Looking into [Web Audio API](https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API) as it has an analyze method that seems to be [used for this purpose](https://stackoverflow.com/questions/62408542/how-to-export-an-audio-file-byte-frequency-data-to-a-json-object).
     * Located [Python-based approach](https://stackoverflow.com/questions/61952022/creating-a-json-with-information-about-audio-file) as well.
     * Located https://webaudioapi.com/samples/. Began experimenting with examples.
@@ -51,3 +51,6 @@
     * A few more examples added to the Resources section above.
     * Just found the [Web MIDI Api](https://developer.mozilla.org/en-US/docs/Web/API/Web_MIDI_API).
       * After doing some more research, the Web Audio API still seems better.
+
+  * 10:18am PST - am PST --- Going to attempt to build an audio upload & visualizer.
+    * Finding tutorial
