@@ -98,11 +98,17 @@ function initializeCanvas() {
     let x = 0;
 
     for (let i = 0; i < bufferLength; i++) {
+      // set bar height. This can end up being smol if not multiplied. May not matter once frames are exported, but good to keep in mind
       barHeight = dataArray[i];
 
-      canvasCtx.fillStyle = 'rgb(' + (barHeight + 100) + ',50,50)';
-      canvasCtx.fillRect(x, canvas.height - barHeight / 2, barWidth, barHeight / 2);
+      // change color based on height. This isn't working too well currently.
+      canvasCtx.fillStyle = 'rgb(' + (barHeight + 100) + ',20,20)';
 
+      // drawing syntax: fillRect(x, y, width, height)
+      // originally, barHeight was divided by 2 as there was an assumption that the wavelength was being generated in the middle of the page, but since it is being rendered at y = 0, there is no visual difference __currently__. Again, this may need to be changed depending on frame requirements later.
+      canvasCtx.fillRect(x, canvas.height - barHeight , barWidth, barHeight );
+
+      // set the next bar to be rendered at 1 + the width of a bar
       x += barWidth + 1;
     }
   }
