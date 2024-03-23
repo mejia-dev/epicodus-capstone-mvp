@@ -23,6 +23,10 @@
 
 
 ### Time Log:
+* 2024-03-23
+  * 11:00am PST -  PST --- Continued Platformer / Visualization testing
+    * Begin experimenting with rendering bars to move horizontally.
+
 * 2024-03-22
   * 8:00am PST - 9:11am PST --- Researching Game Engine
     * Researching gamemaking in Python. 
