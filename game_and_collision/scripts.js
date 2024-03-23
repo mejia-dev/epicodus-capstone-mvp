@@ -1,6 +1,4 @@
-
-
-// Load the window
+// Wait for window load
 window.onload = function() {
 
   // watch for file upload
@@ -80,7 +78,7 @@ function initializeCanvas() {
   canvas.height = window.innerHeight;
 
   // Function to draw the visualization
-  function draw() {
+  function draw_old() {
     requestAnimationFrame(draw);
 
     // Retrieve wavelength/frequency data
@@ -112,6 +110,29 @@ function initializeCanvas() {
       x += barWidth + 1;
     }
   }
+
+  function draw() {
+    requestAnimationFrame(draw);
+  
+    
+
+    analyser.getByteFrequencyData(dataArray);
+    canvasCtx.drawImage(canvas, -1, 0);
+    canvasCtx.clearRect(canvas.width - 1, 0, 1, canvas.height);
+  
+    const barHeight = canvas.height / bufferLength;
+    let y = 0;
+  
+    for (let i = 0; i < bufferLength; i++) {
+      const barWidth = dataArray[i];
+  
+      canvasCtx.fillStyle = 'rgb(' + (barWidth + 100) + ',50,50)';
+      canvasCtx.fillRect(canvas.width - 1, y, 1, barHeight / 2);
+  
+      y += barHeight;
+    }
+  }
+  
 
   // Initiate draw
   draw();
