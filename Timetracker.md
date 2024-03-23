@@ -3,6 +3,10 @@
 ### Thoughts:
 * ~~Python has [pygame](https://www.pygame.org/news) framework.~~ Will use JavaScript.
 * ~~How to convert audio to jsonified format. Python? This would likely result in an upload API call though, which isn't desired.~~ Web Audio API will be used.
+* Rendering function could be something like: 
+  * Do a load of the file
+  * Generate all frames in current method, but instead of rendering on the canvas, push them all to an array.
+  * Once this is finished, rerender canvas based on each frame in the array in time with the music. One potential issue could be pausing and resyncing if it gets out of sync. Would need to experiment (in the meantime, don't play Max Richter’s _Sleep_)
 
 ### Resources:
 * Web Audio API:
@@ -64,3 +68,4 @@
     * Solve file upload and rendering based off of file upload
     * Create copy of visualizer for testing game mechanics.
     * Work on refactoring and removing unused code.
+    
