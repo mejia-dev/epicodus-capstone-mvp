@@ -72,4 +72,5 @@
     * Solve file upload and rendering based off of file upload
     * Create copy of visualizer for testing game mechanics.
     * Work on refactoring and removing unused code.
+    * Add more ideas for how rendering should work.
     
