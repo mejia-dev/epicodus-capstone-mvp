@@ -67,7 +67,7 @@
     * Ended up going through tutorials to build [webaudio examples](https://github.com/mdn/webaudio-examples/tree/main/audio-basics) from MDN.
     * After lunch & appointment, will work on trying to get local file upload and playback supported.
 
-  * 3:30pm PST - 
+  * 3:30pm PST - 6:08pm PST
     * Begin working on file upload.
     * Solve file upload and rendering based off of file upload
     * Create copy of visualizer for testing game mechanics.
