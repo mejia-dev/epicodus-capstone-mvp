@@ -35,6 +35,7 @@
       * Update pseudocode with PlayerObj basics
       * Add initial thoughts for LevelRendering
       * Add basic info for ConditionsChecker
+  * 1:15pm PST - pm PST --- Sketching out components + prototypes
 
 
 * 2024-03-23 - 2 hours total
