@@ -6,6 +6,11 @@ let conditionsIsCourseComplete = false;
 let conditionsIsPlayerDead = false;
 let canvas;
 
+let oldAudioContext;
+let oldAudioHTMLElement;
+let oldDataArray = [];
+let oldAnalyzer;
+let oldBufferLength;
 
 
 
@@ -46,19 +51,50 @@ function levelGenGetComplications() {
 
 
 
+function initializeAudioTrack() {
+  // get context for audio
+  oldAudioContext = new (window.AudioContext || window.webkitAudioContext)();
+
+  // locate the audio holder
+  oldAudioHTMLElement = document.getElementById("audioSource");
+  // get the track from the audio holder
+  const track = oldAudioContext.createMediaElementSource(oldAudioHTMLElement);
+
+  // connect the track from the source to the destination. 
+  track.connect(oldAudioContext.destination);
+
+  // define the audio anaylzer (this generates the code)
+  oldAnalyzer = oldAudioContext.createAnalyser();
+  track.connect(oldAnalyzer);
+  oldAnalyzer.fftSize = 2048;
+  oldBufferLength = oldAnalyzer.frequencyBinCount;
+  oldDataArray = new Uint8Array(oldBufferLength);
+
+  initializeAudioControls();
+  initializeCanvas();
+}
+
+
+
+
 function initializeAudioControls() {
+
+  // define the buttons so they can be referenced later
+  const playButton = document.getElementById("playButton");
+  const debugAudioFrameButton = document.getElementById("debugAudioFrameButton");
+
   playButton.addEventListener("click", () => {
     // Check if context is in suspended state (autoplay policy)
-    if (audioContext.state === "suspended") {
-      audioContext.resume();
+    if (oldAudioContext.state === "suspended") {
+      oldAudioContext.resume();
     }
 
     // Play or pause track depending on state
     if (playButton.dataset.playing === "false") {
-      audioElement.play();
+      oldAudioHTMLElement.play();
       playButton.dataset.playing = "true";
     } else if (playButton.dataset.playing === "true") {
-      audioElement.pause();
+      oldAudioHTMLElement.pause();
       playButton.dataset.playing = "false";
     }
   },
@@ -67,8 +103,8 @@ function initializeAudioControls() {
 
   // debug button for console logging music frames.
   debugAudioFrameButton.addEventListener("click", () => {
-    analyser.getByteTimeDomainData(dataArray);
-    console.log(dataArray);
+    oldAnalyzer.getByteTimeDomainData(oldDataArray);
+    console.log(oldDataArray);
   }
   );
 }
@@ -88,43 +124,6 @@ function initializeAudioControls() {
 
 
 
-function initializeAudioTrack() {
-  // get context for audio
-  const AudioContext = window.AudioContext || window.webkitAudioContext;
-  const audioContext = new AudioContext();
-
-  // locate the audio holder
-  const audioElement = document.getElementById("audioSource");
-
-  // get the track from the audio holder
-  const track = audioContext.createMediaElementSource(audioElement);
-
-  // connect the track from the source to the destination. 
-  track.connect(audioContext.destination);
-
-  // define the buttons so they can be referenced later
-  const playButton = document.getElementById("playButton");
-  const debugAudioFrameButton = document.getElementById("debugAudioFrameButton");
-
-  // define the audio anaylzer (this generates the code)
-  const analyser = audioContext.createAnalyser();
-  track.connect(analyser);
-  analyser.fftSize = 2048;
-  const bufferLength = analyser.frequencyBinCount;
-  const dataArray = new Uint8Array(bufferLength);
-
-
-  
-  initializeAudioControls();
-  initializeCanvas();
-
-
-
-  
-
-}
-
-
 
 
 function initializeCanvas() {
@@ -141,22 +140,22 @@ function initializeCanvas() {
     requestAnimationFrame(draw);
 
     // Retrieve wavelength/frequency data
-    analyser.getByteFrequencyData(dataArray);
+    oldAnalyzer.getByteFrequencyData(oldDataArray);
 
     // add color to canvas
     canvasCtx.fillStyle = 'rgb(0, 0, 0)';
     canvasCtx.fillRect(0, 0, canvas.width, canvas.height);
 
     // define width of bars. Kinda arbitrary, but bar height will change later in relation to it.
-    const barWidth = (canvas.width / bufferLength) * 4.5;
+    const barWidth = (canvas.width / oldBufferLength) * 4.5;
     let barHeight;
 
     // x helps determine proper x position placement of bars
     let x = 0;
 
-    for (let i = 0; i < bufferLength; i++) {
+    for (let i = 0; i < oldBufferLength; i++) {
       // set bar height. This can end up being smol if not multiplied. May not matter once frames are exported, but good to keep in mind
-      barHeight = dataArray[i];
+      barHeight = oldDataArray[i];
 
       // change color based on height. This isn't working too well currently.
       canvasCtx.fillStyle = 'rgb(' + (barHeight + 100) + ',20,20)';
