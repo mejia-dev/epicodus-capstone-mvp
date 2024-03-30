@@ -99,3 +99,15 @@
 
   ```javascript
   ```
+
+
+### ConditionsChecker
+
+  - This will be one of the most basic components at first but may add more functionality if there is room for expansion. This `ConditionsChecker` is responsible for checking each frame for the following:
+    - `this.isCourseComplete` -- checks to see if `LevelRendering.globalRenderX` **has reached or has gone past** the length of `LevelGen.levelComplications`. This would indicate that the player has reached the end of the level/music. 
+      - If the player is at the end, we can activate the win condition. The win condition is not important right now, and will likely just be a redirect to some kind of "a winner is you!" page until core functionality has been established.
+    - `this.isPlayerDead` -- this will simply check if the player touched a spike. The lose condition is not important right now, and will likely just be a redirect to some kind of "game over" page with an option to play again until core functionality has been established.
+  - The purpose of having this component manage these conditions is that it's easier to reference the global "win" or "lose" conditon, and is easier to make the resultant actions happen if everything is just pointing to this one set of variables.
+
+  - may also implement a "start" if it seems necessary. 
+  - In an optimal world, a "pause" would also be a feature, but will have to see if that ends up causing desyncing between level and music tracks.
