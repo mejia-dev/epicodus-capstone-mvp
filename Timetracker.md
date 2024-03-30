@@ -30,6 +30,7 @@
   * 9:40am PST -  PST --- Sketching out level design
     * Research best practice of platformer level design on YouTube.
     * Begin writing pseudocode.md to determine what functionality needs to be written.
+      * Write level complications and music analyzer pseudocode  
 
 
 * 2024-03-23
