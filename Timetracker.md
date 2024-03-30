@@ -22,6 +22,7 @@
   * https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API
 * Platformer samples:
   * Good collision and controls - https://codepen.io/stealy/pen/vYBZoeo
+  * Doing research into handle level autoscrolling.
 
 
 ### Time Log:
