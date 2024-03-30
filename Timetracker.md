@@ -33,6 +33,7 @@
     * Begin writing pseudocode.md to determine what functionality needs to be written.
       * Write level complications and music analyzer pseudocode  
       * Update pseudocode with PlayerObj basics
+      * Add initial thoughts for LevelRendering
 
 
 * 2024-03-23 - 2 hours total
