@@ -28,7 +28,7 @@
 
 ### Time Log:
 
-* 2024-03-30 - 2.5 hours total
+* 2024-03-30 - 4.75 hours total
   * 9:40am PST - 12:17pm PST --- Sketching out level design
     * Research best practice of platformer level design on YouTube.
     * Begin writing pseudocode.md to determine what functionality needs to be written.
@@ -36,9 +36,10 @@
       * Update pseudocode with PlayerObj basics
       * Add initial thoughts for LevelRendering
       * Add basic info for ConditionsChecker
-  * 1:15pm PST - pm PST --- Sketching out components + prototypes
+  * 1:15pm PST - 3pm PST --- Sketching out components + prototypes
     * Started working on sample demov1. 
     * Add read buffer button and confirm it is reading the buffer correctly. We can render if full-page, but currently researching if there's a way to add a "camera" effect to the canvas so that it only renders some of it. 
+    * Appears that global renderX variable is not working. Will look into this more later.
 
 
 * 2024-03-23 - 2 hours total
