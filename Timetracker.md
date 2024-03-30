@@ -1,6 +1,6 @@
 # Epicodus Capstone Planning Log
 
-### Total Time Spent: 12 hours (see time log below for more details)
+### Total Time Spent: 14.25 hours (see time log below for more details)
 
 ### Thoughts:
 * ~~Python has [pygame](https://www.pygame.org/news) framework.~~ Will use JavaScript.
@@ -40,6 +40,7 @@
     * Started working on sample demov1. 
     * Add read buffer button and confirm it is reading the buffer correctly. We can render if full-page, but currently researching if there's a way to add a "camera" effect to the canvas so that it only renders some of it. 
     * Appears that global renderX variable is not working. Will look into this more later.
+  * 3:30pm PST - pm PST --- Continue working on demo
 
 
 * 2024-03-23 - 2 hours total
