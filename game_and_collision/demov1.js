@@ -1,16 +1,17 @@
-let musicAnalyzerMusicTempo = 0;
-let musicAnalyzerMusicLength = 0;
-let levelGenLevelComplications = [];
-let levelRenGlobalRenderX = 0;
-let conditionsIsCourseComplete = false;
-let conditionsIsPlayerDead = false;
-let canvas;
+// let musicAnalyzerMusicTempo = 0;
+// let musicAnalyzerMusicLength = 0;
+// let levelGenLevelComplications = [];
+// let levelRenGlobalRenderX = 0;
+// let conditionsIsCourseComplete = false;
+// let conditionsIsPlayerDead = false;
+// let canvas;
 
 let oldAudioContext;
 let oldAudioHTMLElement;
 let oldDataArray = [];
 let oldAnalyzer;
 let oldBufferLength;
+let uploadedFile;
 
 
 
@@ -23,9 +24,13 @@ window.onload = function () {
     // add more data validation here later.
     if (file.type.toLowerCase().indexOf("audio") != -1) {
       console.log("is audio!")
+      uploadedFile = file;
       document.getElementById("audioSource").src = fileURL;
       initializeAudioTrack();
     }
+
+
+
   });
 }
 
@@ -36,6 +41,7 @@ function levelGenGetComplications() {
   const numSamples = audioData.length;
   const levelWidth = canvas.width;
   const levelHeight = canvas.height;
+
 
   levelData = [];
 
@@ -82,6 +88,7 @@ function initializeAudioControls() {
   // define the buttons so they can be referenced later
   const playButton = document.getElementById("playButton");
   const debugAudioFrameButton = document.getElementById("debugAudioFrameButton");
+  const readAsBufferButton = document.getElementById("readAsBufferButton");
 
   playButton.addEventListener("click", () => {
     // Check if context is in suspended state (autoplay policy)
@@ -105,8 +112,20 @@ function initializeAudioControls() {
   debugAudioFrameButton.addEventListener("click", () => {
     oldAnalyzer.getByteTimeDomainData(oldDataArray);
     console.log(oldDataArray);
-  }
-  );
+  });
+
+  readAsBufferButton.addEventListener("click", () => {
+    const fileReader = new FileReader();
+    fileReader.readAsArrayBuffer(uploadedFile);
+
+    fileReader.onload = function () {
+      const arrayBuffer = this.result;
+      console.log(arrayBuffer);
+      // initAudio(arrayBuffer);
+    };
+
+    
+  })
 }
 
 
@@ -139,6 +158,7 @@ function initializeCanvas() {
   function draw() {
     requestAnimationFrame(draw);
 
+    canvasCtx.translate(0, 0);
     // Retrieve wavelength/frequency data
     oldAnalyzer.getByteFrequencyData(oldDataArray);
 
