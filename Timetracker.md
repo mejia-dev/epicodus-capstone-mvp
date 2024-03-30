@@ -23,6 +23,7 @@
 * Platformer samples:
   * Good collision and controls - https://codepen.io/stealy/pen/vYBZoeo
   * Doing research into handle level autoscrolling.
+    * Appears that I will likely need to use the [translate() method](https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/translate) of 2d canvas.
 
 
 ### Time Log:
