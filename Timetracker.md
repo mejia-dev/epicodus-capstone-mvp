@@ -1,6 +1,6 @@
 # Epicodus Capstone Planning Log
 
-### Total Time Spent: 9.5 hours (see time log below for more details)
+### Total Time Spent: 12 hours (see time log below for more details)
 
 ### Thoughts:
 * ~~Python has [pygame](https://www.pygame.org/news) framework.~~ Will use JavaScript.
@@ -27,13 +27,14 @@
 
 ### Time Log:
 
-* 2024-03-30 - x hours total
-  * 9:40am PST -  PST --- Sketching out level design
+* 2024-03-30 - 2.5 hours total
+  * 9:40am PST - 12:17pm PST --- Sketching out level design
     * Research best practice of platformer level design on YouTube.
     * Begin writing pseudocode.md to determine what functionality needs to be written.
       * Write level complications and music analyzer pseudocode  
       * Update pseudocode with PlayerObj basics
       * Add initial thoughts for LevelRendering
+      * Add basic info for ConditionsChecker
 
 
 * 2024-03-23 - 2 hours total
