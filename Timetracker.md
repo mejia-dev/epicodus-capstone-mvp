@@ -28,9 +28,10 @@
 
 ### Time Log:
 
-* 2024-03-30 -  hours total
+* 2024-03-31 -  hours total
   * 12pm PST - pm PST --- Continue level demos
     * Appears that stretching out the assumed canvas width value can render a more elongated version of the full wavelength. Will begin writing a fresh demo (v4) to see if this can be used in addition to the player movement. 
+    * Create upload handler that will call other functons
 
 * 2024-03-30 - 6.5 hours total
   * 9:40am PST - 12:17pm PST --- Sketching out level design
