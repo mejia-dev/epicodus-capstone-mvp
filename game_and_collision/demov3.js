@@ -1,7 +1,7 @@
 // Variables
 let audioContext;
 let audioBuffer;
-// let audioSource;
+let audioSource;
 let canvas;
 let ctx;
 let levelData;
@@ -16,6 +16,48 @@ const camera = {
         x: 0,
         y: 0
     }
+}
+
+
+
+function initializeAudioControls() {
+
+  // define the buttons so they can be referenced later
+  const playButton = document.getElementById("playButton");
+  const debugAudioFrameButton = document.getElementById("debugAudioFrameButton");
+  const readAsBufferButton = document.getElementById("readAsBufferButton");
+
+  playButton.addEventListener("click", () => {
+    // Check if context is in suspended state (autoplay policy)
+    if (audioSource.state === "suspended") {
+      audioSource.resume();
+    }
+
+    // Play or pause track depending on state
+    if (playButton.dataset.playing === "false") {
+      audioSource.play();
+      playButton.dataset.playing = "true";
+    } else if (playButton.dataset.playing === "true") {
+      audioSource.pause();
+      playButton.dataset.playing = "false";
+    }
+  },
+    false,
+  );
+
+
+  readAsBufferButton.addEventListener("click", () => {
+    const fileReader = new FileReader();
+    fileReader.readAsArrayBuffer(uploadedFile);
+
+    fileReader.onload = function () {
+      const arrayBuffer = this.result;
+      console.log(arrayBuffer);
+      // initAudio(arrayBuffer);
+    };
+
+    
+  })
 }
 
 // Initialize game
@@ -42,6 +84,9 @@ function handleAudio(event) {
 // Initialize audio
 function initAudio(arrayBuffer) {
     audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    audioSource = document.getElementById("audioSource");
+    const track = audioContext.createMediaElementSource(audioSource);
+    track.connect(audioContext.destination);
     audioContext.decodeAudioData(arrayBuffer, function(buffer) {
         audioBuffer = buffer;
         createLevelFromAudio();
@@ -53,7 +98,8 @@ function initAudio(arrayBuffer) {
 function createLevelFromAudio() {
     const audioData = audioBuffer.getChannelData(0); // Get audio data for left channel only for simplicity
     const numSamples = audioData.length;
-    const levelWidth = canvas.width;
+    // const levelWidth = canvas.width;
+    const levelWidth = 5000;
     const levelHeight = canvas.height;
 
     levelData = [];
@@ -70,9 +116,9 @@ function createLevelFromAudio() {
 
 // Start game loop
 function startGame() {
-    console.log(levelData);
+    
     renderX = (levelData.length * -1) + 801;
-    console.log(renderX);
+    
 
     
 
@@ -85,9 +131,9 @@ function gameLoop() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
     // updateRenderX();
     // ctx.translate(renderX, 0);
-    // console.log(renderX);
+    
     // Draw level
-    console.log(audioContext);
+    
     drawLevel();
     updateProgressBar();
     drawProgressBar();
@@ -108,14 +154,13 @@ function updateProgressBar() {
       const currentTime = audioContext.currentTime;
       const duration = audioBuffer.duration;
       progressBarXPos = (currentTime / duration) * 10;
-      console.log(progressBarXPos)
+      
       
   }
 }
 function drawProgressBar() {
   ctx.fillStyle = "blue";
-  ctx.fillRect(progressBarXPos, progressBarY, 5, progressBarHeight);
-  console.log("yes")
+  ctx.fillRect(progressBarXPos, progressBarY, 20, 20);
 }
 
 // Draw level
