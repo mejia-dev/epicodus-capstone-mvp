@@ -1,6 +1,6 @@
 # Epicodus Capstone Planning Log
 
-### Total Time Spent: 14.25 hours (see time log below for more details)
+### Total Time Spent: 16 hours (see time log below for more details)
 
 ### Thoughts:
 * ~~Python has [pygame](https://www.pygame.org/news) framework.~~ Will use JavaScript.
@@ -28,7 +28,7 @@
 
 ### Time Log:
 
-* 2024-03-30 - 4.75 hours total
+* 2024-03-30 - 6.5 hours total
   * 9:40am PST - 12:17pm PST --- Sketching out level design
     * Research best practice of platformer level design on YouTube.
     * Begin writing pseudocode.md to determine what functionality needs to be written.
@@ -40,9 +40,10 @@
     * Started working on sample demov1. 
     * Add read buffer button and confirm it is reading the buffer correctly. We can render if full-page, but currently researching if there's a way to add a "camera" effect to the canvas so that it only renders some of it. 
     * Appears that global renderX variable is not working. Will look into this more later.
-  * 3:30pm PST - pm PST --- Continue working on demo
+  * 3:30pm PST - 5:15pm PST --- Continue working on demo
     * Ended up adapting some other code that shows the complete wavelength and trying to add renderX variable to that. However, the value seems to move by too fast. 
     * Will try starting with an audio progress bar instead and see if it can be reworked to run backwards with audio. 
+    * Audio progress bar appears to be working as expected. Will need to get audio playing consistently as next step.
 
 
 * 2024-03-23 - 2 hours total
