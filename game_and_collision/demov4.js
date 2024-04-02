@@ -40,8 +40,10 @@ function initializeAudioTrack(bufferedAudioArray) {
   track.connect(globalAudioContext.destination);
   globalAudioContext.decodeAudioData(bufferedAudioArray, (buffer) => {
     globalAudioBuffer = buffer;
-    // proceed to next steps after audio has decoded here
+    // proceed to next steps after audio has been decoded here
     initializeAudioControls();
+    createLevelData();
+    startCanvas();
   })
 }
 
@@ -71,28 +73,28 @@ function createLevelData() {
   const audioData = globalAudioBuffer.getChannelData(0);
   const samplesCount = audioData.length;
   const levelWidth = 5000;
-  const levelHeight = globalCanvas.height / 2;
+  const levelHeight = globalCanvas.height;
   // may need to change width and height later for playability. Will need to test.
 
   // erase array if it already exists
   globalLevelData = [];
 
-                      // spread the data (samples count) out across the defined play area
-  for (let i = 0; i < samplesCount; i += samplesCount / levelWidth) {
+                      // spread the data (samples count) out across the defined play area -- ALWAYS USE MATH.FLOOR
+  for (let i = 0; i < samplesCount; i += Math.floor(samplesCount / levelWidth)) {
     const sample = Math.abs(audioData[i]);
-
     const posY = Math.floor(sample * levelHeight);
-    // this x: i / samplesCount controls the overall x width that the data takes up
+    //x: i / samplesCount controls the overall x width that the data takes up
     globalLevelData.push({x: i / samplesCount * levelWidth, y: levelHeight - posY});
   }
-
 }
 
+// this function calls canvas rendering loop. Can include other pregame variable adjustments in here as needed.
 function startCanvas() {
   globalRenderX = 0;
   requestAnimationFrame(gameLoop);
 }
 
+// 
 function gameLoop() {
   globalCanvasCtx.clearRect(0,0, globalCanvas.width, globalCanvas.height);
   // update renderX
