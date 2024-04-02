@@ -1,17 +1,18 @@
 // onload, 
-// get canvas and set it to 2d
+// get globalCanvaset it to 2d
 // get the audio upload spot and set the event handler to change
 
 let globalAudioBuffer;
 let globalAudioContext;
 let globalAudioHTMLElement;
 let globalCanvas;
-let globalCtx;
+let globalCanvasCtx;
 let globalLevelData;
+let globalRenderX;
 
 window.onload = () => {
   globalCanvas = document.getElementById("visualizer");
-  globalCtx = globalCanvas.getContext("2d");
+  globalCanvasCtx = globalCanvas.getContext("2d");
   document.getElementById("audioFile").addEventListener("change", handleAudioUpload);
 };
 
@@ -70,7 +71,7 @@ function createLevelData() {
   const audioData = globalAudioBuffer.getChannelData(0);
   const samplesCount = audioData.length;
   const levelWidth = 5000;
-  const levelHeight = canvas.height / 2;
+  const levelHeight = globalCanvas.height / 2;
   // may need to change width and height later for playability. Will need to test.
 
   // erase array if it already exists
@@ -84,5 +85,32 @@ function createLevelData() {
     // this x: i / samplesCount controls the overall x width that the data takes up
     globalLevelData.push({x: i / samplesCount * levelWidth, y: levelHeight - posY});
   }
-  
+
+}
+
+function startCanvas() {
+  globalRenderX = 0;
+  requestAnimationFrame(gameLoop);
+}
+
+function gameLoop() {
+  globalCanvasCtx.clearRect(0,0, globalCanvas.width, globalCanvas.height);
+  // update renderX
+  drawLevel();
+  requestAnimationFrame(gameLoop);
+}
+
+function drawTerrain() {
+  globalCanvasCtx.beginPath();
+}
+
+function drawLevel() {
+  globalCanvasCtx.beginPath();
+  globalCanvasCtx.moveTo(globalLevelData[0].x, globalLevelData[0].y);
+
+  for (let i = 1; i < globalLevelData.length; i++) {
+    globalCanvasCtx.lineTo(globalLevelData[i].x, globalLevelData[i].y);
+  }
+
+  globalCanvasCtx.stroke();
 }
