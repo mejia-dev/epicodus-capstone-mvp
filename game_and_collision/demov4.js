@@ -1,12 +1,13 @@
 // onload, 
-  // get canvas and set it to 2d
-  // get the audio upload spot and set the event handler to change
+// get canvas and set it to 2d
+// get the audio upload spot and set the event handler to change
 
 let globalAudioBuffer;
 let globalAudioContext;
 let globalAudioHTMLElement;
 let globalCanvas;
 let globalCtx;
+let globalLevelData;
 
 window.onload = () => {
   globalCanvas = document.getElementById("visualizer");
@@ -14,6 +15,8 @@ window.onload = () => {
   document.getElementById("audioFile").addEventListener("change", handleAudioUpload);
 };
 
+
+// this function saves uploaded file as local blob storage
 function handleAudioUpload(event) {
   let blob = window.URL || window.webkitURL;
   const file = event.target.files[0], fileUrl = blob.createObjectURL(file);
@@ -28,7 +31,7 @@ function handleAudioUpload(event) {
 }
 
 
-// attach audio context to the uploaded track
+// this function attaches audio context to the uploaded track
 function initializeAudioTrack(bufferedAudioArray) {
   globalAudioContext = new (window.AudioContext || window.webkitAudioContext)();
   globalAudioHTMLElement = document.getElementById("audioSource");
@@ -41,6 +44,8 @@ function initializeAudioTrack(bufferedAudioArray) {
   })
 }
 
+
+// this function activates audio controls on the page
 function initializeAudioControls() {
   const playButton = document.getElementById("playButton");
   playButton.addEventListener("click", () => {
@@ -60,9 +65,22 @@ function initializeAudioControls() {
 }
 
 
-// Create Level from Audio
-  // this function will create the "level" based on the inputted audio data.
+// this function will create the level/terrain based on the inputted audio data.
+function createLevelData() {
+  const audioData = globalAudioBuffer.getChannelData(0);
+  const samplesCount = audioData.length;
+  const levelWidth = 5000;
+  const levelHeight = canvas.height / 2;
+  // may need to change width and height later for playability. Will need to test.
 
-  function createLevelFromAudio() {
+  // erase array if it already exists
+  globalLevelData = [];
 
+                      // spread the data (samples count) out across the defined play area
+  for (let i = 0; i < samplesCount; i += samplesCount / levelWidth) {
+    const sample = Math.abs(audioData[i]);
+
+    const posY = Math.floor(sample * levelHeight);
+    globalLevelData.push()
   }
+}
