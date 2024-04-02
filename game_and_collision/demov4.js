@@ -81,6 +81,8 @@ function createLevelData() {
     const sample = Math.abs(audioData[i]);
 
     const posY = Math.floor(sample * levelHeight);
-    globalLevelData.push()
+    // this x: i / samplesCount controls the overall x width that the data takes up
+    globalLevelData.push({x: i / samplesCount * levelWidth, y: levelHeight - posY});
   }
+  
 }
