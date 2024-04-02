@@ -12,16 +12,29 @@ window.onload = () => {
 };
 
 function handleAudioUpload(event) {
-  let blob = window.url || window.webkitURL;
-  const file = event.target.files[0], fileUrl = blob.createObjectUrl(file);
-  document.getElementById("audioSource").src = fileURL;
+  let blob = window.URL || window.webkitURL;
+  const file = event.target.files[0], fileUrl = blob.createObjectURL(file);
+  document.getElementById("audioSource").src = fileUrl;
   const fileReader = new FileReader();
   fileReader.onload = () => {
     const bufferedAudioArray = this.result;
     // do something with the buffered audio array here
-    // createLevelFromAudio();
+    initializeAudioTrack(bufferedAudioArray);
   };
   fileReader.readAsArrayBuffer(file);
-  // call next action
-  // initializeAudioTrack();
 }
+
+
+function initializeAudioTrack(bufferedAudioArray) {
+
+}
+
+
+
+
+// Create Level from Audio
+  // this function will create the "level" based on the inputted audio data.
+
+  function createLevelFromAudio() {
+
+  }
