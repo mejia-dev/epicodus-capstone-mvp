@@ -99,11 +99,9 @@ function gameLoop() {
   globalCanvasCtx.clearRect(0,0, globalCanvas.width, globalCanvas.height);
   // update renderX
   drawLevel();
+  drawProgress();
+  updateRenderX();
   requestAnimationFrame(gameLoop);
-}
-
-function drawTerrain() {
-  globalCanvasCtx.beginPath();
 }
 
 function drawLevel() {
@@ -115,4 +113,19 @@ function drawLevel() {
   }
 
   globalCanvasCtx.stroke();
+}
+
+function updateRenderX() {
+  if (globalRenderX < globalLevelData.length) {
+    console.log(globalAudioHTMLElement.currentTime);
+      // globalRenderX += 1 / globalAudioBuffer.duration
+      // globalRenderX += currentPlayingTime;
+      globalRenderX = globalAudioHTMLElement.currentTime;
+      // /(globalAudioBuffer.duration / 5000);
+  }
+}
+
+function drawProgress() {
+  globalCanvasCtx.fillStyle = "blue";
+  globalCanvasCtx.fillRect(globalRenderX, globalCanvas.height / 2, 50, 50);
 }
