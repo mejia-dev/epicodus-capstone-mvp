@@ -79,14 +79,15 @@ function createLevelData() {
   // erase array if it already exists
   globalLevelData = [];
 
-                      // spread the data (samples count) out across the defined play area -- ALWAYS USE MATH.FLOOR
+  // spread the data (samples count) out across the defined play area -- ALWAYS USE MATH.FLOOR
   for (let i = 0; i < samplesCount; i += Math.floor(samplesCount / levelWidth)) {
     const sample = Math.abs(audioData[i]);
     const posY = Math.floor(sample * levelHeight);
     //x: i / samplesCount controls the overall x width that the data takes up
-    globalLevelData.push({x: i / samplesCount * levelWidth, y: levelHeight - posY});
+    globalLevelData.push({ x: i / samplesCount * levelWidth, y: levelHeight - posY });
   }
 }
+
 
 // this function calls canvas rendering loop. Can include other pregame variable adjustments in here as needed.
 function startCanvas() {
@@ -94,37 +95,38 @@ function startCanvas() {
   requestAnimationFrame(gameLoop);
 }
 
-// 
+
+// this function is the game animation loop
 function gameLoop() {
-  globalCanvasCtx.clearRect(0,0, globalCanvas.width, globalCanvas.height);
-  // update renderX
+  globalCanvasCtx.clearRect(0, 0, globalCanvas.width, globalCanvas.height);
   drawLevel();
   drawProgress();
   updateRenderX();
   requestAnimationFrame(gameLoop);
 }
 
+
+// this function draws the level
 function drawLevel() {
   globalCanvasCtx.beginPath();
   globalCanvasCtx.moveTo(globalLevelData[0].x, globalLevelData[0].y);
-
   for (let i = 1; i < globalLevelData.length; i++) {
     globalCanvasCtx.lineTo(globalLevelData[i].x, globalLevelData[i].y);
   }
-
   globalCanvasCtx.stroke();
 }
 
+
+// this function increases the globalRenderX variable in time with the current playback.
 function updateRenderX() {
   if (globalRenderX < globalLevelData.length) {
-    console.log(globalAudioHTMLElement.currentTime);
-      // globalRenderX += 1 / globalAudioBuffer.duration
-      // globalRenderX += currentPlayingTime;
-      globalRenderX = globalAudioHTMLElement.currentTime;
-      // /(globalAudioBuffer.duration / 5000);
+    console.log(globalRenderX + " / " + globalAudioBuffer.duration);
+    globalRenderX = globalAudioHTMLElement.currentTime * (globalAudioBuffer.duration / 5000);
   }
 }
 
+
+// this function draws the blue square at the current position of the audio
 function drawProgress() {
   globalCanvasCtx.fillStyle = "blue";
   globalCanvasCtx.fillRect(globalRenderX, globalCanvas.height / 2, 50, 50);
