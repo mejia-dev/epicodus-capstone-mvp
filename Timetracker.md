@@ -1,6 +1,6 @@
 # Epicodus Capstone Planning Log
 
-### Total Time Spent: 16 hours (see time log below for more details)
+### Total Time Spent: 25.25 hours (see time log below for more details)
 
 ### Thoughts:
 * ~~Python has [pygame](https://www.pygame.org/news) framework.~~ Will use JavaScript.
@@ -28,8 +28,32 @@
 
 ### Time Log:
 
-* 2024-03-31 -  hours total
-  * 12pm PST - pm PST --- Continue level demos
+* 2024-04-02 - 8.25 hours total
+  * 10:01am PST - 12:00pm PST
+		* Continue learning more about the Web Audio API.
+    * Fix typos in blob storage that was causing audio to not be handled correctly.
+    * Working on correcting arraybuffer bug
+    * Fix audio buffering bug.
+      * Appears that in the context of creating a buffer, `fileReader.onload = function () {}` is not the same as `fileReader.onload = () => {}`. Noting this for future use.
+    * Working on mathematic calculations for level generation.
+	* 1:00pm PST - 4:43pm PST
+		* Continue working on level generation function.
+		* Finalize createLevelData function.
+		* Appears that createLevelData function has an error and is returning NaN.
+			* Appears to be an error with the getChannelData method. Appears that it is returning some erroring values. Need to determine why this is happening, then the issue should resolve. May be because the audio has already been split down to single channel.
+			* Fix issue. Appears that the iterator in the for loop was increasing by a non-whole value which was greatly throwing off the calcuations. Using Math.floor() resolved the issue.
+		* Begin working on drawing something that moves in time to the music. 
+			* Having some trouble trying to get current track time working as expected. Can't seem to find where that value is in the Web Audio API.
+			* Located a [full, free, online book](https://webaudioapi.com/book/Web_Audio_API_Boris_Smus_html/toc.html) on the Web Audio API.
+	* 4:54pm PST - 6:34pm PST
+		* Continue looking into Web Audio API.
+		* Successfully get web audio current time via getting the currentTime property of the HTML element responsible for handling audio.
+		* Resolved issue with Razor pages from above.
+		* Looking into equations as to why the square is not moving along the rendered data at the right pace with the song.
+			* The issue lies in the fact that the currentTime is calculated linearly, whereas the level data would make it need to be calculated with a percentage instead (percent of level complete vs timestamp). Trying to figure out which numbers are needed to generate the percentage.
+
+* 2024-03-31 - 1 hour total
+  * 12pm PST - 1pm PST --- Continue level demos
     * Appears that stretching out the assumed canvas width value can render a more elongated version of the full wavelength. Will begin writing a fresh demo (v4) to see if this can be used in addition to the player movement. 
     * Create upload handler that will call other functons
 
