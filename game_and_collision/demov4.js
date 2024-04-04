@@ -106,8 +106,18 @@ function gameLoop() {
 }
 
 
-// this function draws the level
 function drawLevel() {
+  globalCanvasCtx.clearRect(0, 0, globalCanvas.width, globalCanvas.height);
+  globalCanvasCtx.beginPath();
+  globalCanvasCtx.moveTo(globalLevelData[0].x - globalRenderX, globalLevelData[0].y);
+  for (let i = 1; i < globalLevelData.length; i++) {
+    globalCanvasCtx.lineTo(globalLevelData[i].x - globalRenderX, globalLevelData[i].y);
+  }
+  globalCanvasCtx.stroke();
+}
+
+// this function draws the level statically. HISTORIC, DO NOT USE
+function drawLevelOld() {
   globalCanvasCtx.beginPath();
   globalCanvasCtx.moveTo(globalLevelData[0].x, globalLevelData[0].y);
   for (let i = 1; i < globalLevelData.length; i++) {
@@ -128,8 +138,13 @@ function updateRenderX() {
 }
 
 
-// this function draws the blue square at the current position of the audio
-function drawProgress() {
+// this function draws the blue square at the current position of the audio. HISTORIC, DO NOT USE
+function drawProgressOld() {
   globalCanvasCtx.fillStyle = "blue";
   globalCanvasCtx.fillRect(globalRenderX, globalCanvas.height / 2, 50, 50);
+}
+
+function drawProgress() {
+  globalCanvasCtx.fillStyle = "blue";
+  globalCanvasCtx.fillRect(globalCanvas.width / 2 - 25, globalCanvas.height / 2 - 25, 50, 50);
 }
