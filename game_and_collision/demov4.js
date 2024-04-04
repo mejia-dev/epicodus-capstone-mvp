@@ -101,6 +101,7 @@ function gameLoop() {
   globalCanvasCtx.clearRect(0, 0, globalCanvas.width, globalCanvas.height);
   drawLevel();
   drawProgress();
+  drawPlatform();
   updateRenderX();
   requestAnimationFrame(gameLoop);
 }
@@ -147,4 +148,10 @@ function drawProgressOld() {
 function drawProgress() {
   globalCanvasCtx.fillStyle = "blue";
   globalCanvasCtx.fillRect(globalCanvas.width / 2 - 25, globalCanvas.height / 2 - 25, 50, 50);
+}
+
+
+function drawPlatform() {
+  globalCanvasCtx.fillStyle = "green";
+  globalCanvasCtx.fillRect(0, (globalCanvas.height / 3) * 2, globalCanvas.width, 10);
 }
