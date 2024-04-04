@@ -121,7 +121,9 @@ function drawLevel() {
 function updateRenderX() {
   if (globalRenderX < globalLevelData.length) {
     console.log(globalRenderX + " / " + globalAudioBuffer.duration);
-    globalRenderX = globalAudioHTMLElement.currentTime * (globalAudioBuffer.duration / 5000);
+    // globalRenderX = globalAudioHTMLElement.currentTime * (globalAudioBuffer.duration / 5000);
+    const progressPercentage = globalAudioHTMLElement.currentTime / globalAudioBuffer.duration;
+    globalRenderX = progressPercentage * 5000;
   }
 }
 
