@@ -29,9 +29,11 @@
 ### Time Log:
 
 * 2024-04-05 - hours total
-  * 8:30am PST -
+  * 8:30am PST - 10am PST
     * Adjusting height of platform to make it more usable.
     * Begin working on gravity system.
+  * 10:30am PST - 
+    * Continue working on gravity
 
 * 2024-04-04 - 1.5 hours total
   * 9:20am PST - 10:47am PST
