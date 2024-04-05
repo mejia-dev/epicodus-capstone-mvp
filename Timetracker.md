@@ -35,6 +35,7 @@
   * 10:30am PST - 
     * Continue working on gravity.
     * Determined it would be easier to have everything broken up as separate classes as defined in pseudocode. Begin creating PlayerObj class.
+    * Finalize gravity functionality. Now need to add ground checking.
 
 * 2024-04-04 - 1.5 hours total
   * 9:20am PST - 10:47am PST
