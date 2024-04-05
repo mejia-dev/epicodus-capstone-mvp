@@ -32,11 +32,13 @@
   * 8:30am PST - 10am PST
     * Adjusting height of platform to make it more usable.
     * Begin working on gravity system.
-  * 10:30am PST - 
+  * 10:30am PST - 1:20pm PST
     * Continue working on gravity.
     * Determined it would be easier to have everything broken up as separate classes as defined in pseudocode. Begin creating PlayerObj class.
     * Finalize gravity functionality. Now need to add ground checking.
     * Finalize gravity check for platform height. Now player doesn't fall through ground.
+    * Add input controller.
+  * 2pm PST - 
 
 * 2024-04-04 - 1.5 hours total
   * 9:20am PST - 10:47am PST
