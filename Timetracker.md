@@ -39,6 +39,7 @@
     * Finalize gravity check for platform height. Now player doesn't fall through ground.
     * Add input controller.
   * 2pm PST - 
+    * Finished jump functionality. Working on double jump functionality.
 
 * 2024-04-04 - 1.5 hours total
   * 9:20am PST - 10:47am PST
