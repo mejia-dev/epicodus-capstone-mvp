@@ -12,7 +12,7 @@
     * Once this is finished, rerender canvas based on each frame in the array in time with the music. One potential issue could be pausing and resyncing if it gets out of sync. Would need to experiment (in the meantime, don't play Max Richter’s _Sleep_)
   * See if there is a way to make visualizations render horizontally and appear to visually move right to left. 
     * If there is, then there may not even be an issue with pausing. Freeze player when pause button/key is hit. No need for anything more.
-
+    * Begin work on InputControllerObj
 
 ### Resources:
 * Web Audio API:
