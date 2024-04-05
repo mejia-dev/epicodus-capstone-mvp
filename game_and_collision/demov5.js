@@ -41,7 +41,19 @@ class PlayerObj {
   }
 }
 
+class InputController {
+  constructor() {
+    this.jump = {
+      pressed: false
+    }
+    this.pause = {
+      pressed: false
+    }
+  }
+}
+
 const player1 = new PlayerObj();
+const p1InputController = new InputController();
 
 window.onload = () => {
   globalCanvas = document.getElementById("visualizer");
@@ -179,3 +191,33 @@ function drawPlatform() {
   globalCanvasCtx.fillStyle = "green";
   globalCanvasCtx.fillRect(0, globalPlatformY, globalCanvas.width, 10);
 }
+
+
+
+window.addEventListener('keydown', () => {
+  switch (event.key) {
+    case 'w':
+      p1InputController.jump.pressed = true;
+      break;
+    case ' ':
+      p1InputController.jump.pressed = true;
+      break;
+    case 'ArrowUp':
+      p1InputController.jump.pressed = true;
+      break;
+  }
+})
+
+window.addEventListener('keyup', () => {
+  switch (event.key) {
+    case 'w':
+      p1InputController.jump.pressed = false;
+      break;
+    case ' ':
+      p1InputController.jump.pressed = false;
+      break;
+    case 'ArrowUp':
+      p1InputController.jump.pressed = false;
+      break;
+  }
+})
