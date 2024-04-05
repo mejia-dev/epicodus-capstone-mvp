@@ -10,13 +10,14 @@ let globalCanvasCtx;
 let globalLevelData;
 let globalRenderX;
 
-let globalGravity = .2;
+let globalGravity = .5;
 let globalPlatformY;
 
 class PlayerObj {
   constructor() {
     this.width = 50;
     this.height = 50;
+    this.canJumpSingle = true;
     this.position = {
       y: 0
     }
@@ -28,6 +29,10 @@ class PlayerObj {
   draw() {
     globalCanvasCtx.fillStyle = "blue";
     globalCanvasCtx.fillRect(globalCanvas.width / 2 - 25, this.position.y, this.width, this.height);
+    if (p1InputController.jump.pressed && this.canJumpSingle === true) {
+      this.velocity.y = -10;
+      this.canJumpSingle = false;
+    }
   }
 
   requestUpdate() {
@@ -35,6 +40,7 @@ class PlayerObj {
     if (this.height + this.position.y < globalPlatformY) {
       this.velocity.y += globalGravity;
     } else {
+      this.canJumpSingle = true;
       this.velocity.y = 0;
     }
     this.draw();
