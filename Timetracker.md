@@ -36,6 +36,7 @@
     * Continue working on gravity.
     * Determined it would be easier to have everything broken up as separate classes as defined in pseudocode. Begin creating PlayerObj class.
     * Finalize gravity functionality. Now need to add ground checking.
+    * Finalize gravity check for platform height. Now player doesn't fall through ground.
 
 * 2024-04-04 - 1.5 hours total
   * 9:20am PST - 10:47am PST
