@@ -1,6 +1,6 @@
 # Epicodus Capstone Planning Log
 
-### Total Time Spent: 25.25 hours (see time log below for more details)
+### Total Time Spent: 26.75 hours (see time log below for more details)
 
 ### Thoughts:
 * ~~Python has [pygame](https://www.pygame.org/news) framework.~~ Will use JavaScript.
@@ -27,6 +27,18 @@
 
 
 ### Time Log:
+
+* 2024-04-05 - hours total
+  * 8:30am PST -
+    * Adjusting height of platform to make it more usable.
+    * Begin working on gravity system.
+
+* 2024-04-04 - 1.5 hours total
+  * 9:20am PST - 10:47am PST
+		* Working on math to get blue square to move along the level according to the timestamp.
+		* Finish code that gets blue square to move along the level according to timestamp. Now need to lock camera view to the square instead of letting it scroll off-screen
+		* Make blue square be static and make audio wave move instead.
+		* Add first version of ground platform
 
 * 2024-04-02 - 8.25 hours total
   * 10:01am PST - 12:00pm PST
