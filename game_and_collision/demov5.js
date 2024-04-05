@@ -9,26 +9,34 @@ let globalCanvas;
 let globalCanvasCtx;
 let globalLevelData;
 let globalRenderX;
-let globalPlayerY;
+
+let globalGravity = .2;
+let globalPlatformY;
 
 class PlayerObj {
   constructor() {
+    this.width = 50;
+    this.height = 50;
     this.position = {
       y: 0
     }
     this.velocity = {
-      y: 1
+      y: 0
     }
   }
 
   draw() {
     globalCanvasCtx.fillStyle = "blue";
-    globalCanvasCtx.fillRect(globalCanvas.width / 2 - 25, this.position.y, 50, 50);
+    globalCanvasCtx.fillRect(globalCanvas.width / 2 - 25, this.position.y, this.width, this.height);
   }
 
   requestUpdate() {
     this.position.y += this.velocity.y;
-    this.velocity.y += .2;
+    if (this.height + this.position.y < globalPlatformY) {
+      this.velocity.y += globalGravity;
+    } else {
+      this.velocity.y = 0;
+    }
     this.draw();
   }
 }
@@ -167,12 +175,7 @@ function updateRenderX() {
 
 // this function draws the platform.
 function drawPlatform() {
+  globalPlatformY = (globalCanvas.height / 3) * 2
   globalCanvasCtx.fillStyle = "green";
-  globalCanvasCtx.fillRect(0, (globalCanvas.height / 3) * 2, globalCanvas.width, 10);
-}
-
-
-// this function handles gravity
-function implementGravity() {
-  globalPlayerY -= 1;
+  globalCanvasCtx.fillRect(0, globalPlatformY, globalCanvas.width, 10);
 }
