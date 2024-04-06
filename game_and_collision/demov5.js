@@ -87,9 +87,6 @@ class InputController {
   }
 }
 
-const player1 = new PlayerObj();
-const p1InputController = new InputController();
-
 window.onload = () => {
   globalCanvas = document.getElementById("visualizer");
   globalCanvasCtx = globalCanvas.getContext("2d");
@@ -152,7 +149,8 @@ function initializeAudioControls() {
 function createLevelData() {
   const audioData = globalAudioBuffer.getChannelData(0);
   const samplesCount = audioData.length;
-  const levelWidth = 5000;
+  // const levelWidth = 5000;
+  const levelWidth = globalAudioBuffer.duration * 1000;
   const levelHeight = globalCanvas.height;
   // may need to change width and height later for playability. Will need to test.
 
@@ -162,9 +160,11 @@ function createLevelData() {
   // spread the data (samples count) out across the defined play area -- ALWAYS USE MATH.FLOOR
   for (let i = 0; i < samplesCount; i += Math.floor(samplesCount / levelWidth)) {
     const sample = Math.abs(audioData[i]);
+    const posX = (i / samplesCount) * levelWidth;
     const posY = Math.floor(sample * levelHeight);
+    
     //x: i / samplesCount controls the overall x width that the data takes up
-    globalLevelData.push({ x: i / samplesCount * levelWidth, y: levelHeight - posY });
+    globalLevelData.push({ x: posX, y: levelHeight - posY });
   }
 }
 
@@ -198,27 +198,17 @@ function drawLevel() {
   globalCanvasCtx.stroke();
 }
 
-// this function draws the level statically. HISTORIC, DO NOT USE
-function drawLevelOld() {
-  globalCanvasCtx.beginPath();
-  globalCanvasCtx.moveTo(globalLevelData[0].x, globalLevelData[0].y);
-  for (let i = 1; i < globalLevelData.length; i++) {
-    globalCanvasCtx.lineTo(globalLevelData[i].x, globalLevelData[i].y);
-  }
-  globalCanvasCtx.stroke();
-}
-
 
 // this function increases the globalRenderX variable in time with the current playback.
 function updateRenderX() {
   if (globalRenderX < globalLevelData.length) {
     const progressPercentage = globalAudioHTMLElement.currentTime / globalAudioBuffer.duration;
-    globalRenderX = progressPercentage * 5000;
+    // globalRenderX = progressPercentage * 5000;
+    globalRenderX = progressPercentage * globalLevelData[globalLevelData.length - 1].x; // change based on level width
+
   }
 }
 
-
-// this function draws the player at the current x pos of the audio.
 
 // this function draws the platform.
 function drawPlatform() {
@@ -228,6 +218,8 @@ function drawPlatform() {
 }
 
 
+const player1 = new PlayerObj();
+const p1InputController = new InputController();
 
 window.addEventListener('keydown', () => {
   switch (event.key) {
