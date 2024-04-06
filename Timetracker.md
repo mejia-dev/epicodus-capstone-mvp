@@ -1,6 +1,6 @@
 # Epicodus Capstone Planning Log
 
-### Total Time Spent: 26.75 hours (see time log below for more details)
+### Total Time Spent: 34.08 hours (see time log below for more details)
 
 ### Thoughts:
 * ~~Python has [pygame](https://www.pygame.org/news) framework.~~ Will use JavaScript.
@@ -28,7 +28,7 @@
 
 ### Time Log:
 
-* 2024-04-05 - hours total
+* 2024-04-05 - 7.33 hours total
   * 8:30am PST - 10am PST
     * Adjusting height of platform to make it more usable.
     * Begin working on gravity system.
@@ -38,9 +38,10 @@
     * Finalize gravity functionality. Now need to add ground checking.
     * Finalize gravity check for platform height. Now player doesn't fall through ground.
     * Add input controller.
-  * 2pm PST - 
+  * 2pm PST - 5pm PST
     * Finished jump functionality. Working on double jump functionality.
     * Continue work on double jump functionality.
+    * Complete double jump functionality.
 
 * 2024-04-04 - 1.5 hours total
   * 9:20am PST - 10:47am PST
