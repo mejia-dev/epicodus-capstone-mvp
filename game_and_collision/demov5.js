@@ -18,7 +18,7 @@ class PlayerObj {
     this.width = 50;
     this.height = 50;
     this.jumpHeight = 10;
-    this.canJumpSingle = true;
+    this.canJumpSingle = false;
     this.canJumpDouble = false;
     this.isGrounded = true;
     this.position = {
@@ -33,62 +33,27 @@ class PlayerObj {
     globalCanvasCtx.fillStyle = "blue";
     globalCanvasCtx.fillRect(globalCanvas.width / 2 - 25, this.position.y, this.width, this.height);
 
-    console.log(this.isGrounded)
-    // if (this.isGrounded) {
-    //   this.canJumpDouble = false;
-    // }
+    if (this.isGrounded) {
+      this.canJumpSingle = true;
+      this.canJumpDouble = false;
+    }
 
     if (p1InputController.jump.pressed) {
-      if (this.isGrounded) {
+      if (this.canJumpSingle) {
+        this.canJumpSingle = false;
         this.velocity.y = -this.jumpHeight;
-        this.canJumpDouble = true;
-        // console.log()
-        if (this.canJumpDouble && !this.isGrounded && p1InputController.jump.pressed) {
-          console.log("doulbe jumping")
-          this.velocity.y = -this.jumpHeight;
-          this.canJumpDouble = false;
+        const activateDoubleJump = () => {
+          this.canJumpDouble = true;
         }
+        setTimeout(activateDoubleJump, 400);
+      }
+
+      if (this.canJumpDouble) {
+        this.canJumpDouble = false;
+        this.velocity.y = -this.jumpHeight;
       }
     }
 
-    // if (p1InputController.jump.pressed && !this.isGrounded) {
-    //   this.velocity.y = -this.jumpHeight;
-    //   this.canJumpDouble = false;
-    // }
-
-    // if (this.height + this.position.y > globalPlatformY && !p1InputController.jump.pressed) {
-    //   this.canJumpDouble = false;
-    // }
-
-    // if (p1InputController.jump.pressed) {
-    //   if (this.height + this.position.y >= globalPlatformY || this.canJumpDouble) {
-    //     this.velocity.y = -10;
-    //     console.log(this.canJumpDouble)
-    //     this.canJumpDouble = !this.canJumpDouble;
-    //   }
-    // }
-
-    // if (p1InputController.jump.pressed && this.velocity.y > 0) {
-    //   this.velocity.y = -10;
-    //   this.canJumpDouble = false;
-    // }
-
-    // if (p1InputController.jump.pressed && this.canJumpSingle) {
-    //   this.velocity.y = -10;
-    //   this.canJumpSingle = false;
-    //   this.canJumpDouble = true;
-    // }
-    // if (p1InputController.jump.pressed && this.canJumpDouble) {
-    //   this.velocity.y = -10;
-    //   this.canJumpDouble = false;
-    // }
-    
-    // if (p1InputController.jump.pressed && this.canJumpSingle === true ) {
-    //   this.velocity.y = -10;
-    //   this.canJumpSingle = false;
-    //   this.canJumpDouble = true;
-    //   console.log("single")
-    // }
   }
 
   enforceGravity() {
