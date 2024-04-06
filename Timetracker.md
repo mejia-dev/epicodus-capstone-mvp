@@ -1,13 +1,18 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 34.08 hours (see time log below for more details)
+### Total Time Spent: 35.58 hours (see time log below for more details)
 
 
 ### Time Log:
 
-* 2024-04-06 - hours total
-  * 11:32am PST -  PST
+* 2024-04-06 - 1.5 hours total
+  * 11:32am PST - 1:03pm PST
     * Work on math for rendering the level spikes at the right length.
+    * Finalize math and complete level rendering with proper timing. 
+      * Ended up needing to set the width to the audio's duration times 1000 miliseconds. 
+      * Then, adjust renderX updater to update based on completion percentage times the final X value in the levelData array.
+      * This resolves the issue but ends up creating another (anticipated) problem where the level is rendering very quickly and the spikes are difficult to jump over. Now that audio is rendering at the proper time though, this should be easy enough to adjust in the next update.
+
 
 * 2024-04-05 - 7.33 hours total
   * 8:30am PST - 10am PST
