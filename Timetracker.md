@@ -10,6 +10,7 @@
     * Continue working on making the beat hit at the right time.
     * Finalize rendering delay.
     * Begin planning out enemies.
+      * Got list of all spikes in audio. Should be able to overlap these spikes with the track.
 
 
 * 2024-04-06 - 2.5 hours total
