@@ -10,14 +10,14 @@ let globalCanvasCtx;
 let globalLevelData;
 let globalRenderX;
 
-let globalGravity = .5;
+let globalGravity = .8;
 let globalPlatformY;
 
 class PlayerObj {
   constructor() {
     this.width = 50;
     this.height = 50;
-    this.jumpHeight = 10;
+    this.jumpHeight = 15;
     this.canJumpSingle = false;
     this.canJumpDouble = false;
     this.isGrounded = true;
@@ -62,6 +62,9 @@ class PlayerObj {
       this.velocity.y += globalGravity;
     } else {
       this.velocity.y = 0;
+    }
+    if (this.position.y < globalPlatformY + 20) {
+      this.position.y--;
     }
   }
 
@@ -205,7 +208,6 @@ function updateRenderX() {
     const progressPercentage = globalAudioHTMLElement.currentTime / globalAudioBuffer.duration;
     // globalRenderX = progressPercentage * 5000;
     globalRenderX = progressPercentage * globalLevelData[globalLevelData.length - 1].x; // change based on level width
-
   }
 }
 
