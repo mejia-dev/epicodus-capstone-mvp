@@ -8,6 +8,7 @@ let globalAudioHTMLElement;
 let globalCanvas;
 let globalCanvasCtx;
 let globalLevelData;
+let globalEnemyPositionList;
 let globalRenderX;
 
 let globalGravity = .8;
@@ -79,6 +80,7 @@ class PlayerObj {
   }
 }
 
+
 class InputController {
   constructor() {
     this.jump = {
@@ -89,6 +91,20 @@ class InputController {
     }
   }
 }
+
+
+class EnemyObj {
+  constructor() {
+    this.width = 50;
+    this.height = 50;
+    // this.isGrounded = true;
+    this.position = {
+      x: 0,
+      y: 0
+    }
+  }
+}
+
 
 window.onload = () => {
   globalCanvas = document.getElementById("visualizer");
@@ -160,20 +176,24 @@ function createLevelData() {
   // clear array, set platform height
   globalPlatformY = (globalCanvas.height / 3) * 2
   globalLevelData = [];
-
-  console.log(globalPlatformY);
+  globalEnemyPositionList = [];
 
   // spread the data (samples count) out across the defined play area -- ALWAYS USE MATH.FLOOR
   for (let i = 0; i < samplesCount; i += Math.floor(samplesCount / levelWidth)) {
     const sample = Math.abs(audioData[i]);
     const posX = (i / samplesCount) * levelWidth;
     const posY = Math.floor(sample * levelHeight) /2 ;
-    if (posY > 200) {console.log(posY)};
+    if (posY > 200)
+    {
+      // 50 is currently arbitrary representation of final enemy height.
+      globalEnemyPositionList.push({x: posX, y: globalPlatformY - 50});
+    }
     
     //x: i / samplesCount controls the overall x width that the data takes up
     globalLevelData.push({ x: posX, y: levelHeight - posY });
   }
   console.log("Done processing");
+  console.log(globalEnemyPositionList);
 }
 
 
