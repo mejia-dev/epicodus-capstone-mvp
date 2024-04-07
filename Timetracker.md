@@ -1,18 +1,23 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 35.58 hours (see time log below for more details)
+### Total Time Spent: 36.58 hours (see time log below for more details)
 
 
 ### Time Log:
 
-* 2024-04-06 - 1.5 hours total
+* 2024-04-06 -  hours total
+  * 11:50am PST -  PST
+    * Continue working on making the beat hit at the right time.
+
+
+* 2024-04-06 - 2.5 hours total
   * 11:32am PST - 1:03pm PST
     * Work on math for rendering the level spikes at the right length.
     * Finalize math and complete level rendering with proper timing. 
       * Ended up needing to set the width to the audio's duration times 1000 miliseconds. 
       * Then, adjust renderX updater to update based on completion percentage times the final X value in the levelData array.
       * This resolves the issue but ends up creating another (anticipated) problem where the level is rendering very quickly and the spikes are difficult to jump over. Now that audio is rendering at the proper time though, this should be easy enough to adjust in the next update.
-  * 5:20pm PST - pm PST
+  * 5:20pm PST - 6:28pm PST
     * Improve gravity to make levels easier.
     * Work on adjusting color affects of wavelengths and change height.
     * Begin work on making beat hit at the point of the player instead of at the edge of the canvas.
