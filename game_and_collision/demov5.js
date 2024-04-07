@@ -164,7 +164,7 @@ function createLevelData() {
   for (let i = 0; i < samplesCount; i += Math.floor(samplesCount / levelWidth)) {
     const sample = Math.abs(audioData[i]);
     const posX = (i / samplesCount) * levelWidth;
-    const posY = Math.floor(sample * levelHeight);
+    const posY = Math.floor(sample * levelHeight) /2 ;
     
     //x: i / samplesCount controls the overall x width that the data takes up
     globalLevelData.push({ x: posX, y: levelHeight - posY });
@@ -175,6 +175,8 @@ function createLevelData() {
 // this function calls canvas rendering loop. Can include other pregame variable adjustments in here as needed.
 function startCanvas() {
   globalRenderX = 0;
+  globalCanvasCtx.fillStyle = "black";
+  globalCanvasCtx.fillRect(0, 0, globalCanvas.width, globalCanvas.height);
   requestAnimationFrame(gameLoop);
 }
 
@@ -194,6 +196,11 @@ function gameLoop() {
 function drawLevel() {
   globalCanvasCtx.clearRect(0, 0, globalCanvas.width, globalCanvas.height);
   globalCanvasCtx.beginPath();
+
+  const colorIndex = Math.floor((globalRenderX / globalLevelData.length) * 255);
+  const color = `rgb(${colorIndex}, ${(255 - colorIndex)}, ${(128 + colorIndex)})`;
+  globalCanvasCtx.strokeStyle = color;
+
   globalCanvasCtx.moveTo(globalLevelData[0].x - globalRenderX, globalLevelData[0].y);
   for (let i = 1; i < globalLevelData.length; i++) {
     globalCanvasCtx.lineTo(globalLevelData[i].x - globalRenderX, globalLevelData[i].y);
