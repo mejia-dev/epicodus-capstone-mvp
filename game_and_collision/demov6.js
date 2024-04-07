@@ -120,25 +120,27 @@ class InputController {
 
 
 class EnemyObj {
-  constructor() {
+  constructor(spawnX, spawnY) {
     this.width = 50;
     this.height = 50;
     this.readyForDeletion = false;
     // this.isGrounded = true;
     this.position = {
-      x: 0,
-      y: 0
+      x: spawnX,
+      y: spawnY
     }
   }
   draw() {
     globalCanvasCtx.fillStyle = "red";
-    globalCanvasCtx.fillRect(this.x, this.y, this.width, this,height);
+    globalCanvasCtx.fillRect(globalCanvas.width / 2, this.y, this.width, this.height);
   }
   requestUpdate() {
+    console.log(this.position.x)
     this.position.x -= globalRenderX;
     if (this.x < 0 - this.width) {
       this.readyForDeletion = true;
     }
+    this.draw();
   }
 }
 
@@ -295,4 +297,4 @@ function drawPlatform() {
 
 const player1 = new PlayerObj();
 const p1InputController = new InputController();
-const enemy1 = new EnemyObj();
+const enemy1 = new EnemyObj(80, 450);
