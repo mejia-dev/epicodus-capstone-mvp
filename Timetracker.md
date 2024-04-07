@@ -1,17 +1,18 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 36.58 hours (see time log below for more details)
+### Total Time Spent: 38.88 hours (see time log below for more details)
 
 
 ### Time Log:
 
-* 2024-04-06 -  hours total
-  * 11:50am PST -  PST
+* 2024-04-06 - 2.3 hours total
+  * 11:50am PST - 2:08pm PST
     * Continue working on making the beat hit at the right time.
     * Finalize rendering delay.
     * Begin planning out enemies.
       * Got list of all spikes in audio. Should be able to overlap these spikes with the track.
       * Create Enemy class. Looking through old code snippets to determine how to spawn enemies. May end up something like "if enemy exists in array every x seconds, spawn one at the requested position". X could be dependent on difficulty.
+      * Working on rendering enemies on screen.
 
 
 * 2024-04-06 - 2.5 hours total
