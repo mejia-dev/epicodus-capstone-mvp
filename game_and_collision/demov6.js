@@ -135,7 +135,7 @@ class EnemyObj {
     globalCanvasCtx.fillRect(this.x, this.y, this.width, this,height);
   }
   requestUpdate() {
-    this.x -= globalRenderX;
+    this.position.x -= globalRenderX;
     if (this.x < 0 - this.width) {
       this.readyForDeletion = true;
     }
@@ -249,6 +249,7 @@ function gameLoop() {
   drawLevel();
   // drawPlayer();
   player1.requestUpdate();
+  enemy1.requestUpdate();
   drawPlatform();
   updateRenderX();
   requestAnimationFrame(gameLoop);
@@ -294,4 +295,4 @@ function drawPlatform() {
 
 const player1 = new PlayerObj();
 const p1InputController = new InputController();
-
+const enemy1 = new EnemyObj();
