@@ -11,6 +11,7 @@
     * Finalize rendering delay.
     * Begin planning out enemies.
       * Got list of all spikes in audio. Should be able to overlap these spikes with the track.
+      * Create Enemy class. Looking through old code snippets to determine how to spawn enemies. May end up something like "if enemy exists in array every x seconds, spawn one at the requested position". X could be dependent on difficulty.
 
 
 * 2024-04-06 - 2.5 hours total
