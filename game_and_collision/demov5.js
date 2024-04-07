@@ -212,9 +212,13 @@ function drawLevel() {
 // this function increases the globalRenderX variable in time with the current playback.
 function updateRenderX() {
   if (globalRenderX < globalLevelData.length) {
+    // visual Offset milliseconds may need to be adjusted if sprite ever moves. 
+    const visualOffsetInMs = 700;
     const progressPercentage = globalAudioHTMLElement.currentTime / globalAudioBuffer.duration;
-    // globalRenderX = progressPercentage * 5000;
-    globalRenderX = progressPercentage * globalLevelData[globalLevelData.length - 1].x; // change based on level width
+    const audioTimeVis = progressPercentage * globalLevelData[globalLevelData.length - 1].x;
+    const offsetAudioTime = audioTimeVis - visualOffsetInMs;
+    // using Math.max to ensure that the value does not reverse in the event of it being negative
+    globalRenderX = Math.max(offsetAudioTime, 0);
   }
 }
 
