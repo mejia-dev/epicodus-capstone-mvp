@@ -8,6 +8,8 @@
 * 2024-04-06 -  hours total
   * 11:50am PST -  PST
     * Continue working on making the beat hit at the right time.
+    * Finalize rendering delay.
+    * Begin planning out enemies.
 
 
 * 2024-04-06 - 2.5 hours total
