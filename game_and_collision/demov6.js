@@ -89,6 +89,32 @@ class InputController {
     this.pause = {
       pressed: false
     }
+    window.addEventListener('keydown', () => {
+      switch (event.key) {
+        case 'w':
+          this.jump.pressed = true;
+          break;
+        case ' ':
+          this.jump.pressed = true;
+          break;
+        case 'ArrowUp':
+          this.jump.pressed = true;
+          break;
+      }
+    })
+    window.addEventListener('keyup', () => {
+      switch (event.key) {
+        case 'w':
+          this.jump.pressed = false;
+          break;
+        case ' ':
+          this.jump.pressed = false;
+          break;
+        case 'ArrowUp':
+          this.jump.pressed = false;
+          break;
+      }
+    })
   }
 }
 
@@ -97,10 +123,21 @@ class EnemyObj {
   constructor() {
     this.width = 50;
     this.height = 50;
+    this.readyForDeletion = false;
     // this.isGrounded = true;
     this.position = {
       x: 0,
       y: 0
+    }
+  }
+  draw() {
+    globalCanvasCtx.fillStyle = "red";
+    globalCanvasCtx.fillRect(this.x, this.y, this.width, this,height);
+  }
+  requestUpdate() {
+    this.x -= globalRenderX;
+    if (this.x < 0 - this.width) {
+      this.readyForDeletion = true;
     }
   }
 }
@@ -258,30 +295,3 @@ function drawPlatform() {
 const player1 = new PlayerObj();
 const p1InputController = new InputController();
 
-window.addEventListener('keydown', () => {
-  switch (event.key) {
-    case 'w':
-      p1InputController.jump.pressed = true;
-      break;
-    case ' ':
-      p1InputController.jump.pressed = true;
-      break;
-    case 'ArrowUp':
-      p1InputController.jump.pressed = true;
-      break;
-  }
-})
-
-window.addEventListener('keyup', () => {
-  switch (event.key) {
-    case 'w':
-      p1InputController.jump.pressed = false;
-      break;
-    case ' ':
-      p1InputController.jump.pressed = false;
-      break;
-    case 'ArrowUp':
-      p1InputController.jump.pressed = false;
-      break;
-  }
-})
