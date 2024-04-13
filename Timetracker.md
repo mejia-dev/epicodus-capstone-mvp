@@ -1,12 +1,12 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 38.88 hours (see time log below for more details)
+### Total Time Spent: 39.88 hours (see time log below for more details)
 
 
 ### Time Log:
 
-* 2024-04-13 - hours total
-  * 9:30am BST - 
+* 2024-04-13 - 1 hour total
+  * 9:30am BST - 10:30am BST
     * Continue working on rendering enemies onscreen.
     * Add basic functionality for rendering enemies every x seconds using setInterval to increase a global counter.
 
