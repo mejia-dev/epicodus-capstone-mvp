@@ -5,6 +5,11 @@
 
 ### Time Log:
 
+* 2024-04-13 - hours total
+  * 9:30am BST - 
+    * Continue working on rendering enemies onscreen.
+    * Add basic functionality for rendering enemies every x seconds using setInterval to increase a global counter.
+
 * 2024-04-06 - 2.3 hours total
   * 11:50am PST - 2:08pm PST
     * Continue working on making the beat hit at the right time.
