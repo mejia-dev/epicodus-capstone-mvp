@@ -134,14 +134,12 @@ class EnemyObj {
   }
   draw() {
     globalCanvasCtx.fillStyle = "red";
-    console.log("y" + this.position.y)
     // globalCanvasCtx.fillRect(globalCanvas.width / 2, globalPlatformY - this.height, this.width, this.height);
     globalCanvasCtx.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
   requestUpdate() {
     this.position.x -= 1;
-    console.log(this.position.x)
-    if (this.x < 0 - this.width) {
+    if (this.position.x < 0 - this.width) {
       this.readyForDeletion = true;
     }
     this.draw();
@@ -303,6 +301,8 @@ function checkEnemySpawn() {
     globalEnemyPositionList.forEach(kvp => {
       if (kvp.x >= globalRenderX && kvp.x <= globalRenderX + globalCanvas.width) {
         console.log("There is an enemy here!")
+        let newEnemy = new EnemyObj(kvp.x, globalPlatformY);
+        newEnemy.requestUpdate();
       }
     })
 
