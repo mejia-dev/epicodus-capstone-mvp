@@ -5,6 +5,11 @@
 
 ### Time Log:
 
+* 2024-04-15 -  hours total
+* 7:56am BST - 
+  * Continue working on enemy spawning.
+  * Determined that the issue is not with the spawning method, but moreso that the condition is checking if the enemy's x position is equal to the song position via globalRenderX (grX). Because grX increments by a number relative to the length of the song, the condition is often not returning any spawned enemies until an enemy's xPos just so happens to be grX, which is rare. 
+
 * 2024-04-13 - 1 hour total
   * 9:30am BST - 10:30am BST
     * Continue working on rendering enemies onscreen.
