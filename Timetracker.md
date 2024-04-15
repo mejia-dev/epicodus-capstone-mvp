@@ -1,11 +1,11 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 39.88 hours (see time log below for more details)
+### Total Time Spent: 47.18 hours (see time log below for more details)
 
 
 ### Time Log:
 
-* 2024-04-15 -  hours total
+* 2024-04-15 - 7.3 hours total
 * 7:56am BST - 1:03pm BST
   * Continue working on enemy spawning.
   * Determined that the issue is not with the spawning method, but moreso that the condition is checking if the enemy's x position is equal to the song position via globalRenderX (grX). Because grX increments by a number relative to the length of the song, the condition is often not returning any spawned enemies until an enemy's xPos just so happens to be grX, which is rare. 
@@ -33,7 +33,7 @@
   * Added moveSpeed property to enemy. Also added a `globalPreviousRenderX` variable to assist with calculations for movement speed. This variable gets updated right before the new `renderX` is set.
   * Researching collision detection. Appears to be best practice to have a separate collision detection handler instead of building it into the code of one of the objects that are colliding. Will begin work on this. 
   * Add collision detector. Appears that there is no x position on player. Will adjust this.
-* 4:20pm BST - pm BST
+* 4:20pm BST - 5:07pm BST
   * Add x position to player.
   * Collision appears to be registering on the wrong side. Collision is detected and undetected preemptively.
     * Resolved this. Appears that collision order was reversed. Object1 needs to be the object being hit and Object2 needs to be the approaching object. 
