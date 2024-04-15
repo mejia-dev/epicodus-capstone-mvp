@@ -14,6 +14,7 @@ let globalEnemyTimer = 0;
 let globalEnemySpawnedList = [];
 let globalEnemySpawnInterval;
 let globalRenderX;
+let globalPreviousRenderX;
 
 let globalGravity = .8;
 let globalPlatformY;
@@ -127,6 +128,7 @@ class EnemyObj {
   constructor(spawnX, spawnY) {
     this.width = 50;
     this.height = 50;
+    this.moveSpeed = 0;
     this.readyForDeletion = false;
     // this.isGrounded = true;
     this.position = {
@@ -139,8 +141,16 @@ class EnemyObj {
     // globalCanvasCtx.fillRect(globalCanvas.width / 2, globalPlatformY - this.height, this.width, this.height);
     globalCanvasCtx.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
+
+  updateMoveSpeed() {
+    const prevLevelX = (globalPreviousRenderX / globalLevelData.length) * globalLevelData[globalLevelData.length - 1].x;
+    const currentLevelX = (globalRenderX / globalLevelData.length) * globalLevelData[globalLevelData.length - 1].x;
+    this.moveSpeed = currentLevelX - prevLevelX;
+  }
+
   requestUpdate() {
-    this.position.x -= 1;
+    this.updateMoveSpeed();
+    this.position.x -= this.moveSpeed; 
     if (this.position.x < 0 - this.width) {
       this.readyForDeletion = true;
     }
@@ -291,6 +301,7 @@ function updateRenderX() {
     const progressPercentage = globalAudioHTMLElement.currentTime / globalAudioBuffer.duration;
     const audioTimeVis = progressPercentage * globalLevelData[globalLevelData.length - 1].x;
     const offsetAudioTime = audioTimeVis - visualOffsetInMs;
+    globalPreviousRenderX = globalRenderX;
     // using Math.max to ensure that the value does not reverse in the event of it being negative
     globalRenderX = Math.max(offsetAudioTime, 0);
   }
@@ -299,7 +310,6 @@ function updateRenderX() {
 function checkEnemySpawn() {
   if (globalEnemyTimer === 3) {
     globalEnemyTimer = 0;
-
     globalEnemyPositionList.forEach(kvp => {
       if (kvp.x >= globalRenderX && kvp.x <= globalRenderX + globalCanvas.width) {
         let newEnemy = new EnemyObj(globalCanvas.width, globalPlatformY - 50);
