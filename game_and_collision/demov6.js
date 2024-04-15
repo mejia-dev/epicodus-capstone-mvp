@@ -228,13 +228,12 @@ function createLevelData() {
   for (let i = 0; i < samplesCount; i += Math.floor(samplesCount / levelWidth)) {
     const sample = Math.abs(audioData[i]);
     const posX = (i / samplesCount) * levelWidth;
-    const posY = Math.floor(sample * levelHeight) /2 ;
-    if (posY > 200)
-    {
+    const posY = Math.floor(sample * levelHeight) / 2;
+    if (posY > 200) {
       // 50 is currently arbitrary representation of final enemy height.
-      globalEnemyPositionList.push({x: posX, y: globalPlatformY - 50});
+      globalEnemyPositionList.push({ x: posX, y: globalPlatformY - 50 });
     }
-    
+
     //x: i / samplesCount controls the overall x width that the data takes up
     globalLevelData.push({ x: posX, y: levelHeight - posY });
   }
@@ -249,7 +248,7 @@ function startCanvas() {
     globalEnemyTimer++;
   }, 1000);
   requestAnimationFrame(gameLoop);
-  
+
 }
 
 
@@ -257,13 +256,12 @@ function startCanvas() {
 function gameLoop() {
   if (globalAudioIsPlaying) {
     globalCanvasCtx.clearRect(0, 0, globalCanvas.width, globalCanvas.height);
-  drawLevel();
-  // drawPlayer();
-  player1.requestUpdate();
-  checkEnemySpawn();
-  updateSpawnedEnemies();
-  drawPlatform();
-  updateRenderX();
+    drawLevel();
+    player1.requestUpdate();
+    checkEnemySpawn();
+    updateSpawnedEnemies();
+    drawPlatform();
+    updateRenderX();
   }
   requestAnimationFrame(gameLoop);
 }
