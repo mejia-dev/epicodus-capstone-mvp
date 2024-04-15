@@ -26,6 +26,7 @@
     * There is currently no collision detection between the player and an enemy
     * Multiple enemies may be spawning at once. This is hard to tell currently as all enemies move so slowly.
   * Make enemies render above platform.
+  * Looking through code to determine how best to make enemies move at same speed as wavelength.
 
 * 2024-04-13 - 1 hour total
   * 9:30am BST - 10:30am BST
