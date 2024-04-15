@@ -19,7 +19,12 @@
     * After doing some research it appears that this is because I am setting the enemy's posX value to be the x value of the data point, but because the enemy list does not scroll across the screen like the audio track does, they are rendering outside of the view. Could either solve this by having render on the right side of the screen whenever they are added to the spawn list, or could attempt to move one layer on top of the other one (enemy layer flows concurrently with wavelength layer)
     * Resolved issue by rendering enemy on right side of the canvas. Can add it as a second layer later if there is a need for it.
     * Enemy spawning still runs if the game is paused or not started. 
-    * Doing some research on game pausing best practices 
+    * Doing some research on game pausing best practices. Decided to just set this to be globalAudioIsPaused for now, since all game effects will likely be based on whether audio is playing or not. 
+  * Add pause functionality to game which fixes multiple enemies rendering at the start of the game. However,
+    * Enemies are spawning below platform (just need height adjustment)
+    * Enemies are moving much slower than the level scroll.
+    * There is currently no collision detection between the player and an enemy
+    * Multiple enemies may be spawning at once. This is hard to tell currently as all enemies move so slowly.
 
 * 2024-04-13 - 1 hour total
   * 9:30am BST - 10:30am BST
