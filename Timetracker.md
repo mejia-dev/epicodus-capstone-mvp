@@ -38,6 +38,7 @@
   * Collision appears to be registering on the wrong side. Collision is detected and undetected preemptively.
     * Resolved this. Appears that collision order was reversed. Object1 needs to be the object being hit and Object2 needs to be the approaching object. 
   * Noted that collision detection works correctly on the x axis but does not work correctly when the player jumps over the enemy successfully (still detects a hit).
+    * Resolved by adding a condition for object1 and object2's x and y values (four conditions total)
 
 * 2024-04-13 - 1 hour total
   * 9:30am BST - 10:30am BST
