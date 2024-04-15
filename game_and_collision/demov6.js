@@ -307,6 +307,10 @@ function updateRenderX() {
   }
 }
 
+function checkCollision(object1, object2) {
+  return object1.position.x + object1.width >= object2.position.x;
+}
+
 function checkEnemySpawn() {
   if (globalEnemyTimer === 3) {
     globalEnemyTimer = 0;
