@@ -25,6 +25,7 @@
     * Enemies are moving much slower than the level scroll.
     * There is currently no collision detection between the player and an enemy
     * Multiple enemies may be spawning at once. This is hard to tell currently as all enemies move so slowly.
+  * Make enemies render above platform.
 
 * 2024-04-13 - 1 hour total
   * 9:30am BST - 10:30am BST
