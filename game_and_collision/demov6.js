@@ -240,7 +240,6 @@ function createLevelData() {
   }
 }
 
-let enemy1
 // this function calls canvas rendering loop. Can include other pregame variable adjustments in here as needed.
 function startCanvas() {
   globalRenderX = 0;
@@ -249,7 +248,6 @@ function startCanvas() {
   globalEnemySpawnInterval = setInterval(() => {
     globalEnemyTimer++;
   }, 1000);
-  enemy1 = new EnemyObj(globalCanvas.width / 2 , globalPlatformY - 50);
   requestAnimationFrame(gameLoop);
   
 }
@@ -262,7 +260,6 @@ function gameLoop() {
   drawLevel();
   // drawPlayer();
   player1.requestUpdate();
-  enemy1.requestUpdate();
   checkEnemySpawn();
   updateSpawnedEnemies();
   drawPlatform();
@@ -332,4 +329,3 @@ function drawPlatform() {
 
 const player1 = new PlayerObj();
 const p1InputController = new InputController();
-// const enemy1 = new EnemyObj(80, 450);
