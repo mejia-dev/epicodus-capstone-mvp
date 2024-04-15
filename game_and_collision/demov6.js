@@ -302,7 +302,7 @@ function checkEnemySpawn() {
 
     globalEnemyPositionList.forEach(kvp => {
       if (kvp.x >= globalRenderX && kvp.x <= globalRenderX + globalCanvas.width) {
-        let newEnemy = new EnemyObj(globalCanvas.width, globalPlatformY);
+        let newEnemy = new EnemyObj(globalCanvas.width, globalPlatformY - 50);
         globalEnemySpawnedList.push(newEnemy);
       }
     })
