@@ -5,6 +5,7 @@
 let globalAudioBuffer;
 let globalAudioContext;
 let globalAudioHTMLElement;
+let globalAudioIsPlaying = false;
 let globalCanvas;
 let globalCanvasCtx;
 let globalLevelData;
@@ -192,12 +193,15 @@ function initializeAudioControls() {
   playButton.addEventListener("click", () => {
     if (globalAudioContext.state === "suspended") {
       globalAudioContext.resume();
+      globalAudioIsPlaying = true;
     }
     if (playButton.dataset.playing === "false") {
       globalAudioHTMLElement.play();
+      globalAudioIsPlaying = true;
       playButton.dataset.playing = "true";
     } else if (playButton.dataset.playing === "true") {
       globalAudioHTMLElement.pause();
+      globalAudioIsPlaying = false;
       playButton.dataset.playing = "false";
     }
   },
@@ -253,7 +257,8 @@ function startCanvas() {
 
 // this function is the game animation loop
 function gameLoop() {
-  globalCanvasCtx.clearRect(0, 0, globalCanvas.width, globalCanvas.height);
+  if (globalAudioIsPlaying) {
+    globalCanvasCtx.clearRect(0, 0, globalCanvas.width, globalCanvas.height);
   drawLevel();
   // drawPlayer();
   player1.requestUpdate();
@@ -262,6 +267,7 @@ function gameLoop() {
   updateSpawnedEnemies();
   drawPlatform();
   updateRenderX();
+  }
   requestAnimationFrame(gameLoop);
 }
 
@@ -297,12 +303,10 @@ function updateRenderX() {
 
 function checkEnemySpawn() {
   if (globalEnemyTimer === 3) {
-    console.log("Waiting to spawn...");
     globalEnemyTimer = 0;
 
     globalEnemyPositionList.forEach(kvp => {
       if (kvp.x >= globalRenderX && kvp.x <= globalRenderX + globalCanvas.width) {
-        console.log("There is an enemy here!")
         let newEnemy = new EnemyObj(globalCanvas.width, globalPlatformY);
         globalEnemySpawnedList.push(newEnemy);
       }
@@ -314,7 +318,6 @@ function updateSpawnedEnemies() {
   console.log(globalEnemySpawnedList.length)
   globalEnemySpawnedList = globalEnemySpawnedList.filter(enemy => !enemy.readyForDeletion);
   globalEnemySpawnedList.forEach(enemy => {
-    console.log(enemy)
     enemy.requestUpdate();
   });
 }
