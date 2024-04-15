@@ -134,10 +134,13 @@ class EnemyObj {
   }
   draw() {
     globalCanvasCtx.fillStyle = "red";
-    globalCanvasCtx.fillRect(globalCanvas.width / 2, globalPlatformY - this.height, this.width, this.height);
+    console.log("y" + this.position.y)
+    // globalCanvasCtx.fillRect(globalCanvas.width / 2, globalPlatformY - this.height, this.width, this.height);
+    globalCanvasCtx.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
   requestUpdate() {
     this.position.x -= 1;
+    console.log(this.position.x)
     if (this.x < 0 - this.width) {
       this.readyForDeletion = true;
     }
@@ -234,7 +237,7 @@ function createLevelData() {
   }
 }
 
-
+let enemy1
 // this function calls canvas rendering loop. Can include other pregame variable adjustments in here as needed.
 function startCanvas() {
   globalRenderX = 0;
@@ -243,7 +246,9 @@ function startCanvas() {
   globalEnemySpawnInterval = setInterval(() => {
     globalEnemyTimer++;
   }, 1000);
+  enemy1 = new EnemyObj(globalCanvas.width / 2 , globalPlatformY - 50);
   requestAnimationFrame(gameLoop);
+  
 }
 
 
@@ -325,4 +330,4 @@ function drawPlatform() {
 
 const player1 = new PlayerObj();
 const p1InputController = new InputController();
-const enemy1 = new EnemyObj(80, 450);
+// const enemy1 = new EnemyObj(80, 450);
