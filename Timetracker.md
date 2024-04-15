@@ -27,11 +27,12 @@
     * Multiple enemies may be spawning at once. This is hard to tell currently as all enemies move so slowly.
   * Make enemies render above platform.
   * Looking through code to determine how best to make enemies move at same speed as wavelength.
-* 2:08pm BST -  BST
+* 2:08pm BST - 3:32pm BST
   * Continue working on enemy spawning.
   * Determined to have a moveSpeed property of the enemy and update it based on renderX on each requestUpdate call.
   * Added moveSpeed property to enemy. Also added a `globalPreviousRenderX` variable to assist with calculations for movement speed. This variable gets updated right before the new `renderX` is set.
   * Researching collision detection. Appears to be best practice to have a separate collision detection handler instead of building it into the code of one of the objects that are colliding. Will begin work on this. 
+  * Add collision detector. Appears that there is no x position on player. Will adjust this.
 
 * 2024-04-13 - 1 hour total
   * 9:30am BST - 10:30am BST
