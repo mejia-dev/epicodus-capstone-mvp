@@ -16,7 +16,10 @@
     * Determined that the issue was caused by incorrectly scoped `this` when declaring the enemy. After changing to a non-relative value, rendering works as expected.
   * Fix bug in marking enemies ready for deletion. Was using `this.x` instead of `this.position.x`.
   * Add enemy spawner. List seems to be populating, but is not always rendering all enemies on screen. Some songs will render too many of the enemies (to the point of lag) and others will not.
-    * After doing some research it appears that this is because I am setting the enemy's posX value to be the x value of the data point, but because the enemy list does not scroll across the screen like the audio track does, they are rendering outside of the view. Could either solve this by having render on the right side of the screen whenever they are added to the spawn list, or could attempt to move one layer on top of the other one (enemy layer flows concurrently with wavelength layer) 
+    * After doing some research it appears that this is because I am setting the enemy's posX value to be the x value of the data point, but because the enemy list does not scroll across the screen like the audio track does, they are rendering outside of the view. Could either solve this by having render on the right side of the screen whenever they are added to the spawn list, or could attempt to move one layer on top of the other one (enemy layer flows concurrently with wavelength layer)
+    * Resolved issue by rendering enemy on right side of the canvas. Can add it as a second layer later if there is a need for it.
+    * Enemy spawning still runs if the game is paused or not started. 
+    * Doing some research on game pausing best practices 
 
 * 2024-04-13 - 1 hour total
   * 9:30am BST - 10:30am BST
