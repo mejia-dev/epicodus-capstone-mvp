@@ -134,10 +134,10 @@ class EnemyObj {
   }
   draw() {
     globalCanvasCtx.fillStyle = "red";
-    globalCanvasCtx.fillRect(globalCanvas.width / 2, this.y, this.width, this.height);
+    globalCanvasCtx.fillRect(globalCanvas.width / 2, globalPlatformY - this.height, this.width, this.height);
   }
   requestUpdate() {
-    this.position.x -= globalRenderX;
+    this.position.x -= 1;
     if (this.x < 0 - this.width) {
       this.readyForDeletion = true;
     }
@@ -291,15 +291,25 @@ function updateRenderX() {
 }
 
 function checkEnemySpawn() {
-  if (globalEnemyTimer === 5) {
-    console.log("do enemy spawn");
+  if (globalEnemyTimer === 3) {
+    console.log("Waiting to spawn...");
     globalEnemyTimer = 0;
+
+    globalEnemyPositionList.forEach(kvp => {
+      if (kvp.x >= globalRenderX && kvp.x <= globalRenderX + globalCanvas.width) {
+        console.log("There is an enemy here!")
+      }
+    })
+
+    // for (let i = 0; i < globalEnemyPositionList; i++) {
+    //   if (globalEnemyPositionList[i].x >= globalRenderX && globalEnemyPositionList[i].x <= globalRenderX + globalCanvas.width) {
+    //     console.log("There is an enemy here!")
+    //     break;
+    //   }
+    // }
+
   }
-  globalEnemyPositionList.forEach(kvp => {
-    if (kvp.x >= globalRenderX && kvp.x <= globalRenderX + globalCanvas.width) {
-      console.log("There is an enemy here!")
-    }
-  })
+  
   // globalEnemyPositionList = globalEnemyPositionList.filter(enemy => !enemy.readyForDeletion);
   // for each enemy in list, draw and update them
   // set the global enemies list to filter out enemies ready for deletion
