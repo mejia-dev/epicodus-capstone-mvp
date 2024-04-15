@@ -12,6 +12,8 @@
   * Resolved enemy spawning issue by getting a range if the enemy's position is greater than grX and less than grX + canvaswidth
   * Fixed initial enemy spawning not working due to y spawn value not being properly defined. 
   * Working on resolving issue with enemy rendering. Enemy renders at a static position but seems as though it can't move.
+    * Appears `this.position.y` for enemy1 is NaN.
+    * Determined that the issue was caused by incorrectly scoped `this` when declaring the enemy. After changing to a non-relative value, rendering works as expected.
 
 * 2024-04-13 - 1 hour total
   * 9:30am BST - 10:30am BST
