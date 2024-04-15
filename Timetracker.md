@@ -36,6 +36,7 @@
 * 4:20pm BST - pm BST
   * Add x position to player.
   * Collision appears to be registering on the wrong side. Collision is detected and undetected preemptively.
+    * Resolved this. Appears that collision order was reversed. Object1 needs to be the object being hit and Object2 needs to be the approaching object. 
 
 * 2024-04-13 - 1 hour total
   * 9:30am BST - 10:30am BST
