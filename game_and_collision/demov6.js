@@ -9,6 +9,8 @@ let globalCanvas;
 let globalCanvasCtx;
 let globalLevelData;
 let globalEnemyPositionList;
+let globalEnemyTimer = 0;
+let globalEnemySpawnInterval;
 let globalRenderX;
 
 let globalGravity = .8;
@@ -135,7 +137,6 @@ class EnemyObj {
     globalCanvasCtx.fillRect(globalCanvas.width / 2, this.y, this.width, this.height);
   }
   requestUpdate() {
-    console.log(this.position.x)
     this.position.x -= globalRenderX;
     if (this.x < 0 - this.width) {
       this.readyForDeletion = true;
@@ -231,8 +232,6 @@ function createLevelData() {
     //x: i / samplesCount controls the overall x width that the data takes up
     globalLevelData.push({ x: posX, y: levelHeight - posY });
   }
-  console.log("Done processing");
-  console.log(globalEnemyPositionList);
 }
 
 
@@ -241,6 +240,9 @@ function startCanvas() {
   globalRenderX = 0;
   globalCanvasCtx.fillStyle = "black";
   globalCanvasCtx.fillRect(0, 0, globalCanvas.width, globalCanvas.height);
+  globalEnemySpawnInterval = setInterval(() => {
+    globalEnemyTimer++;
+  }, 1000);
   requestAnimationFrame(gameLoop);
 }
 
@@ -252,6 +254,7 @@ function gameLoop() {
   // drawPlayer();
   player1.requestUpdate();
   enemy1.requestUpdate();
+  checkEnemySpawn();
   drawPlatform();
   updateRenderX();
   requestAnimationFrame(gameLoop);
@@ -285,6 +288,21 @@ function updateRenderX() {
     // using Math.max to ensure that the value does not reverse in the event of it being negative
     globalRenderX = Math.max(offsetAudioTime, 0);
   }
+}
+
+function checkEnemySpawn() {
+  if (globalEnemyTimer === 5) {
+    console.log("do enemy spawn");
+    globalEnemyTimer = 0;
+  }
+  globalEnemyPositionList.forEach(kvp => {
+    if (kvp.x >= globalRenderX && kvp.x <= globalRenderX + globalCanvas.width) {
+      console.log("There is an enemy here!")
+    }
+  })
+  // globalEnemyPositionList = globalEnemyPositionList.filter(enemy => !enemy.readyForDeletion);
+  // for each enemy in list, draw and update them
+  // set the global enemies list to filter out enemies ready for deletion
 }
 
 
