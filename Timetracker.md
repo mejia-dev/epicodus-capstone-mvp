@@ -33,6 +33,9 @@
   * Added moveSpeed property to enemy. Also added a `globalPreviousRenderX` variable to assist with calculations for movement speed. This variable gets updated right before the new `renderX` is set.
   * Researching collision detection. Appears to be best practice to have a separate collision detection handler instead of building it into the code of one of the objects that are colliding. Will begin work on this. 
   * Add collision detector. Appears that there is no x position on player. Will adjust this.
+* 4:20pm BST - pm BST
+  * Add x position to player.
+  * Collision appears to be registering on the wrong side. Collision is detected and undetected preemptively.
 
 * 2024-04-13 - 1 hour total
   * 9:30am BST - 10:30am BST
