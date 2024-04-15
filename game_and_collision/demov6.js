@@ -10,6 +10,7 @@ let globalCanvasCtx;
 let globalLevelData;
 let globalEnemyPositionList;
 let globalEnemyTimer = 0;
+let globalEnemySpawnedList = [];
 let globalEnemySpawnInterval;
 let globalRenderX;
 
@@ -258,6 +259,7 @@ function gameLoop() {
   player1.requestUpdate();
   enemy1.requestUpdate();
   checkEnemySpawn();
+  updateSpawnedEnemies();
   drawPlatform();
   updateRenderX();
   requestAnimationFrame(gameLoop);
@@ -301,23 +303,20 @@ function checkEnemySpawn() {
     globalEnemyPositionList.forEach(kvp => {
       if (kvp.x >= globalRenderX && kvp.x <= globalRenderX + globalCanvas.width) {
         console.log("There is an enemy here!")
-        let newEnemy = new EnemyObj(kvp.x, globalPlatformY);
-        newEnemy.requestUpdate();
+        let newEnemy = new EnemyObj(globalCanvas.width, globalPlatformY);
+        globalEnemySpawnedList.push(newEnemy);
       }
     })
-
-    // for (let i = 0; i < globalEnemyPositionList; i++) {
-    //   if (globalEnemyPositionList[i].x >= globalRenderX && globalEnemyPositionList[i].x <= globalRenderX + globalCanvas.width) {
-    //     console.log("There is an enemy here!")
-    //     break;
-    //   }
-    // }
-
   }
-  
-  // globalEnemyPositionList = globalEnemyPositionList.filter(enemy => !enemy.readyForDeletion);
-  // for each enemy in list, draw and update them
-  // set the global enemies list to filter out enemies ready for deletion
+}
+
+function updateSpawnedEnemies() {
+  console.log(globalEnemySpawnedList.length)
+  globalEnemySpawnedList = globalEnemySpawnedList.filter(enemy => !enemy.readyForDeletion);
+  globalEnemySpawnedList.forEach(enemy => {
+    console.log(enemy)
+    enemy.requestUpdate();
+  });
 }
 
 
