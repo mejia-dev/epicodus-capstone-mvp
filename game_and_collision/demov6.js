@@ -28,6 +28,7 @@ class PlayerObj {
     this.canJumpDouble = false;
     this.isGrounded = true;
     this.position = {
+      x: 0,
       y: 0
     }
     this.velocity = {
@@ -37,8 +38,7 @@ class PlayerObj {
 
   draw() {
     globalCanvasCtx.fillStyle = "blue";
-    globalCanvasCtx.fillRect(globalCanvas.width / 2 - 25, this.position.y, this.width, this.height);
-
+    globalCanvasCtx.fillRect(this.position.x, this.position.y, this.width, this.height);
     if (this.isGrounded) {
       this.canJumpSingle = true;
       this.canJumpDouble = false;
@@ -150,7 +150,7 @@ class EnemyObj {
 
   requestUpdate() {
     this.updateMoveSpeed();
-    this.position.x -= this.moveSpeed; 
+    this.position.x -= this.moveSpeed;
     if (this.position.x < 0 - this.width) {
       this.readyForDeletion = true;
     }
@@ -254,6 +254,7 @@ function startCanvas() {
   globalRenderX = 0;
   globalCanvasCtx.fillStyle = "black";
   globalCanvasCtx.fillRect(0, 0, globalCanvas.width, globalCanvas.height);
+  player1.position.x = globalCanvas.width / 2 - 50;
   globalEnemySpawnInterval = setInterval(() => {
     globalEnemyTimer++;
   }, 1000);
@@ -324,10 +325,12 @@ function checkEnemySpawn() {
 }
 
 function updateSpawnedEnemies() {
-  console.log(globalEnemySpawnedList.length)
   globalEnemySpawnedList = globalEnemySpawnedList.filter(enemy => !enemy.readyForDeletion);
   globalEnemySpawnedList.forEach(enemy => {
     enemy.requestUpdate();
+    if (checkCollision(player1, enemy)) {
+      console.log("Collided")
+    }
   });
 }
 
