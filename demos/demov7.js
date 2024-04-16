@@ -47,7 +47,7 @@ class PlayerObj {
     globalCanvasCtx.shadowBlur = 0;
   }
 
-  checkJump(deltaTime) {
+  checkJump() {
     if (this.isGrounded) {
       this.canJumpSingle = true;
       this.canJumpDouble = false;
@@ -55,7 +55,7 @@ class PlayerObj {
     if (p1InputController.jump.pressed) {
       if (this.canJumpSingle) {
         this.canJumpSingle = false;
-        this.velocity.y = -this.jumpHeight * deltaTime;
+        this.velocity.y = -this.jumpHeight;
         const activateDoubleJump = () => {
           this.canJumpDouble = true;
         }
@@ -64,20 +64,21 @@ class PlayerObj {
 
       if (this.canJumpDouble) {
         this.canJumpDouble = false;
-        this.velocity.y = -this.jumpHeight * deltaTime;
+        this.velocity.y = -this.jumpHeight;
       }
     }
   }
 
-  enforceGravity(deltaTime) {
-    this.position.y += this.velocity.y * deltaTime;
+  enforceGravity() {
+    console.log(this.velocity.y)
+    this.position.y += this.velocity.y;
     if (this.height + this.position.y < globalPlatformY) {
-      this.velocity.y += globalGravity * deltaTime;
+      this.velocity.y += globalGravity;
     } else {
       this.velocity.y = 0;
     }
     if (this.position.y < globalPlatformY + 20) {
-      this.position.y-- * deltaTime;
+      this.position.y--;
     }
   }
 
@@ -96,14 +97,14 @@ class PlayerObj {
     setTimeout(removeTempInvincibility, 3000);
   }
 
-  requestUpdate(deltaTime) {
+  requestUpdate(deltaTimeMultiplier) {
     if (this.height + this.position.y < globalPlatformY) {
       this.isGrounded = false;
     } else {
       this.isGrounded = true;
     }
-    this.checkJump(deltaTime);
-    this.enforceGravity(deltaTime);
+    this.checkJump(deltaTimeMultiplier);
+    this.enforceGravity(deltaTimeMultiplier);
     this.draw();
   }
 }
@@ -316,26 +317,35 @@ function startCanvas() {
 
 }
 
+const targetFPS = 60;
+const frame_interval = 1000 / targetFPS;
+let deltaTimeMultiplier = 1;
+let deltaTime = 0;
+
+let previousTime = performance.now();
 
 // this function is the game animation loop
 function gameLoop(timestamp) {
   if (globalAudioIsPlaying) {
-    const deltaTime = (timestamp - globalLastTimestamp) / 1000;
+
+    deltaTime = timestamp - previousTime;
+    deltaTimeMultiplier = deltaTime / frame_interval;
+
+    // const deltaTime = (timestamp - globalLastTimestamp) / 1000;
     globalLastTimestamp = timestamp;
     globalCanvasCtx.clearRect(0, 0, globalCanvas.width, globalCanvas.height);
-    drawLevel();
-    player1.requestUpdate(deltaTime);
+    drawLevel(deltaTimeMultiplier);
+    player1.requestUpdate(deltaTimeMultiplier);
     checkEnemySpawn();
     updateSpawnedEnemies();
     drawPlatform();
-    updateRenderX();
-    console.log(player1.score);
+    updateRenderX(deltaTimeMultiplier);
   }
   requestAnimationFrame(gameLoop);
 }
 
 
-function drawLevel() {
+function drawLevel(deltaTimeMultiplier) {
   globalCanvasCtx.clearRect(0, 0, globalCanvas.width, globalCanvas.height);
   globalCanvasCtx.beginPath();
 
@@ -352,7 +362,7 @@ function drawLevel() {
 
 
 // this function increases the globalRenderX variable in time with the current playback.
-function updateRenderX() {
+function updateRenderX(deltaTimeMultiplier) {
   if (globalRenderX < globalLevelData.length) {
     // visual Offset milliseconds may need to be adjusted if sprite ever moves. 
     const visualOffsetInMs = 700;
