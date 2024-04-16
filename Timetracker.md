@@ -16,7 +16,9 @@
   * Separate jump to have its own method in PlayerObj.
   * Working on bug as to why score is not increasing when enemy is successfully avoided.
     * Resolved the issue. Wasn't calling checkBoundaries method from requestUpdate of Enemy.
-    * Discovered another issue -- score is being added for each frame of collision. Need to make this only apply once.
+    * Discovered another issue -- score is being added for each frame of collision (most likely, unsure what else would be causing it). Need to make this only apply once.
+      * Attempted to add a "scored" flag property to the enemy object that sets when the score is set, but this only ends up getting reapplied multiple times. 
+      * Attempted to add a timeout but this just delays all of the scoring and doesn't fix the issue.
 
 * 2024-04-15 - 7.3 hours total
 * 7:56am BST - 1:03pm BST
