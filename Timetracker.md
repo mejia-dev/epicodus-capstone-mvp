@@ -1,11 +1,11 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 52.5 hours (see time log below for more details)
+### Total Time Spent: 53.25 hours (see time log below for more details)
 
 
 ### Time Log:
 
-* 2024-04-16 - 4.5 hours total
+* 2024-04-16 - 6.08 hours total
   * 8am BST - 12:30pm BST
     * Begin working on lives and losing functionality.
     * Update repo's README.
@@ -29,9 +29,10 @@
   * 5:30pm BST - 6:00pm BST
     * Watch video on Delta Time (https://www.youtube.com/watch?v=WU6GPObmNwM).
     * Doing some research into [`performance.now()`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now) vs `Date.now()`.
-  * 7:45pm BST - pm BST
+  * 7:45pm BST - 8:30pm BST
     * Continue working on Delta Time functionality.
     * Attempting to work out how to apply the delta time multiplier once obtained.
+    * Not finding the solution easily. May need to do a deep-dive on the topic to further explore it. 
 
 
 * 2024-04-15 - 7.3 hours total
