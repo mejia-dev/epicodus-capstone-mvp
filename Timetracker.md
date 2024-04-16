@@ -28,6 +28,7 @@
     * Adjusting delta time functionality. Player appears to be floating upwards continually
   * 5:30pm BST - 
     * Watch video on Delta Time (https://www.youtube.com/watch?v=WU6GPObmNwM).
+    * Doing some research into [`performance.now()`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now) vs `Date.now()`.
 
 
 * 2024-04-15 - 7.3 hours total
