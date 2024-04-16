@@ -1,6 +1,6 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 52 hours (see time log below for more details)
+### Total Time Spent: 52.5 hours (see time log below for more details)
 
 
 ### Time Log:
@@ -26,9 +26,11 @@
       * Created demov7 and began implementing delta time.
   * 2:30pm BST - 2:50pm BST
     * Adjusting delta time functionality. Player appears to be floating upwards continually
-  * 5:30pm BST - 
+  * 5:30pm BST - 6:00pm BST
     * Watch video on Delta Time (https://www.youtube.com/watch?v=WU6GPObmNwM).
     * Doing some research into [`performance.now()`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now) vs `Date.now()`.
+  * 7:45pm BST - pm BST
+    * Continue working on Delta Time functionality.
 
 
 * 2024-04-15 - 7.3 hours total
