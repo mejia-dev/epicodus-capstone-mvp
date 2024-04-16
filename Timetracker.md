@@ -6,59 +6,62 @@
 ### Time Log:
 
 * 2024-04-16 - 4.5 hours total
-* 8am BST - 12:30pm BST
-  * Begin working on lives and losing functionality.
-  * Update repo's README.
-  * Add three lives for the player, detracted on collision with an enemy.
-  * Add three seconds of invincibility when the player is hit.
-    * Looking into adding a visual effect for this.
-    * Add basic glow effect if player has invincibility via ShadowBlur
-  * Separate jump to have its own method in PlayerObj.
-  * Working on bug as to why score is not increasing when enemy is successfully avoided.
-    * Resolved the issue. Wasn't calling checkBoundaries method from requestUpdate of Enemy.
-    * Discovered another issue -- score is being added for each frame of collision (most likely, unsure what else would be causing it). Need to make this only apply once.
-      * Attempted to add a "scored" flag property to the enemy object that sets when the score is set, but this only ends up getting reapplied multiple times. 
-      * Attempted to add a timeout but this just delays all of the scoring and doesn't fix the issue.
-      * Also noticed that enemy timer runs from the moment the canvas starts and that framerate is still choppy on larger songs. Need delta time implementation and to make sure timer isn't running until play is pressed.
-      * Still researching how to solve the frame score issue
-      * More research time.
-    * Scoring seems to be consistently inconsistent. Going to try to implement delta time to see if this can be solved once framerate is smooth.
-    * Created demov7 and began implementing delta time.
+  * 8am BST - 12:30pm BST
+    * Begin working on lives and losing functionality.
+    * Update repo's README.
+    * Add three lives for the player, detracted on collision with an enemy.
+    * Add three seconds of invincibility when the player is hit.
+      * Looking into adding a visual effect for this.
+      * Add basic glow effect if player has invincibility via ShadowBlur
+    * Separate jump to have its own method in PlayerObj.
+    * Working on bug as to why score is not increasing when enemy is successfully avoided.
+      * Resolved the issue. Wasn't calling checkBoundaries method from requestUpdate of Enemy.
+      * Discovered another issue -- score is being added for each frame of collision (most likely, unsure what else would be causing it). Need to make this only apply once.
+        * Attempted to add a "scored" flag property to the enemy object that sets when the score is set, but this only ends up getting reapplied multiple times. 
+        * Attempted to add a timeout but this just delays all of the scoring and doesn't fix the issue.
+        * Also noticed that enemy timer runs from the moment the canvas starts and that framerate is still choppy on larger songs. Need delta time implementation and to make sure timer isn't running until play is pressed.
+        * Still researching how to solve the frame score issue
+        * More research time.
+      * Scoring seems to be consistently inconsistent. Going to try to implement delta time to see if this can be solved once framerate is smooth.
+      * Created demov7 and began implementing delta time.
+  * 2:30pm BST - 
+    * Adjusting delta time functionality. Player appears to be floating upwards continually
+
 
 * 2024-04-15 - 7.3 hours total
-* 7:56am BST - 1:03pm BST
-  * Continue working on enemy spawning.
-  * Determined that the issue is not with the spawning method, but moreso that the condition is checking if the enemy's x position is equal to the song position via globalRenderX (grX). Because grX increments by a number relative to the length of the song, the condition is often not returning any spawned enemies until an enemy's xPos just so happens to be grX, which is rare. 
-  * Resolved enemy spawning issue by getting a range if the enemy's position is greater than grX and less than grX + canvaswidth
-  * Fixed initial enemy spawning not working due to y spawn value not being properly defined. 
-  * Working on resolving issue with enemy rendering. Enemy renders at a static position but seems as though it can't move.
-    * Appears `this.position.y` for enemy1 is NaN.
-    * Determined that the issue was caused by incorrectly scoped `this` when declaring the enemy. After changing to a non-relative value, rendering works as expected.
-  * Fix bug in marking enemies ready for deletion. Was using `this.x` instead of `this.position.x`.
-  * Add enemy spawner. List seems to be populating, but is not always rendering all enemies on screen. Some songs will render too many of the enemies (to the point of lag) and others will not.
-    * After doing some research it appears that this is because I am setting the enemy's posX value to be the x value of the data point, but because the enemy list does not scroll across the screen like the audio track does, they are rendering outside of the view. Could either solve this by having render on the right side of the screen whenever they are added to the spawn list, or could attempt to move one layer on top of the other one (enemy layer flows concurrently with wavelength layer)
-    * Resolved issue by rendering enemy on right side of the canvas. Can add it as a second layer later if there is a need for it.
-    * Enemy spawning still runs if the game is paused or not started. 
-    * Doing some research on game pausing best practices. Decided to just set this to be globalAudioIsPaused for now, since all game effects will likely be based on whether audio is playing or not. 
-  * Add pause functionality to game which fixes multiple enemies rendering at the start of the game. However,
-    * Enemies are spawning below platform (just need height adjustment)
-    * Enemies are moving much slower than the level scroll.
-    * There is currently no collision detection between the player and an enemy
-    * Multiple enemies may be spawning at once. This is hard to tell currently as all enemies move so slowly.
-  * Make enemies render above platform.
-  * Looking through code to determine how best to make enemies move at same speed as wavelength.
-* 2:08pm BST - 3:32pm BST
-  * Continue working on enemy spawning.
-  * Determined to have a moveSpeed property of the enemy and update it based on renderX on each requestUpdate call.
-  * Added moveSpeed property to enemy. Also added a `globalPreviousRenderX` variable to assist with calculations for movement speed. This variable gets updated right before the new `renderX` is set.
-  * Researching collision detection. Appears to be best practice to have a separate collision detection handler instead of building it into the code of one of the objects that are colliding. Will begin work on this. 
-  * Add collision detector. Appears that there is no x position on player. Will adjust this.
-* 4:20pm BST - 5:07pm BST
-  * Add x position to player.
-  * Collision appears to be registering on the wrong side. Collision is detected and undetected preemptively.
-    * Resolved this. Appears that collision order was reversed. Object1 needs to be the object being hit and Object2 needs to be the approaching object. 
-  * Noted that collision detection works correctly on the x axis but does not work correctly when the player jumps over the enemy successfully (still detects a hit).
-    * Resolved by adding a condition for object1 and object2's x and y values (four conditions total)
+  * 7:56am BST - 1:03pm BST
+    * Continue working on enemy spawning.
+    * Determined that the issue is not with the spawning method, but moreso that the condition is checking if the enemy's x position is equal to the song position via globalRenderX (grX). Because grX increments by a number relative to the length of the song, the condition is often not returning any spawned enemies until an enemy's xPos just so happens to be grX, which is rare. 
+    * Resolved enemy spawning issue by getting a range if the enemy's position is greater than grX and less than grX + canvaswidth
+    * Fixed initial enemy spawning not working due to y spawn value not being properly defined. 
+    * Working on resolving issue with enemy rendering. Enemy renders at a static position but seems as though it can't move.
+      * Appears `this.position.y` for enemy1 is NaN.
+      * Determined that the issue was caused by incorrectly scoped `this` when declaring the enemy. After changing to a non-relative value, rendering works as expected.
+    * Fix bug in marking enemies ready for deletion. Was using `this.x` instead of `this.position.x`.
+    * Add enemy spawner. List seems to be populating, but is not always rendering all enemies on screen. Some songs will render too many of the enemies (to the point of lag) and others will not.
+      * After doing some research it appears that this is because I am setting the enemy's posX value to be the x value of the data point, but because the enemy list does not scroll across the screen like the audio track does, they are rendering outside of the view. Could either solve this by having render on the right side of the screen whenever they are added to the spawn list, or could attempt to move one layer on top of the other one (enemy layer flows concurrently with wavelength layer)
+      * Resolved issue by rendering enemy on right side of the canvas. Can add it as a second layer later if there is a need for it.
+      * Enemy spawning still runs if the game is paused or not started. 
+      * Doing some research on game pausing best practices. Decided to just set this to be globalAudioIsPaused for now, since all game effects will likely be based on whether audio is playing or not. 
+    * Add pause functionality to game which fixes multiple enemies rendering at the start of the game. However,
+      * Enemies are spawning below platform (just need height adjustment)
+      * Enemies are moving much slower than the level scroll.
+      * There is currently no collision detection between the player and an enemy
+      * Multiple enemies may be spawning at once. This is hard to tell currently as all enemies move so slowly.
+    * Make enemies render above platform.
+    * Looking through code to determine how best to make enemies move at same speed as wavelength.
+  * 2:08pm BST - 3:32pm BST
+    * Continue working on enemy spawning.
+    * Determined to have a moveSpeed property of the enemy and update it based on renderX on each requestUpdate call.
+    * Added moveSpeed property to enemy. Also added a `globalPreviousRenderX` variable to assist with calculations for movement speed. This variable gets updated right before the new `renderX` is set.
+    * Researching collision detection. Appears to be best practice to have a separate collision detection handler instead of building it into the code of one of the objects that are colliding. Will begin work on this. 
+    * Add collision detector. Appears that there is no x position on player. Will adjust this.
+  * 4:20pm BST - 5:07pm BST
+    * Add x position to player.
+    * Collision appears to be registering on the wrong side. Collision is detected and undetected preemptively.
+      * Resolved this. Appears that collision order was reversed. Object1 needs to be the object being hit and Object2 needs to be the approaching object. 
+    * Noted that collision detection works correctly on the x axis but does not work correctly when the player jumps over the enemy successfully (still detects a hit).
+      * Resolved by adding a condition for object1 and object2's x and y values (four conditions total)
 
 * 2024-04-13 - 1 hour total
   * 9:30am BST - 10:30am BST
