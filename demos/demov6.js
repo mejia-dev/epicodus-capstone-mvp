@@ -154,6 +154,9 @@ class EnemyObj {
     this.width = 50;
     this.height = 50;
     this.moveSpeed = 0;
+    this.isAlive = true;
+    this.toBeScored = false;
+    this.hasBeenScored = false;
     this.readyForDeletion = false;
     // this.isGrounded = true;
     this.position = {
@@ -163,7 +166,6 @@ class EnemyObj {
   }
   draw() {
     globalCanvasCtx.fillStyle = "red";
-    // globalCanvasCtx.fillRect(globalCanvas.width / 2, globalPlatformY - this.height, this.width, this.height);
     globalCanvasCtx.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
 
@@ -177,10 +179,38 @@ class EnemyObj {
     this.updateMoveSpeed();
     this.position.x -= this.moveSpeed;
     if (this.position.x < 0 - this.width) {
+      // if (!this.scored) {
+      //   player1.addScore(1);
+      //   this.scored = true;
+      // }
+
+      // this.toBeScored = true;
+      // if (this.toBeScored) {
+        
+      //   this.toBeScored = false;
+      // }
+
+      player1.addScore(1);
+
+
       this.readyForDeletion = true;
-      player1.score++;
     }
-    this.draw();
+
+
+    // const scoreEnemy = () => {
+    //   if (this.toBeScored) {
+    //     player1.addScore(1);
+    //     this.toBeScored = false;
+    //   }
+    // }
+    // setTimeout(scoreEnemy, 500);
+    
+    
+    
+    
+    if (this.isAlive) {
+      this.draw();
+    }
   }
 }
 
@@ -299,7 +329,7 @@ function gameLoop() {
     updateSpawnedEnemies();
     drawPlatform();
     updateRenderX();
-    console.log(player1.isInvincible);
+    console.log(player1.score);
   }
   requestAnimationFrame(gameLoop);
 }
@@ -363,6 +393,8 @@ function updateSpawnedEnemies() {
     enemy.requestUpdate();
     if (checkCollision(player1, enemy)) {
       player1.takeDamage(1);
+      enemy.isAlive = false;
+      enemy.readyForDeletion = true;
     }
   });
 }
