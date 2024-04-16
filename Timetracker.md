@@ -5,8 +5,8 @@
 
 ### Time Log:
 
-* 2024-04-16 -  hours total
-* 8am BST - pm BST
+* 2024-04-16 - 4.5 hours total
+* 8am BST - 12:30pm BST
   * Begin working on lives and losing functionality.
   * Update repo's README.
   * Add three lives for the player, detracted on collision with an enemy.
