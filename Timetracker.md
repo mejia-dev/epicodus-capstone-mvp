@@ -1,6 +1,6 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 51.68 hours (see time log below for more details)
+### Total Time Spent: 52 hours (see time log below for more details)
 
 
 ### Time Log:
@@ -24,8 +24,10 @@
         * More research time.
       * Scoring seems to be consistently inconsistent. Going to try to implement delta time to see if this can be solved once framerate is smooth.
       * Created demov7 and began implementing delta time.
-  * 2:30pm BST - 
+  * 2:30pm BST - 2:50pm BST
     * Adjusting delta time functionality. Player appears to be floating upwards continually
+  * 5:30pm BST - 
+    * Watch video on Delta Time (https://www.youtube.com/watch?v=WU6GPObmNwM).
 
 
 * 2024-04-15 - 7.3 hours total
