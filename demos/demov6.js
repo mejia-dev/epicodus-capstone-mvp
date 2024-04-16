@@ -40,12 +40,20 @@ class PlayerObj {
   }
 
   draw() {
+    if (this.isInvincible) {
+      globalCanvasCtx.shadowBlur = 15;
+      globalCanvasCtx.shadowColor = "red";
+    }
     globalCanvasCtx.fillStyle = "blue";
     globalCanvasCtx.fillRect(this.position.x, this.position.y, this.width, this.height);
+    globalCanvasCtx.shadowBlur = 0;
     if (this.isGrounded) {
       this.canJumpSingle = true;
       this.canJumpDouble = false;
     }
+
+
+
 
     if (p1InputController.jump.pressed) {
       if (this.canJumpSingle) {
