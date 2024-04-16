@@ -5,6 +5,10 @@
 
 ### Time Log:
 
+* 2024-04-16 -  hours total
+* 8am BST - pm BST
+  * Begin working on lives and losing functionality.
+
 * 2024-04-15 - 7.3 hours total
 * 7:56am BST - 1:03pm BST
   * Continue working on enemy spawning.
