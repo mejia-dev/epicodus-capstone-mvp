@@ -23,6 +23,7 @@
       * Still researching how to solve the frame score issue
       * More research time.
     * Scoring seems to be consistently inconsistent. Going to try to implement delta time to see if this can be solved once framerate is smooth.
+    * Created demov7 and began implementing delta time.
 
 * 2024-04-15 - 7.3 hours total
 * 7:56am BST - 1:03pm BST
