@@ -178,6 +178,7 @@ class EnemyObj {
     this.position.x -= this.moveSpeed;
     if (this.position.x < 0 - this.width) {
       this.readyForDeletion = true;
+      player1.score++;
     }
     this.draw();
   }
