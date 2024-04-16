@@ -1,6 +1,6 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 47.18 hours (see time log below for more details)
+### Total Time Spent: 51.68 hours (see time log below for more details)
 
 
 ### Time Log:
