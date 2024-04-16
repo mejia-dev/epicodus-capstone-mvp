@@ -8,6 +8,7 @@
 * 2024-04-16 -  hours total
 * 8am BST - pm BST
   * Begin working on lives and losing functionality.
+  * Update repo's README.
 
 * 2024-04-15 - 7.3 hours total
 * 7:56am BST - 1:03pm BST
