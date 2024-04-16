@@ -13,6 +13,8 @@
   * Add three seconds of invincibility when the player is hit.
     * Looking into adding a visual effect for this.
     * Add basic glow effect if player has invincibility via ShadowBlur
+  * Separate jump to have its own method in PlayerObj.
+  * Working on bug as to why score is not increasing when enemy is successfully avoided.
 
 * 2024-04-15 - 7.3 hours total
 * 7:56am BST - 1:03pm BST
