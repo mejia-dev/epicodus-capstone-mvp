@@ -27,6 +27,9 @@ class PlayerObj {
     this.canJumpSingle = false;
     this.canJumpDouble = false;
     this.isGrounded = true;
+    this.score = 0;
+    this.lives = 3;
+    this.isInvincible = false;
     this.position = {
       x: 0,
       y: 0
@@ -72,6 +75,21 @@ class PlayerObj {
     if (this.position.y < globalPlatformY + 20) {
       this.position.y--;
     }
+  }
+
+  addScore(addedInt) {
+    this.score += addedInt;
+  }
+
+  takeDamage(attackDamage) {
+    if (!this.isInvincible) {
+      this.lives -= attackDamage;
+      this.isInvincible = true;
+    }
+    const removeTempInvincibility = () => {
+      this.isInvincible = false;
+    }
+    setTimeout(removeTempInvincibility, 3000);
   }
 
   requestUpdate() {
@@ -273,6 +291,7 @@ function gameLoop() {
     updateSpawnedEnemies();
     drawPlatform();
     updateRenderX();
+    console.log(player1.isInvincible);
   }
   requestAnimationFrame(gameLoop);
 }
@@ -317,6 +336,7 @@ function checkCollision(object1, object2) {
   );
 }
 
+
 function checkEnemySpawn() {
   if (globalEnemyTimer === 3) {
     globalEnemyTimer = 0;
@@ -334,7 +354,7 @@ function updateSpawnedEnemies() {
   globalEnemySpawnedList.forEach(enemy => {
     enemy.requestUpdate();
     if (checkCollision(player1, enemy)) {
-      console.log("Collided")
+      player1.takeDamage(1);
     }
   });
 }
