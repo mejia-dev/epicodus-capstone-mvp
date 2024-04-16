@@ -12,6 +12,7 @@
   * Add three lives for the player, detracted on collision with an enemy.
   * Add three seconds of invincibility when the player is hit.
     * Looking into adding a visual effect for this.
+    * Add basic glow effect if player has invincibility via ShadowBlur
 
 * 2024-04-15 - 7.3 hours total
 * 7:56am BST - 1:03pm BST
