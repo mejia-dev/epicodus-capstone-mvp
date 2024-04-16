@@ -22,6 +22,7 @@
       * Also noticed that enemy timer runs from the moment the canvas starts and that framerate is still choppy on larger songs. Need delta time implementation and to make sure timer isn't running until play is pressed.
       * Still researching how to solve the frame score issue
       * More research time.
+    * Scoring seems to be consistently inconsistent. Going to try to implement delta time to see if this can be solved once framerate is smooth.
 
 * 2024-04-15 - 7.3 hours total
 * 7:56am BST - 1:03pm BST
