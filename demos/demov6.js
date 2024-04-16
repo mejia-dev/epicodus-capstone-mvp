@@ -47,14 +47,13 @@ class PlayerObj {
     globalCanvasCtx.fillStyle = "blue";
     globalCanvasCtx.fillRect(this.position.x, this.position.y, this.width, this.height);
     globalCanvasCtx.shadowBlur = 0;
+  }
+
+  checkJump() {
     if (this.isGrounded) {
       this.canJumpSingle = true;
       this.canJumpDouble = false;
     }
-
-
-
-
     if (p1InputController.jump.pressed) {
       if (this.canJumpSingle) {
         this.canJumpSingle = false;
@@ -70,7 +69,6 @@ class PlayerObj {
         this.velocity.y = -this.jumpHeight;
       }
     }
-
   }
 
   enforceGravity() {
@@ -106,6 +104,7 @@ class PlayerObj {
     } else {
       this.isGrounded = true;
     }
+    this.checkJump();
     this.enforceGravity();
     this.draw();
   }
