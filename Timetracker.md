@@ -31,6 +31,7 @@
     * Doing some research into [`performance.now()`](https://developer.mozilla.org/en-US/docs/Web/API/Performance/now) vs `Date.now()`.
   * 7:45pm BST - pm BST
     * Continue working on Delta Time functionality.
+    * Attempting to work out how to apply the delta time multiplier once obtained.
 
 
 * 2024-04-15 - 7.3 hours total
