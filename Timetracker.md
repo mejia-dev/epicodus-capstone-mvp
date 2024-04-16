@@ -19,6 +19,7 @@
     * Discovered another issue -- score is being added for each frame of collision (most likely, unsure what else would be causing it). Need to make this only apply once.
       * Attempted to add a "scored" flag property to the enemy object that sets when the score is set, but this only ends up getting reapplied multiple times. 
       * Attempted to add a timeout but this just delays all of the scoring and doesn't fix the issue.
+      * Also noticed that enemy timer runs from the moment the canvas starts and that framerate is still choppy on larger songs. Need delta time implementation and to make sure timer isn't running until play is pressed.
 
 * 2024-04-15 - 7.3 hours total
 * 7:56am BST - 1:03pm BST
