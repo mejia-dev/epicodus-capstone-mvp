@@ -26,6 +26,7 @@
       * https://www.youtube.com/watch?v=c4b9lCfSDQM
       * https://www.youtube.com/watch?v=yGhfUcPjXuE
       * https://www.youtube.com/watch?v=rWtfClpWSb8
+    * Rebuilding jump functionality from scratch.
 
 * 2024-04-16 - 7.35 hours total
   * 8am BST - 12:30pm BST
