@@ -70,7 +70,6 @@ class PlayerObj {
   }
 
   enforceGravity() {
-    console.log(this.velocity.y)
     this.position.y += this.velocity.y;
     if (this.height + this.position.y < globalPlatformY) {
       this.velocity.y += globalGravity;
@@ -329,10 +328,11 @@ function gameLoop(timestamp) {
   if (globalAudioIsPlaying) {
 
     deltaTime = timestamp - previousTime;
+    console.log(deltaTime)
     deltaTimeMultiplier = deltaTime / frame_interval;
 
     // const deltaTime = (timestamp - globalLastTimestamp) / 1000;
-    globalLastTimestamp = timestamp;
+    // globalLastTimestamp = timestamp;
     globalCanvasCtx.clearRect(0, 0, globalCanvas.width, globalCanvas.height);
     drawLevel(deltaTimeMultiplier);
     player1.requestUpdate(deltaTimeMultiplier);
@@ -340,6 +340,7 @@ function gameLoop(timestamp) {
     updateSpawnedEnemies();
     drawPlatform();
     updateRenderX(deltaTimeMultiplier);
+    previousTime = timestamp;
   }
   requestAnimationFrame(gameLoop);
 }
@@ -367,8 +368,8 @@ function updateRenderX(deltaTimeMultiplier) {
     // visual Offset milliseconds may need to be adjusted if sprite ever moves. 
     const visualOffsetInMs = 700;
     const progressPercentage = globalAudioHTMLElement.currentTime / globalAudioBuffer.duration;
-    const audioTimeVis = progressPercentage * globalLevelData[globalLevelData.length - 1].x;
-    const offsetAudioTime = audioTimeVis - visualOffsetInMs;
+    const audioTimeVis = (progressPercentage * globalLevelData[globalLevelData.length - 1].x)  * deltaTimeMultiplier;
+    const offsetAudioTime = audioTimeVis;
     globalPreviousRenderX = globalRenderX;
     // using Math.max to ensure that the value does not reverse in the event of it being negative
     globalRenderX = Math.max(offsetAudioTime, 0);
