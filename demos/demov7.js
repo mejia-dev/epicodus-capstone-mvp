@@ -89,11 +89,11 @@ class PlayerObj {
     if (!this.isInvincible) {
       this.lives -= attackDamage;
       this.isInvincible = true;
+      const removeTempInvincibility = () => {
+        this.isInvincible = false;
+      }
+      setTimeout(removeTempInvincibility, 3000);
     }
-    const removeTempInvincibility = () => {
-      this.isInvincible = false;
-    }
-    setTimeout(removeTempInvincibility, 3000);
   }
 
   requestUpdate(deltaTimeMultiplier) {
