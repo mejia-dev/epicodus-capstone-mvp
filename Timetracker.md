@@ -5,9 +5,10 @@
 
 ### Time Log:
 
-* 2024-04-16 - 6.08 hours total
+* 2024-04-16 -  hours total
   * 10:02am BST - am BST
     * Reading up more on delta time
+    * Implemented first functional version of delta time, though this somehow made the frame rate....consistently choppy?
 
 * 2024-04-16 - 6.08 hours total
   * 8am BST - 12:30pm BST
