@@ -21,6 +21,7 @@
       * `enforceGravity(deltaTimeMultiplier)` may need to have an additional calculation performed on it (potentially twice). Delta time may need to first be calculated as part of the velocity calculation (modifying `this.velocity.y`), then again as part of the actual movement (changing `this.position.y` based on `this.velocity.y`).
       * Successfully update `enforceGravity` to account for delta time. Also refactored "isGrounded" check to be part of gravity enforcement, as originally desired. 
       * Noted that at higher framerates, the setTimeout method does not work as desired for double jumping, since the player may have already landed by the time the timeout is complete. Will need to look into refactoring this.
+    * After looking into it more, may just be able to scale the delay by delta time.
 
 * 2024-04-16 - 7.35 hours total
   * 8am BST - 12:30pm BST
