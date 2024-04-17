@@ -24,6 +24,8 @@ class PlayerObj {
     this.jumpHeight = 15;
     this.canJumpSingle = false;
     this.canJumpDouble = false;
+    this.lastJumpTime = 0;
+    this.jumpCooldown = 400;
     this.isGrounded = true;
     this.score = 0;
     this.lives = 3;
@@ -47,6 +49,31 @@ class PlayerObj {
     globalCanvasCtx.shadowBlur = 0;
   }
 
+  checkJumpNew(deltaTimeMultiplier) {
+    if (this.isGrounded) {
+      this.canJumpSingle = true;
+      this.canJumpDouble = false;
+    }
+    if (p1InputController.jump.pressed) {
+      const currentTime = performance.now();
+      const elapsedTime = currentTime - this.lastJumpTime;
+
+      if (this.canJumpSingle) {
+        console.log("single")
+        this.lastJumpTime = currentTime;
+        this.canJumpSingle = false;
+        this.velocity.y = -this.jumpHeight;
+        this.canJumpDouble = true;
+      }
+
+      if (this.canJumpDouble && elapsedTime > this.jumpCooldown) {
+        console.log("double")
+        this.canJumpDouble = false;
+        this.velocity.y = -this.jumpHeight;
+      }
+    }
+  }
+
   checkJump(deltaTimeMultiplier) {
     if (this.isGrounded) {
       this.canJumpSingle = true;
@@ -59,7 +86,7 @@ class PlayerObj {
         const activateDoubleJump = () => {
           this.canJumpDouble = true;
         }
-        setTimeout(activateDoubleJump, 400);
+        setTimeout(activateDoubleJump, 200 * deltaTimeMultiplier);
       }
 
       if (this.canJumpDouble) {
