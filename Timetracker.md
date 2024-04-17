@@ -9,6 +9,7 @@
   * 10:02am BST - am BST
     * Reading up more on delta time
     * Implemented first functional version of delta time, though this somehow made the frame rate....consistently choppy?
+    * Second implementation of delta time works! Needed to be added to the drawLevel method instead of the updateRenderX method.
 
 * 2024-04-16 - 6.08 hours total
   * 8am BST - 12:30pm BST
