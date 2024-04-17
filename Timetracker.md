@@ -12,7 +12,8 @@
     * Second implementation of delta time works! Needed to be added to the drawLevel method instead of the updateRenderX method.
     * Successfully add delta time to enemy. Will just need to add to player now.
   * 11:56am BST - 
-    * Continue working on adding delta time to player
+    * Continue working on adding delta time to player.
+    * Fix bug where invincibility would deactivate if hit again
 
 * 2024-04-16 - 6.08 hours total
   * 8am BST - 12:30pm BST
