@@ -13,7 +13,8 @@
     * Successfully add delta time to enemy. Will just need to add to player now.
   * 11:56am BST - 
     * Continue working on adding delta time to player.
-    * Fix bug where invincibility would deactivate if hit again
+    * Fix bug where invincibility would deactivate if hit again.
+    * Continue working on implementing delta time. The current issue seems to be that the jump height increases at higher framerates due to the `deltaTimeMultiplier` multiplying the velocity.
 
 * 2024-04-16 - 6.08 hours total
   * 8am BST - 12:30pm BST
