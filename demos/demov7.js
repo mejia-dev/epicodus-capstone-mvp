@@ -49,37 +49,13 @@ class PlayerObj {
     globalCanvasCtx.shadowBlur = 0;
   }
 
-  checkJumpNew(deltaTimeMultiplier) {
-    if (this.isGrounded) {
-      this.canJumpSingle = true;
-      this.canJumpDouble = false;
-    }
-    if (p1InputController.jump.pressed) {
-      const currentTime = performance.now();
-      const elapsedTime = currentTime - this.lastJumpTime;
-
-      if (this.canJumpSingle) {
-        console.log("single")
-        this.lastJumpTime = currentTime;
-        this.canJumpSingle = false;
-        this.velocity.y = -this.jumpHeight;
-        this.canJumpDouble = true;
-      }
-
-      if (this.canJumpDouble && elapsedTime > this.jumpCooldown) {
-        console.log("double")
-        this.canJumpDouble = false;
-        this.velocity.y = -this.jumpHeight;
-      }
-    }
-  }
-
   checkJump(deltaTimeMultiplier) {
     if (this.isGrounded) {
       this.canJumpSingle = true;
-      this.canJumpDouble = false;
+      this.canJumpDouble = true;
     }
     if (p1InputController.jump.pressed) {
+
       if (this.canJumpSingle) {
         this.canJumpSingle = false;
         this.velocity.y = -this.jumpHeight;
@@ -89,24 +65,42 @@ class PlayerObj {
         setTimeout(activateDoubleJump, 200 * deltaTimeMultiplier);
       }
 
-      if (this.canJumpDouble) {
+      const activateDoubleJump = () => {
+        this.canJumpDouble = true;
+      }
+      setTimeout(activateDoubleJump, 200 * deltaTimeMultiplier);
+      
+      if (this.canJumpDouble && !this.isGrounded) {
+        console.log("Activated dobule jump")
         this.canJumpDouble = false;
         this.velocity.y = -this.jumpHeight;
       }
     }
   }
 
-  // enforceGravityOld(deltaTimeMultiplier) {
-  //   this.position.y += this.velocity.y;
-  //   if (this.height + this.position.y < globalPlatformY) {
-  //     this.velocity.y += globalGravity;
-  //   } else {
-  //     this.velocity.y = 0;
-  //   }
-  //   if (this.position.y < globalPlatformY + 20) {
-  //     this.position.y--;
-  //   }
-  // }
+  checkJumpOld(deltaTimeMultiplier) {
+    if (this.isGrounded) {
+      this.canJumpSingle = true;
+      this.canJumpDouble = true;
+    }
+    if (p1InputController.jump.pressed) {
+
+      if (this.canJumpSingle) {
+        this.canJumpSingle = false;
+        this.velocity.y = -this.jumpHeight;
+        const activateDoubleJump = () => {
+          this.canJumpDouble = true;
+        }
+        setTimeout(activateDoubleJump, 200 * deltaTimeMultiplier);
+      }
+      
+      if (this.canJumpDouble && !this.isGrounded) {
+        console.log("Activated dobule jump")
+        this.canJumpDouble = false;
+        this.velocity.y = -this.jumpHeight;
+      }
+    }
+  }
 
   enforceGravity(deltaTimeMultiplier) {
     const gravityForce = globalGravity * deltaTimeMultiplier;
@@ -145,6 +139,7 @@ class PlayerObj {
     this.checkJump(deltaTimeMultiplier);
     this.enforceGravity(deltaTimeMultiplier);
     this.draw();
+    if (this.canJumpDouble) console.log("Can jump double")
   }
 }
 
