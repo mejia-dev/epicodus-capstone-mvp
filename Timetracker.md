@@ -6,10 +6,11 @@
 ### Time Log:
 
 * 2024-04-16 -  hours total
-  * 10:02am BST - am BST
+  * 10:02am BST - 11:02am BST
     * Reading up more on delta time
     * Implemented first functional version of delta time, though this somehow made the frame rate....consistently choppy?
     * Second implementation of delta time works! Needed to be added to the drawLevel method instead of the updateRenderX method.
+    * Successfully add delta time to enemy. Will just need to add to player now.
 
 * 2024-04-16 - 6.08 hours total
   * 8am BST - 12:30pm BST
