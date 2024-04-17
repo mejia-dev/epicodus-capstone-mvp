@@ -1,11 +1,13 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 54.25 hours (see time log below for more details)
+### Total Time Spent: 56.49 hours (see time log below for more details)
 
 
 ### Time Log:
 
-* 2024-04-16 - 1 hours total
+* 2024-04-16 - 1.97 hours total
+  * 9:04am BST - 10:02am BST
+    * Working on resume and cover letter for internship through Epicodus. Sent resume and cover letter, CC'ing Nina from Epicodus.
   * 10:02am BST - 11:02am BST
     * Reading up more on delta time
     * Implemented first functional version of delta time, though this somehow made the frame rate....consistently choppy?
@@ -18,7 +20,7 @@
     * Attempting to solve gravity first instead of jump as this may be easier to reverse.
       * `enforceGravity(deltaTimeMultiplier)` may need to have an additional calculation performed on it (potentially twice). Delta time may need to first be calculated as part of the velocity calculation (modifying `this.velocity.y`), then again as part of the actual movement (changing `this.position.y` based on `this.velocity.y`).
 
-* 2024-04-16 - 6.08 hours total
+* 2024-04-16 - 7.35 hours total
   * 8am BST - 12:30pm BST
     * Begin working on lives and losing functionality.
     * Update repo's README.
@@ -46,6 +48,8 @@
     * Continue working on Delta Time functionality.
     * Attempting to work out how to apply the delta time multiplier once obtained.
     * Not finding the solution easily. May need to do a deep-dive on the topic to further explore it. 
+  * 9:40pm BST - 10:56pm BST
+    * Working on resume and cover letter for internship through Epicodus. Sent resume and cover letter, CC'ing Nina from Epicodus.
 
 
 * 2024-04-15 - 7.3 hours total
