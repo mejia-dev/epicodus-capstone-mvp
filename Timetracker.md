@@ -6,6 +6,10 @@
 ### Time Log:
 
 * 2024-04-16 - 6.08 hours total
+  * 10:02am BST - am BST
+    * Reading up more on delta time
+
+* 2024-04-16 - 6.08 hours total
   * 8am BST - 12:30pm BST
     * Begin working on lives and losing functionality.
     * Update repo's README.
