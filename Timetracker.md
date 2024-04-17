@@ -1,11 +1,11 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 56.49 hours (see time log below for more details)
+### Total Time Spent: 59.61 hours (see time log below for more details)
 
 
 ### Time Log:
 
-* 2024-04-16 - 1.97 hours total
+* 2024-04-16 - 5.09 hours total
   * 9:04am BST - 10:02am BST
     * Working on resume and cover letter for internship through Epicodus. Sent resume and cover letter, CC'ing Nina from Epicodus.
   * 10:02am BST - 11:02am BST
@@ -13,7 +13,7 @@
     * Implemented first functional version of delta time, though this somehow made the frame rate....consistently choppy?
     * Second implementation of delta time works! Needed to be added to the drawLevel method instead of the updateRenderX method.
     * Successfully add delta time to enemy. Will just need to add to player now.
-  * 11:56am BST - 1:12pm BST
+  * 11:56am BST - 3:03pm BST
     * Continue working on adding delta time to player.
     * Fix bug where invincibility would deactivate if hit again.
     * Continue working on implementing delta time. The current issue seems to be that the jump height increases at higher framerates due to the `deltaTimeMultiplier` multiplying the velocity.
@@ -27,6 +27,7 @@
       * https://www.youtube.com/watch?v=yGhfUcPjXuE
       * https://www.youtube.com/watch?v=rWtfClpWSb8
     * Rebuilding jump functionality from scratch.
+    * Will look into this more later.
 
 * 2024-04-16 - 7.35 hours total
   * 8am BST - 12:30pm BST
