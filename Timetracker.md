@@ -15,6 +15,8 @@
     * Continue working on adding delta time to player.
     * Fix bug where invincibility would deactivate if hit again.
     * Continue working on implementing delta time. The current issue seems to be that the jump height increases at higher framerates due to the `deltaTimeMultiplier` multiplying the velocity.
+    * Attempting to solve gravity first instead of jump as this may be easier to reverse.
+      * `enforceGravity(deltaTimeMultiplier)` may need to have an additional calculation performed on it (potentially twice). Delta time may need to first be calculated as part of the velocity calculation (modifying `this.velocity.y`), then again as part of the actual movement (changing `this.position.y` based on `this.velocity.y`).
 
 * 2024-04-16 - 6.08 hours total
   * 8am BST - 12:30pm BST
