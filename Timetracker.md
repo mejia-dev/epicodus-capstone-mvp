@@ -28,6 +28,8 @@
       * https://www.youtube.com/watch?v=rWtfClpWSb8
     * Rebuilding jump functionality from scratch.
     * Will look into this more later.
+  * 8:30pm BST - 
+    * Working on resume and cover letter for internship through Epicodus.
 
 * 2024-04-16 - 7.35 hours total
   * 8am BST - 12:30pm BST
