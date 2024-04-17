@@ -69,7 +69,7 @@ class PlayerObj {
     }
   }
 
-  enforceGravity() {
+  enforceGravity(deltaTimeMultiplier) {
     this.position.y += this.velocity.y;
     if (this.height + this.position.y < globalPlatformY) {
       this.velocity.y += globalGravity;
@@ -167,15 +167,15 @@ class EnemyObj {
     globalCanvasCtx.fillRect(this.position.x, this.position.y, this.width, this.height);
   }
 
-  updateMoveSpeed() {
+  updateMoveSpeed(deltaTimeMultiplier) {
     const prevLevelX = (globalPreviousRenderX / globalLevelData.length) * globalLevelData[globalLevelData.length - 1].x;
     const currentLevelX = (globalRenderX / globalLevelData.length) * globalLevelData[globalLevelData.length - 1].x;
-    this.moveSpeed = currentLevelX - prevLevelX;
+    this.moveSpeed = (currentLevelX - prevLevelX);
   }
 
-  requestUpdate() {
-    this.updateMoveSpeed();
-    this.position.x -= this.moveSpeed;
+  requestUpdate(deltaTimeMultiplier) {
+    this.updateMoveSpeed(deltaTimeMultiplier);
+    this.position.x -= this.moveSpeed * deltaTimeMultiplier;
     if (this.position.x < 0 - this.width) {
       // if (!this.scored) {
       //   player1.addScore(1);
@@ -328,7 +328,6 @@ function gameLoop(timestamp) {
   if (globalAudioIsPlaying) {
 
     deltaTime = timestamp - previousTime;
-    console.log(deltaTime)
     deltaTimeMultiplier = deltaTime / frame_interval;
 
     // const deltaTime = (timestamp - globalLastTimestamp) / 1000;
@@ -337,7 +336,7 @@ function gameLoop(timestamp) {
     drawLevel(deltaTimeMultiplier);
     player1.requestUpdate(deltaTimeMultiplier);
     checkEnemySpawn();
-    updateSpawnedEnemies();
+    updateSpawnedEnemies(deltaTimeMultiplier);
     drawPlatform();
     updateRenderX();
     previousTime = timestamp;
@@ -398,10 +397,10 @@ function checkEnemySpawn() {
   }
 }
 
-function updateSpawnedEnemies() {
+function updateSpawnedEnemies(deltaTimeMultiplier) {
   globalEnemySpawnedList = globalEnemySpawnedList.filter(enemy => !enemy.readyForDeletion);
   globalEnemySpawnedList.forEach(enemy => {
-    enemy.requestUpdate();
+    enemy.requestUpdate(deltaTimeMultiplier);
     if (checkCollision(player1, enemy)) {
       player1.takeDamage(1);
       enemy.isAlive = false;
