@@ -13,7 +13,7 @@
     * Implemented first functional version of delta time, though this somehow made the frame rate....consistently choppy?
     * Second implementation of delta time works! Needed to be added to the drawLevel method instead of the updateRenderX method.
     * Successfully add delta time to enemy. Will just need to add to player now.
-  * 11:56am BST - 
+  * 11:56am BST - 1:12pm BST
     * Continue working on adding delta time to player.
     * Fix bug where invincibility would deactivate if hit again.
     * Continue working on implementing delta time. The current issue seems to be that the jump height increases at higher framerates due to the `deltaTimeMultiplier` multiplying the velocity.
@@ -22,6 +22,10 @@
       * Successfully update `enforceGravity` to account for delta time. Also refactored "isGrounded" check to be part of gravity enforcement, as originally desired. 
       * Noted that at higher framerates, the setTimeout method does not work as desired for double jumping, since the player may have already landed by the time the timeout is complete. Will need to look into refactoring this.
     * After looking into it more, may just be able to scale the delay by delta time.
+    * Reviewing some more resources
+      * https://www.youtube.com/watch?v=c4b9lCfSDQM
+      * https://www.youtube.com/watch?v=yGhfUcPjXuE
+      * https://www.youtube.com/watch?v=rWtfClpWSb8
 
 * 2024-04-16 - 7.35 hours total
   * 8am BST - 12:30pm BST
