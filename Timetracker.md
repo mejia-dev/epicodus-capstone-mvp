@@ -1,11 +1,11 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 59.61 hours (see time log below for more details)
+### Total Time Spent: 61.01 hours (see time log below for more details)
 
 
 ### Time Log:
 
-* 2024-04-16 - 5.09 hours total
+* 2024-04-16 - 6.49 hours total
   * 9:04am BST - 10:02am BST
     * Working on resume and cover letter for internship through Epicodus. Sent resume and cover letter, CC'ing Nina from Epicodus.
   * 10:02am BST - 11:02am BST
@@ -28,8 +28,8 @@
       * https://www.youtube.com/watch?v=rWtfClpWSb8
     * Rebuilding jump functionality from scratch.
     * Will look into this more later.
-  * 8:30pm BST - 
-    * Working on resume and cover letter for internship through Epicodus.
+  * 8:30pm BST - 9:54pm BST
+    * Working on resume and cover letter for internship through Epicodus. Sent resume and cover letter, CC'ing Nina from Epicodus.
 
 * 2024-04-16 - 7.35 hours total
   * 8am BST - 12:30pm BST
