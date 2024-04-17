@@ -339,7 +339,7 @@ function gameLoop(timestamp) {
     checkEnemySpawn();
     updateSpawnedEnemies();
     drawPlatform();
-    updateRenderX(deltaTimeMultiplier);
+    updateRenderX();
     previousTime = timestamp;
   }
   requestAnimationFrame(gameLoop);
@@ -356,20 +356,20 @@ function drawLevel(deltaTimeMultiplier) {
 
   globalCanvasCtx.moveTo(globalLevelData[0].x - globalRenderX, globalLevelData[0].y);
   for (let i = 1; i < globalLevelData.length; i++) {
-    globalCanvasCtx.lineTo(globalLevelData[i].x - globalRenderX, globalLevelData[i].y);
+    globalCanvasCtx.lineTo((globalLevelData[i].x - globalRenderX) * deltaTimeMultiplier, globalLevelData[i].y);
   }
   globalCanvasCtx.stroke();
 }
 
 
 // this function increases the globalRenderX variable in time with the current playback.
-function updateRenderX(deltaTimeMultiplier) {
+function updateRenderX() {
   if (globalRenderX < globalLevelData.length) {
     // visual Offset milliseconds may need to be adjusted if sprite ever moves. 
     const visualOffsetInMs = 700;
     const progressPercentage = globalAudioHTMLElement.currentTime / globalAudioBuffer.duration;
-    const audioTimeVis = (progressPercentage * globalLevelData[globalLevelData.length - 1].x)  * deltaTimeMultiplier;
-    const offsetAudioTime = audioTimeVis;
+    const audioTimeVis = progressPercentage * globalLevelData[globalLevelData.length - 1].x;
+    const offsetAudioTime = audioTimeVis - visualOffsetInMs;
     globalPreviousRenderX = globalRenderX;
     // using Math.max to ensure that the value does not reverse in the event of it being negative
     globalRenderX = Math.max(offsetAudioTime, 0);
