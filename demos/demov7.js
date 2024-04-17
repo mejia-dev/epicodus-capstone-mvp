@@ -47,7 +47,7 @@ class PlayerObj {
     globalCanvasCtx.shadowBlur = 0;
   }
 
-  checkJump() {
+  checkJump(deltaTimeMultiplier) {
     if (this.isGrounded) {
       this.canJumpSingle = true;
       this.canJumpDouble = false;
@@ -69,15 +69,28 @@ class PlayerObj {
     }
   }
 
+  // enforceGravityOld(deltaTimeMultiplier) {
+  //   this.position.y += this.velocity.y;
+  //   if (this.height + this.position.y < globalPlatformY) {
+  //     this.velocity.y += globalGravity;
+  //   } else {
+  //     this.velocity.y = 0;
+  //   }
+  //   if (this.position.y < globalPlatformY + 20) {
+  //     this.position.y--;
+  //   }
+  // }
+
   enforceGravity(deltaTimeMultiplier) {
-    this.position.y += this.velocity.y;
-    if (this.height + this.position.y < globalPlatformY) {
-      this.velocity.y += globalGravity;
-    } else {
+    const gravityForce = globalGravity * deltaTimeMultiplier;
+    this.velocity.y += gravityForce;
+    this.position.y += this.velocity.y * deltaTimeMultiplier;
+    if (this.position.y + this.height >= globalPlatformY) {
+      this.position.y = globalPlatformY - this.height;
       this.velocity.y = 0;
-    }
-    if (this.position.y < globalPlatformY + 20) {
-      this.position.y--;
+      this.isGrounded = true;
+    } else {
+      this.isGrounded = false;
     }
   }
 
@@ -97,11 +110,11 @@ class PlayerObj {
   }
 
   requestUpdate(deltaTimeMultiplier) {
-    if (this.height + this.position.y < globalPlatformY) {
-      this.isGrounded = false;
-    } else {
-      this.isGrounded = true;
-    }
+    // if (this.height + this.position.y < globalPlatformY) {
+    //   this.isGrounded = false;
+    // } else {
+    //   this.isGrounded = true;
+    // }
     this.checkJump(deltaTimeMultiplier);
     this.enforceGravity(deltaTimeMultiplier);
     this.draw();
