@@ -5,6 +5,11 @@
 
 ### Time Log:
 
+* 2024-04-26 -  hours total
+  * 11:15am PST - 
+    * Continue working on delta time. 
+    * Working with Delta Time. Discussion with Henry on spatial filters for audio to see if overall wavelengths could be reduced at all.
+
 * 2024-04-16 - 6.49 hours total
   * 9:04am BST - 10:02am BST
     * Working on resume and cover letter for internship through Epicodus. Sent resume and cover letter, CC'ing Nina from Epicodus.
