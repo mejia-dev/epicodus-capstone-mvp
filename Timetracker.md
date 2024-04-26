@@ -1,17 +1,17 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 61.01 hours (see time log below for more details)
+### Total Time Spent: 64.81 hours (see time log below for more details)
 
 
 ### Time Log:
 
-* 2024-04-26 -  hours total
-  * 11:15am PST - 
+* 2024-04-26 - 3.8 hours total
+  * 11:15am PST - 3:03pm PST
     * Continue working on delta time. 
     * Working with Delta Time. Discussion with Henry on spatial filters for audio to see if overall wavelengths could be reduced at all.
     * Finalize delta time for jump! Ended up using a modified version of the formula from https://www.youtube.com/watch?v=c4b9lCfSDQM.
 
-* 2024-04-16 - 6.49 hours total
+* 2024-04-17 - 6.49 hours total
   * 9:04am BST - 10:02am BST
     * Working on resume and cover letter for internship through Epicodus. Sent resume and cover letter, CC'ing Nina from Epicodus.
   * 10:02am BST - 11:02am BST
