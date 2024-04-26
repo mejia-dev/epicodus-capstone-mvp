@@ -103,9 +103,13 @@ class PlayerObj {
   }
 
   enforceGravity(deltaTimeMultiplier) {
-    const gravityForce = globalGravity * deltaTimeMultiplier;
-    this.velocity.y += gravityForce;
-    this.position.y += this.velocity.y * deltaTimeMultiplier;
+    // const gravityForce = globalGravity * deltaTimeMultiplier;
+    // this.velocity.y += gravityForce;
+    // this.position.y += this.velocity.y * deltaTimeMultiplier;
+
+    this.position.y = this.position.y + this.velocity.y * deltaTimeMultiplier;
+    this.velocity.y = this.velocity.y + globalGravity * deltaTimeMultiplier;
+
     if (this.position.y + this.height >= globalPlatformY) {
       this.position.y = globalPlatformY - this.height;
       this.velocity.y = 0;
