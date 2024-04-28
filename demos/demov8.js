@@ -4,19 +4,21 @@ let globalAudioHTMLElement;
 let globalAudioIsPlaying = false;
 let globalCanvas;
 let globalCanvasCtx;
-let globalLevelData;
 let globalEnemyPositionList;
-let globalEnemyTimer = 0;
-let globalEnemyTimerPausedState = 0;
 let globalEnemySpawnedList = [];
 let globalEnemySpawnInterval;
+let globalEnemyTimer = 0;
+let globalEnemyTimerPausedState = 0;
+let globalScoreSet = new Set();
+let globalGravity = .8;
+let globalLastTimestamp = 0;
+let globalLevelData;
 let globalRenderX;
+let globalPlatformY;
 let globalPreviousRenderX;
 
-let globalLastTimestamp = 0;
 
-let globalGravity = .8;
-let globalPlatformY;
+
 
 class PlayerObj {
   constructor() {
@@ -124,6 +126,10 @@ class PlayerObj {
     this.score += addedInt;
   }
 
+  updateScore() {
+    this.score = globalScoreSet.size;
+  }
+
   takeDamage(attackDamage) {
     if (!this.isInvincible) {
       this.lives -= attackDamage;
@@ -218,18 +224,9 @@ class EnemyObj {
     this.updateMoveSpeed(deltaTimeMultiplier);
     this.position.x -= this.moveSpeed * deltaTimeMultiplier;
     if (this.position.x < 0 - this.width) {
-      // if (!this.scored) {
-      //   player1.addScore(1);
-      //   this.scored = true;
-      // }
-
-      // this.toBeScored = true;
-      // if (this.toBeScored) {
-
-      //   this.toBeScored = false;
-      // }
-
-      player1.addScore(1);
+      globalScoreSet.add(this.id);
+      player1.updateScore();
+      // player1.addScore(1);
 
 
       this.readyForDeletion = true;
