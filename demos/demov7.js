@@ -368,17 +368,16 @@ function gameLoop(timestamp) {
   checkEnemySpawn();
   console.log(globalEnemyTimer)
   if (globalAudioIsPlaying) {
-
     deltaTime = timestamp - previousTime;
     deltaTimeMultiplier = deltaTime / frame_interval;
-
-    // const deltaTime = (timestamp - globalLastTimestamp) / 1000;
-    // globalLastTimestamp = timestamp;
+    
+    
     globalCanvasCtx.clearRect(0, 0, globalCanvas.width, globalCanvas.height);
     drawLevel(deltaTimeMultiplier);
     player1.requestUpdate(deltaTimeMultiplier);
     updateSpawnedEnemies(deltaTimeMultiplier);
     drawPlatform();
+    drawHUD();
     updateRenderX();
     previousTime = timestamp;
   }
@@ -454,6 +453,16 @@ function updateSpawnedEnemies(deltaTimeMultiplier) {
       enemy.readyForDeletion = true;
     }
   });
+}
+
+
+function drawHUD() {
+  globalCanvasCtx.fillStyle = "white";
+  globalCanvasCtx.font = "20px Arial";
+  globalCanvasCtx.fillText(
+    `Lives: ${player1.lives} 
+    Score: ${player1.score}`
+  , 10, 30);
 }
 
 
