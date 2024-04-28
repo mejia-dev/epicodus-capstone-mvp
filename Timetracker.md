@@ -1,12 +1,12 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 64.81 hours (see time log below for more details)
+### Total Time Spent: 69.49 hours (see time log below for more details)
 
 
 ### Time Log:
 
-* 2024-04-28 -  hours total
-  * 10:48am PST - 
+* 2024-04-28 - 4.68 hours total
+  * 10:48am PST - 3:29
     * Determine a bug with the current enemy spawn system that leads to inconsistent spawns. Appears that the enemy timer is increasing whether or not the audio is playing. Can likely just have a checker outside the loop to see if the audio is playing, and if not, set the timer back to 0.
     * Add initial fix for keeping spawn times consistent from the start of the audio track. However, noticed that with this method, the timer now gets set back to 0 at every pause. Working on a new solution.
     * Add globalEnemyTimerPausedState variable to keep track of timer while it is paused. This resolves the issue and pausing now works as expected.
@@ -32,6 +32,7 @@
       * Appears that sometimes the player can't double-jump, but other times, the player can jump more than twice.
       * Implemented old jump functionality which seems to be working better, but can still slow down at highest framerates.
       * Wondering if perhaps the delay using the timeout needs to happen not at the assignment of the ability, but on the check to see if the key was pressed again.
+      * Jump still not working with new technique. Will work on this more later.
 
 * 2024-04-26 - 3.8 hours total
   * 11:15am PST - 3:03pm PST
