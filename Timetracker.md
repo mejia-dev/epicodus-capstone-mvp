@@ -21,6 +21,7 @@
     * Add handleLose function with message rendering in middle of screen. The music also pauses so that no other functionality takes place. 
     * Begin working on win condition.
     * Running into some trouble trying to figure out how to get the "end" of the rendered audio and make it an actionable condition.
+      * Found that comparing `globalAudioHTMLElement.currentTime` to  `globalAudioBuffer.duration` should be what is needed, since this gets updated independently from any other functionality.
 
 * 2024-04-26 - 3.8 hours total
   * 11:15am PST - 3:03pm PST
