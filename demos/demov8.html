@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="styles.css" rel="stylesheet" />
+  <script src="demov8.js"></script>
+  <title>8Demo</title>
+</head>
+<body>
+  <h1>Howdy 8!</h1>
+
+  <input type="file" accept="audio/*" id="audioFile"></input>
+  <p id="fileUploadError"></p>
+  <audio id="audioSource" src="sample-audio.mp3"></audio>
+
+  <button id="playButton" data-playing="false" role="switch" aria-checked="false">
+    <span>Play/Pause</span>
+  </button>
+
+  <button id="debugAudioFrameButton">
+    <span>Debug Audio Frame</span>
+  </button>
+
+  <canvas id="visualizer" width="800" height="600"></canvas>
+
+</body>
+</html>
