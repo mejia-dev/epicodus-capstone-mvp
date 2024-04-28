@@ -18,6 +18,7 @@
       * Double jump may be failing at higher frame rates. Need to test more.
       * Defined win conditions
     * Begin working on loss handling
+    * Add handleLose function with message rendering in middle of screen. The music also pauses so that no other functionality takes place. 
 
 * 2024-04-26 - 3.8 hours total
   * 11:15am PST - 3:03pm PST
