@@ -26,6 +26,7 @@
     * Looking into scoring issues where enemy collides with end of level multiple times, causing multiple points to be added.
       * Create demov8
       * Give each enemy a unique ID using the current time. (`new Date().toLocaleTimeString();`). Will try having a global "ScoresSet" that unique scores can be added to, then the player's score is calculated by getting the count of those scores.
+      * Add successful scoring via set using globalScoreSet variable. Confirmed that now only one point is added per avoided enemy.
 
 * 2024-04-26 - 3.8 hours total
   * 11:15am PST - 3:03pm PST
