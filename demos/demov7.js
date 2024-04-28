@@ -7,6 +7,7 @@ let globalCanvasCtx;
 let globalLevelData;
 let globalEnemyPositionList;
 let globalEnemyTimer = 0;
+let globalEnemyTimerPausedState = 0;
 let globalEnemySpawnedList = [];
 let globalEnemySpawnInterval;
 let globalRenderX;
@@ -365,6 +366,7 @@ let previousTime = performance.now();
 // this function is the game animation loop
 function gameLoop(timestamp) {
   checkEnemySpawn();
+  console.log(globalEnemyTimer)
   if (globalAudioIsPlaying) {
 
     deltaTime = timestamp - previousTime;
@@ -426,9 +428,10 @@ function checkCollision(object1, object2) {
 
 function checkEnemySpawn() {
   if (!globalAudioIsPlaying) {
-    globalEnemyTimer = 0;
+    globalEnemyTimer = globalEnemyTimerPausedState;
     return;
   }
+  globalEnemyTimerPausedState = globalEnemyTimer;
 
   if (globalEnemyTimer === 3) {
     globalEnemyTimer = 0;
