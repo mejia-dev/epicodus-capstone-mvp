@@ -8,6 +8,7 @@
 * 2024-04-28 -  hours total
   * 10:48am PST - 
     * Determine a bug with the current enemy spawn system that leads to inconsistent spawns. Appears that the enemy timer is increasing whether or not the audio is playing. Can likely just have a checker outside the loop to see if the audio is playing, and if not, set the timer back to 0.
+    * Add initial fix for keeping spawn times consistent from the start of the audio track. However, noticed that with this method, the timer now gets set back to 0 at every pause. Working on a new solution.
 
 * 2024-04-26 - 3.8 hours total
   * 11:15am PST - 3:03pm PST
