@@ -70,7 +70,7 @@ class PlayerObj {
         this.canJumpDouble = true;
       }
       setTimeout(activateDoubleJump, 200 * deltaTimeMultiplier);
-      
+
       if (this.canJumpDouble && !this.isGrounded) {
         // console.log("Activated dobule jump")
         this.canJumpDouble = false;
@@ -94,7 +94,7 @@ class PlayerObj {
         }
         setTimeout(activateDoubleJump, 200 * deltaTimeMultiplier);
       }
-      
+
       if (this.canJumpDouble && !this.isGrounded) {
         console.log("Activated dobule jump")
         this.canJumpDouble = false;
@@ -224,7 +224,7 @@ class EnemyObj {
 
       // this.toBeScored = true;
       // if (this.toBeScored) {
-        
+
       //   this.toBeScored = false;
       // }
 
@@ -242,10 +242,10 @@ class EnemyObj {
     //   }
     // }
     // setTimeout(scoreEnemy, 500);
-    
-    
-    
-    
+
+
+
+
     if (this.isAlive) {
       this.draw();
     }
@@ -366,17 +366,17 @@ let previousTime = performance.now();
 // this function is the game animation loop
 function gameLoop(timestamp) {
   checkEnemySpawn();
-  console.log(globalEnemyTimer)
   if (globalAudioIsPlaying) {
     deltaTime = timestamp - previousTime;
     deltaTimeMultiplier = deltaTime / frame_interval;
-    
-    
+
+
     globalCanvasCtx.clearRect(0, 0, globalCanvas.width, globalCanvas.height);
     drawLevel(deltaTimeMultiplier);
     player1.requestUpdate(deltaTimeMultiplier);
     updateSpawnedEnemies(deltaTimeMultiplier);
     drawPlatform();
+    handleLose();
     drawHUD();
     updateRenderX();
     previousTime = timestamp;
@@ -425,6 +425,19 @@ function checkCollision(object1, object2) {
 }
 
 
+function handleLose() {
+  if (player1.lives <= 0) {
+    globalAudioHTMLElement.pause();
+    globalAudioIsPlaying = false;
+    playButton.dataset.playing = "false";
+    globalCanvasCtx.fillStyle = "white";
+  globalCanvasCtx.font = "40px Arial";
+  globalCanvasCtx.textAlign = "center";
+  globalCanvasCtx.fillText("You Lose", globalCanvas.width / 2, globalCanvas.height / 2);
+  }
+}
+
+
 function checkEnemySpawn() {
   if (!globalAudioIsPlaying) {
     globalEnemyTimer = globalEnemyTimerPausedState;
@@ -462,7 +475,7 @@ function drawHUD() {
   globalCanvasCtx.fillText(
     `Lives: ${player1.lives} 
     Score: ${player1.score}`
-  , 10, 30);
+    , 10, 30);
 }
 
 
