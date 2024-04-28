@@ -106,9 +106,6 @@ class PlayerObj {
   }
 
   enforceGravity(deltaTimeMultiplier) {
-    // const gravityForce = globalGravity * deltaTimeMultiplier;
-    // this.velocity.y += gravityForce;
-    // this.position.y += this.velocity.y * deltaTimeMultiplier;
 
     this.position.y = this.position.y + this.velocity.y * deltaTimeMultiplier;
     this.velocity.y = this.velocity.y + globalGravity * deltaTimeMultiplier;
@@ -120,10 +117,6 @@ class PlayerObj {
     } else {
       this.isGrounded = false;
     }
-  }
-
-  addScore(addedInt) {
-    this.score += addedInt;
   }
 
   updateScore() {
@@ -203,7 +196,6 @@ class EnemyObj {
     this.toBeScored = false;
     this.hasBeenScored = false;
     this.readyForDeletion = false;
-    // this.isGrounded = true;
     this.position = {
       x: spawnX,
       y: spawnY
@@ -226,24 +218,9 @@ class EnemyObj {
     if (this.position.x < 0 - this.width) {
       globalScoreSet.add(this.id);
       player1.updateScore();
-      // player1.addScore(1);
-
 
       this.readyForDeletion = true;
     }
-
-
-    // const scoreEnemy = () => {
-    //   if (this.toBeScored) {
-    //     player1.addScore(1);
-    //     this.toBeScored = false;
-    //   }
-    // }
-    // setTimeout(scoreEnemy, 500);
-
-
-
-
     if (this.isAlive) {
       this.draw();
     }
