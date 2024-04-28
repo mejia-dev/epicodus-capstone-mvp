@@ -53,57 +53,101 @@ class PlayerObj {
   }
 
   checkJump(deltaTimeMultiplier) {
+
     if (this.isGrounded) {
       this.canJumpSingle = true;
-      this.canJumpDouble = true;
+      this.canJumpDouble = false;
     }
-    if (p1InputController.jump.pressed) {
 
-      if (this.canJumpSingle) {
-        this.canJumpSingle = false;
-        this.velocity.y = -this.jumpHeight;
-        const activateDoubleJump = () => {
-          this.canJumpDouble = true;
-        }
-        setTimeout(activateDoubleJump, 200 * deltaTimeMultiplier);
-      }
+    // if is on floor 
+      // if key pressed, jump
+    // else
+      // if key pressed
 
-      const activateDoubleJump = () => {
+    if (this.isGrounded) {
+      if (p1InputController.jump.pressed) {
+        this.velocity.y = -this.jumpHeight; 
         this.canJumpDouble = true;
+        console.log("single")
       }
-      setTimeout(activateDoubleJump, 200 * deltaTimeMultiplier);
-
-      if (this.canJumpDouble && !this.isGrounded) {
-        // console.log("Activated dobule jump")
+    } else {
+      if (p1InputController.jump.pressed && this.canJumpDouble) {
+        this.velocity.y = -this.jumpHeight; 
         this.canJumpDouble = false;
-        this.velocity.y = -this.jumpHeight;
+        console.log("double")
       }
     }
+
+    // if (p1InputController.jump.pressed) {
+
+    //   if (this.canJumpSingle) {
+    //     this.canJumpSingle = false;
+    //     this.velocity.y = -this.jumpHeight;
+    //     const activateDoubleJump = () => {
+    //       this.canJumpDouble = true;
+    //     }
+    //     setTimeout(activateDoubleJump, 150 * deltaTimeMultiplier);
+    //   }
+
+    //   if (this.canJumpDouble && !this.isGrounded) {
+    //     this.canJumpDouble = false;
+    //     this.velocity.y = -this.jumpHeight;
+    //   }
+      
+    // }
+
+
+    // if (this.isGrounded) {
+    //   this.canJumpSingle = true;
+    //   this.canJumpDouble = true;
+    // }
+    // if (p1InputController.jump.pressed) {
+
+    //   if (this.canJumpSingle) {
+    //     this.canJumpSingle = false;
+    //     this.velocity.y = -this.jumpHeight;
+    //     const activateDoubleJump = () => {
+    //       this.canJumpDouble = true;
+    //     }
+    //     setTimeout(activateDoubleJump, 200 * deltaTimeMultiplier);
+    //   }
+
+    //   const activateDoubleJump = () => {
+    //     this.canJumpDouble = true;
+    //   }
+    //   setTimeout(activateDoubleJump, 200 * deltaTimeMultiplier);
+
+    //   if (this.canJumpDouble && !this.isGrounded) {
+    //     // console.log("Activated dobule jump")
+    //     this.canJumpDouble = false;
+    //     this.velocity.y = -this.jumpHeight;
+    //   }
+    // }
   }
 
-  checkJumpOld(deltaTimeMultiplier) {
-    if (this.isGrounded) {
-      this.canJumpSingle = true;
-      this.canJumpDouble = true;
-    }
-    if (p1InputController.jump.pressed) {
+  // checkJumpOld(deltaTimeMultiplier) {
+  //   if (this.isGrounded) {
+  //     this.canJumpSingle = true;
+  //     this.canJumpDouble = true;
+  //   }
+  //   if (p1InputController.jump.pressed) {
 
-      if (this.canJumpSingle) {
-        this.canJumpSingle = false;
-        this.velocity.y = -this.jumpHeight;
-        const activateDoubleJump = () => {
-          this.canJumpDouble = true;
-        }
-        setTimeout(activateDoubleJump, 200 * deltaTimeMultiplier);
-      }
+  //     if (this.canJumpSingle) {
+  //       this.canJumpSingle = false;
+  //       this.velocity.y = -this.jumpHeight;
+  //       const activateDoubleJump = () => {
+  //         this.canJumpDouble = true;
+  //       }
+  //       setTimeout(activateDoubleJump, 200 * deltaTimeMultiplier);
+  //     }
 
-      if (this.canJumpDouble && !this.isGrounded) {
-        console.log("Activated dobule jump")
-        this.canJumpDouble = false;
-        this.velocity.y = -this.jumpHeight;
-      }
-    }
-  }
+  //     if (this.canJumpDouble && !this.isGrounded) {
+  //       console.log("Activated dobule jump")
+  //       this.canJumpDouble = false;
+  //       this.velocity.y = -this.jumpHeight;
+  //     }
+  //   }
+  // }
 
   enforceGravity(deltaTimeMultiplier) {
 
