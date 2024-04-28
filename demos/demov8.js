@@ -189,6 +189,7 @@ class InputController {
 
 class EnemyObj {
   constructor(spawnX, spawnY) {
+    this.id = new Date().toLocaleTimeString();
     this.width = 50;
     this.height = 50;
     this.moveSpeed = 0;
@@ -352,8 +353,6 @@ function startCanvas() {
   globalEnemySpawnInterval = setInterval(() => {
     globalEnemyTimer++;
   }, 1000);
-  console.log(globalAudioHTMLElement.currentTime)
-  console.log(globalAudioBuffer.duration)
   requestAnimationFrame(gameLoop);
 
 }
