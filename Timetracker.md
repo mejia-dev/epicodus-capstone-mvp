@@ -30,6 +30,8 @@
     * Cleaned up code.
     * Begin looking into double-jumping issues at higher framerates
       * Appears that sometimes the player can't double-jump, but other times, the player can jump more than twice.
+      * Implemented old jump functionality which seems to be working better, but can still slow down at highest framerates.
+      * Wondering if perhaps the delay using the timeout needs to happen not at the assignment of the ability, but on the check to see if the key was pressed again.
 
 * 2024-04-26 - 3.8 hours total
   * 11:15am PST - 3:03pm PST
