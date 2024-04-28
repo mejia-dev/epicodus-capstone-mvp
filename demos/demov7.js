@@ -71,7 +71,7 @@ class PlayerObj {
       setTimeout(activateDoubleJump, 200 * deltaTimeMultiplier);
       
       if (this.canJumpDouble && !this.isGrounded) {
-        console.log("Activated dobule jump")
+        // console.log("Activated dobule jump")
         this.canJumpDouble = false;
         this.velocity.y = -this.jumpHeight;
       }
@@ -143,7 +143,7 @@ class PlayerObj {
     this.checkJump(deltaTimeMultiplier);
     this.enforceGravity(deltaTimeMultiplier);
     this.draw();
-    if (this.canJumpDouble) console.log("Can jump double")
+    // if (this.canJumpDouble) console.log("Can jump double")
   }
 }
 
@@ -364,6 +364,7 @@ let previousTime = performance.now();
 
 // this function is the game animation loop
 function gameLoop(timestamp) {
+  checkEnemySpawn();
   if (globalAudioIsPlaying) {
 
     deltaTime = timestamp - previousTime;
@@ -374,7 +375,6 @@ function gameLoop(timestamp) {
     globalCanvasCtx.clearRect(0, 0, globalCanvas.width, globalCanvas.height);
     drawLevel(deltaTimeMultiplier);
     player1.requestUpdate(deltaTimeMultiplier);
-    checkEnemySpawn();
     updateSpawnedEnemies(deltaTimeMultiplier);
     drawPlatform();
     updateRenderX();
@@ -425,6 +425,11 @@ function checkCollision(object1, object2) {
 
 
 function checkEnemySpawn() {
+  if (!globalAudioIsPlaying) {
+    globalEnemyTimer = 0;
+    return;
+  }
+
   if (globalEnemyTimer === 3) {
     globalEnemyTimer = 0;
     globalEnemyPositionList.forEach(kvp => {
@@ -432,7 +437,7 @@ function checkEnemySpawn() {
         let newEnemy = new EnemyObj(globalCanvas.width, globalPlatformY - 50);
         globalEnemySpawnedList.push(newEnemy);
       }
-    })
+    });
   }
 }
 
