@@ -352,6 +352,8 @@ function startCanvas() {
   globalEnemySpawnInterval = setInterval(() => {
     globalEnemyTimer++;
   }, 1000);
+  console.log(globalAudioHTMLElement.currentTime)
+  console.log(globalAudioBuffer.duration)
   requestAnimationFrame(gameLoop);
 
 }
@@ -376,6 +378,7 @@ function gameLoop(timestamp) {
     player1.requestUpdate(deltaTimeMultiplier);
     updateSpawnedEnemies(deltaTimeMultiplier);
     drawPlatform();
+    handleWin();
     handleLose();
     drawHUD();
     updateRenderX();
@@ -424,16 +427,29 @@ function checkCollision(object1, object2) {
   );
 }
 
+function handleWin() {
+  if (globalAudioHTMLElement.currentTime >= globalAudioBuffer.duration) {
+    globalCanvasCtx.fillStyle = "white";
+    globalCanvasCtx.font = "40px Arial";
+    globalCanvasCtx.textAlign = "center";
+    globalCanvasCtx.fillText("You Win!", globalCanvas.width / 2, (globalCanvas.height / 2) - 40);
+    globalCanvasCtx.fillStyle = "white";
+    globalCanvasCtx.font = "20px Arial";
+    globalCanvasCtx.textAlign = "center";
+    globalCanvasCtx.fillText(`Your score: ${player1.score} `, globalCanvas.width / 2, (globalCanvas.height / 2));
+    // you win!
+    // your score is: 
+  }
+}
 
 function handleLose() {
   if (player1.lives <= 0) {
     globalAudioHTMLElement.pause();
     globalAudioIsPlaying = false;
-    playButton.dataset.playing = "false";
     globalCanvasCtx.fillStyle = "white";
-  globalCanvasCtx.font = "40px Arial";
-  globalCanvasCtx.textAlign = "center";
-  globalCanvasCtx.fillText("You Lose", globalCanvas.width / 2, globalCanvas.height / 2);
+    globalCanvasCtx.font = "40px Arial";
+    globalCanvasCtx.textAlign = "center";
+    globalCanvasCtx.fillText("You Lose", globalCanvas.width / 2, globalCanvas.height / 2);
   }
 }
 
