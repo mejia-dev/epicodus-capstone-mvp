@@ -12,6 +12,12 @@
     * Add globalEnemyTimerPausedState variable to keep track of timer while it is paused. This resolves the issue and pausing now works as expected.
     * Begin work on adding a life indicator.
     * Add working HUD for both lives and score.
+    * More things that need to be finished:
+      * Defined loss handling (ran out of lives)
+      * Adjust scoring
+      * Double jump may be failing at higher frame rates. Need to test more.
+      * Defined win conditions
+    * Begin working on loss handling
 
 * 2024-04-26 - 3.8 hours total
   * 11:15am PST - 3:03pm PST
