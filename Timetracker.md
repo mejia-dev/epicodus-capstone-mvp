@@ -11,19 +11,21 @@
     * Add initial fix for keeping spawn times consistent from the start of the audio track. However, noticed that with this method, the timer now gets set back to 0 at every pause. Working on a new solution.
     * Add globalEnemyTimerPausedState variable to keep track of timer while it is paused. This resolves the issue and pausing now works as expected.
     * Begin work on adding a life indicator.
-    * Add working HUD for both lives and score.
+      * Add working HUD for both lives and score.
     * More things that need to be finished:
       * Defined loss handling (ran out of lives)
       * Adjust scoring
       * Double jump may be failing at higher frame rates. Need to test more.
       * Defined win conditions
     * Begin working on loss handling
-    * Add handleLose function with message rendering in middle of screen. The music also pauses so that no other functionality takes place. 
+      * Add handleLose function with message rendering in middle of screen. The music also pauses so that no other functionality takes place. 
     * Begin working on win condition.
-    * Running into some trouble trying to figure out how to get the "end" of the rendered audio and make it an actionable condition.
+      * Running into some trouble trying to figure out how to get the "end" of the rendered audio and make it an actionable condition.
       * Found that comparing `globalAudioHTMLElement.currentTime` to  `globalAudioBuffer.duration` should be what is needed, since this gets updated independently from any other functionality.
-    * Add functional winning message.
+      * Add functional winning message.
     * Looking into scoring issues where enemy collides with end of level multiple times, causing multiple points to be added.
+      * Create demov8
+      * Give each enemy a unique ID using the current time. (`new Date().toLocaleTimeString();`). Will try having a global "ScoresSet" that unique scores can be added to, then the player's score is calculated by getting the count of those scores.
 
 * 2024-04-26 - 3.8 hours total
   * 11:15am PST - 3:03pm PST
