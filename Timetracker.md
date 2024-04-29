@@ -43,6 +43,10 @@
     * Refactor all game logic to happen in `GameRendering.tsx`. Confirmed game is playable.
     * Noted that the onload method used does not seem to be working for some browsers. Will adjust this. 
     * Fix onChange issue by using onChange event of input element, then using the ChangeEvent type on the `handleAudioUpload` function.
+    * Running eslint against the code and resolving issues.
+      * Change `globalScoreSet` declaration to `const` (line 15).
+      * Change `blob` declaration to `const` (line 30).
+      * Change `newEnemy` declaration to `const` (line 228).
 
 
 * 2024-04-28 - 4.68 hours total
