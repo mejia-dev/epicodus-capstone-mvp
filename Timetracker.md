@@ -24,6 +24,8 @@
     * All work listed from here on out is done in the [Rhythm Runner repo](https://github.com/mejia-dev/rhythmrunner) unless explicitly stated otherwise.
     ---
     * Created Vite app with TypeScript. Will attempt to use type checking if it doesn't end up seriously impeding progress (due to deadline).
+    * Begin working on `PlayerObj.ts`. Realized that it needs `InputController`.
+    * Created `InputController.ts`. 
 
 
 * 2024-04-28 - 4.68 hours total
