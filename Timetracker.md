@@ -8,7 +8,8 @@
 * 2024-04-29 -  hours total
   * 8:06am PST - PST
     * Continue working on jump technique
-    * Doing some more research on YouTube.
+      * Doing some more research on YouTube.
+      * Attempt a new double jump functionality by checking for a velocity that is not 0. This seems to work better in most cases.
 
 * 2024-04-28 - 4.68 hours total
   * 10:48am PST - 3:29pm PST
