@@ -81,11 +81,13 @@ class PlayerObj {
     if (p1InputController.jump.pressed) {
       if (this.isGrounded) {
         this.velocity.y = -this.jumpHeight; 
+            this.canJumpDouble = true;
       }
     }
 
-    if (p1InputController.jump.pressed && this.velocity.y > 0) {
+    if (p1InputController.jump.pressed && this.velocity.y > 0 && this.canJumpDouble) {
       this.velocity.y = -this.jumpHeight; 
+      this.canJumpDouble = false;
     }
 
     // if (p1InputController.jump.pressed) {
