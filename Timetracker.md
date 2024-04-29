@@ -13,6 +13,7 @@
       * Resolve double-jump control (to make sure player can only jump twice). Tested at all speeds and confirmed it is working as expected.
     * Game MVP appears to be fully functional. Testing full playthrough of short, medium, and long tracks now to ensure no bugs or glitches.
       * Successful test at short track (win and loss).
+      * Successful test at medium track (win and loss).
 
 * 2024-04-28 - 4.68 hours total
   * 10:48am PST - 3:29pm PST
