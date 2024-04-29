@@ -42,6 +42,7 @@
     * Having some trouble passing data back from GlobalGameLogic to GameRendering whenever the scene is finished loading. May end up just turning this into one file if a solution can't be found.
     * Refactor all game logic to happen in `GameRendering.tsx`. Confirmed game is playable.
     * Noted that the onload method used does not seem to be working for some browsers. Will adjust this. 
+    * Fix onChange issue by using onChange event of input element, then using the ChangeEvent type on the `handleAudioUpload` function.
 
 
 * 2024-04-28 - 4.68 hours total
