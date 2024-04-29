@@ -39,6 +39,7 @@
     * Remove `AudioHandler.ts` since it appears that many of these functions need to take place without import statements since they need to be applied directly to the variables in `GlobalGameLogic.ts`.
     * Add canvas initialization to `GlobalGameLogic.ts`.
     * Updating location of global variable imports and exports between `GlobalGameLogic.ts` and `GameRendering.tsx` since some things only get updated by one and read by the other.
+    * Having some trouble passing data back from GlobalGameLogic to GameRendering whenever the scene is finished loading. May end up just turning this into one file if a solution can't be found.
 
 
 * 2024-04-28 - 4.68 hours total
