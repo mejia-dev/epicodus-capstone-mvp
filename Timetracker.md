@@ -15,11 +15,16 @@
       * Successful test at short track (win and loss).
       * Successful test at medium track (win and loss).
       * Loss condition successful for long track but it is difficult to stay alive long enough to test win condition (track is roughly 15 minutes long). Confirmed that it works fine when lives are not counted so would likely also work when lives are counted.
-    * Will begin working in the Rhythm Runner repo.
+    * Will begin working in the [Rhythm Runner repo](https://github.com/mejia-dev/rhythmrunner).
     * Noticed several bugs when testing with Firefox.
       * One audio track inexplicably won't upload. Error: `Uncaught (in promise) DOMException: The buffer passed to decodeAudioData contains an unknown content type. `. This is the shortest track of all the test tracks and just won't play.
       * The browser lags significantly when trying to play any other track.
     * Did some research but could not find anything that resolved the Firefox issues. Given the deadline, will just say that Chrome / Chromium browsers are a requirement for this game since it works fine in Chrome/Edge/Brave. May explore Firefox functionality later if desired.
+    ---
+    * All work listed from here on out is done in the [Rhythm Runner repo](https://github.com/mejia-dev/rhythmrunner) unless explicitly stated otherwise.
+    ---
+    * Created Vite app with TypeScript. Will attempt to use type checking if it doesn't end up seriously impeding progress (due to deadline).
+
 
 * 2024-04-28 - 4.68 hours total
   * 10:48am PST - 3:29pm PST
