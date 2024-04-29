@@ -30,6 +30,7 @@
     * Added global variable exports from `Game.ts`.
     * Added `PlayerObj.ts`.
     * Realized I had created the project without React. Recreated with React.
+    * Began working on `EnemyObj.ts`. Tested changing updateSpawnedEnemies to handle awarding points, not enemy object. Confirmed this work and commited in this MVP repository to demov8. Will also do this on production build.
 
 
 * 2024-04-28 - 4.68 hours total
