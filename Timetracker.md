@@ -36,6 +36,8 @@
     * Lunch
   * 1pm PST - 
     * Continue working on `AudioHandler.ts`.
+    * Remove `AudioHandler.ts` since it appears that many of these functions need to take place without import statements since they need to be applied directly to the variables in `GlobalGameLogic.ts`.
+    * Add canvas initialization to `GlobalGameLogic.ts`.
 
 
 * 2024-04-28 - 4.68 hours total
