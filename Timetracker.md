@@ -29,6 +29,7 @@
     * Continued working on `PlayerObj.ts`, but noted that there are some global variables related to the canvas that are required. Will work on `Game.ts`.
     * Added global variable exports from `Game.ts`.
     * Added `PlayerObj.ts`.
+    * Realized I had created the project without React. Recreated with React.
 
 
 * 2024-04-28 - 4.68 hours total
