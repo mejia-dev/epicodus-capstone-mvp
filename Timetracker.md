@@ -10,6 +10,8 @@
     * Continue working on jump technique
       * Doing some more research on YouTube.
       * Attempt a new double jump functionality by checking for a velocity that is not 0. This seems to work better in most cases.
+      * Resolve double-jump control (to make sure player can only jump twice). Tested at all speeds and confirmed it is working as expected.
+    * Game MVP appears to be fully functional. Testing full playthrough of short, medium, and long tracks now to ensure no bugs or glitches.
 
 * 2024-04-28 - 4.68 hours total
   * 10:48am PST - 3:29pm PST
