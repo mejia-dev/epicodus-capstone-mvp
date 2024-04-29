@@ -271,12 +271,12 @@ class EnemyObj {
   requestUpdate(deltaTimeMultiplier) {
     this.updateMoveSpeed(deltaTimeMultiplier);
     this.position.x -= this.moveSpeed * deltaTimeMultiplier;
-    if (this.position.x < 0 - this.width) {
-      globalScoreSet.add(this.id);
-      player1.updateScore();
+    // if (this.position.x < 0 - this.width) {
+    //   globalScoreSet.add(this.id);
+    //   player1.updateScore();
 
-      this.readyForDeletion = true;
-    }
+    //   this.readyForDeletion = true;
+    // }
     if (this.isAlive) {
       this.draw();
     }
@@ -508,6 +508,11 @@ function updateSpawnedEnemies(deltaTimeMultiplier) {
     if (checkCollision(player1, enemy)) {
       player1.takeDamage(1);
       enemy.isAlive = false;
+      enemy.readyForDeletion = true;
+    }
+    if (enemy.position.x < 0 - enemy.width) {
+      globalScoreSet.add(enemy.id)
+      player1.updateScore();
       enemy.readyForDeletion = true;
     }
   });
