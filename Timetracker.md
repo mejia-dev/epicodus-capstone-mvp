@@ -47,6 +47,7 @@
       * Change `globalScoreSet` declaration to `const` (line 15).
       * Change `blob` declaration to `const` (line 30).
       * Change `newEnemy` declaration to `const` (line 228).
+    * Looking into how to change two "any" declarations on the `blob` and `file` variables in the `handleAudioUpload` function.
 
 
 * 2024-04-28 - 4.68 hours total
