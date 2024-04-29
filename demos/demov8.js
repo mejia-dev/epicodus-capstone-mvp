@@ -64,18 +64,28 @@ class PlayerObj {
     // else
       // if key pressed
 
-    if (this.isGrounded) {
-      if (p1InputController.jump.pressed) {
+    // if (this.isGrounded) {
+    //   if (p1InputController.jump.pressed) {
+    //     this.velocity.y = -this.jumpHeight; 
+    //     this.canJumpDouble = true;
+    //     console.log("single")
+    //   }
+    // } else {
+    //   if (p1InputController.jump.pressed && this.canJumpDouble) {
+    //     this.velocity.y = -this.jumpHeight; 
+    //     this.canJumpDouble = false;
+    //     console.log("double")
+    //   }
+    // }
+
+    if (p1InputController.jump.pressed) {
+      if (this.isGrounded) {
         this.velocity.y = -this.jumpHeight; 
-        this.canJumpDouble = true;
-        console.log("single")
       }
-    } else {
-      if (p1InputController.jump.pressed && this.canJumpDouble) {
-        this.velocity.y = -this.jumpHeight; 
-        this.canJumpDouble = false;
-        console.log("double")
-      }
+    }
+
+    if (p1InputController.jump.pressed && this.velocity.y > 0) {
+      this.velocity.y = -this.jumpHeight; 
     }
 
     // if (p1InputController.jump.pressed) {
