@@ -32,6 +32,10 @@
     * Realized I had created the project without React. Recreated with React.
     * Began working on `EnemyObj.ts`. Tested changing updateSpawnedEnemies to handle awarding points, not enemy object. Confirmed this work and commited in this MVP repository to demov8. Will also do this on production build.
     * Begin working on `AudioHandler.ts`.
+  * 12pm PST - 1:05pm PST
+    * Lunch
+  * 1pm PST - 
+    * Continue working on `AudioHandler.ts`.
 
 
 * 2024-04-28 - 4.68 hours total
