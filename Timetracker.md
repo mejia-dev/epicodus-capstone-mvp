@@ -40,6 +40,7 @@
     * Add canvas initialization to `GlobalGameLogic.ts`.
     * Updating location of global variable imports and exports between `GlobalGameLogic.ts` and `GameRendering.tsx` since some things only get updated by one and read by the other.
     * Having some trouble passing data back from GlobalGameLogic to GameRendering whenever the scene is finished loading. May end up just turning this into one file if a solution can't be found.
+    * Refactor all game logic to happen in `GameRendering.tsx`. Confirmed game is playable.
 
 
 * 2024-04-28 - 4.68 hours total
