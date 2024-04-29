@@ -1,12 +1,12 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 69.49 hours (see time log below for more details)
+### Total Time Spent: 73.39 hours (see time log below for more details)
 
 
 ### Time Log:
 
-* 2024-04-29 -  hours total
-  * 8:06am PST - PST
+* 2024-04-29 - 3.9 hours total
+  * 8:06am PST - 12pm PST
     * Continue working on jump technique
       * Doing some more research on YouTube.
       * Attempt a new double jump functionality by checking for a velocity that is not 0. This seems to work better in most cases.
@@ -31,6 +31,7 @@
     * Added `PlayerObj.ts`.
     * Realized I had created the project without React. Recreated with React.
     * Began working on `EnemyObj.ts`. Tested changing updateSpawnedEnemies to handle awarding points, not enemy object. Confirmed this work and commited in this MVP repository to demov8. Will also do this on production build.
+    * Begin working on `AudioHandler.ts`.
 
 
 * 2024-04-28 - 4.68 hours total
