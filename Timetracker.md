@@ -18,6 +18,7 @@
     * Added fonts to HTML elements. Working on adding these to canvas.
     * Successfully add fonts to canvas using font-family declaration in stylesheet.
     * Adjust spacing of score and lives display.
+    * Make lives indicator turn red when lower than 2 lives remaining.
 
 
 * 2024-04-29 - 7.82 hours total
