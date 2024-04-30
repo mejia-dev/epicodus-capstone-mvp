@@ -10,6 +10,9 @@
     * Begin working on assets for game (sprites, sounds, etc.)
     * Change platform to white and make it thinner.
     * Add black background for game. Move black background rendering and canvas resetting into separate `resetCanvas` function.
+    * Adjust position of player to be more on the left.
+    * Change platform to be the same color as the audio visualizer, using a new function `updateGlobalAudioColor` and new variable `globalAudioColor`. Reduce width of platform.
+    * Clean up and reorganize code in `GameRendering.tsx`.
 
 
 * 2024-04-29 - 7.82 hours total
