@@ -31,6 +31,8 @@
     * Lunch
   * 1:07pm PST - 
     * Continue working on finding spritesheet for player and enemy
+      * Attempted to develop my own spritesheet but determined that this might take too much time.
+      * Started looking through https://craftpix.net/.
 
 
 * 2024-04-29 - 7.82 hours total
