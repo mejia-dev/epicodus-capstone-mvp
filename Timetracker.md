@@ -7,7 +7,7 @@
 
 * 2024-04-30 -  hours total
   * 7:56am PST - 
-    * Begin working on assets for game (sprites, sounds, etc.)
+    * Begin working on assets for game (sprites, sounds, etc.). Create `graphics-upgrade` branch.
     * Change platform to white and make it thinner.
     * Add black background for game. Move black background rendering and canvas resetting into separate `resetCanvas` function.
     * Adjust position of player to be more on the left.
@@ -25,6 +25,7 @@
       * Used the `.focus()` method on the `globalCanvas` object, but found that it still is not targeting correctly.
       * Ended up setting a tabIndex property on the canvas which allowed it to work as expected.
       * Confirmed that using the button and then pressing spacebar does not have adverse effects anymore.
+      * Remove canvas focus outline using CSS. This removes the white border around the object.
 
 
 * 2024-04-29 - 7.82 hours total
