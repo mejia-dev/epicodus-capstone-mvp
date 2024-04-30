@@ -39,6 +39,7 @@
     * Decided on using spritesheet from https://0x72.itch.io/16x16-robot-tileset.
     * Begin learning how to animate a spritesheet.
     * Working on determining which coordinates of the spritesheet needs to be targeted for each animation set.
+    * Working on scaling up sprites to be 50x50px since they are currently smaller.
 
 
 * 2024-04-29 - 7.82 hours total
