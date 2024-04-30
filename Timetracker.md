@@ -9,6 +9,8 @@
   * 7:56am PST - 
     * Begin working on assets for game (sprites, sounds, etc.)
     * Change platform to white and make it thinner.
+    * Add black background for game. Move black background rendering and canvas resetting into separate `resetCanvas` function.
+
 
 * 2024-04-29 - 7.82 hours total
   * 8:06am PST - 12pm PST
