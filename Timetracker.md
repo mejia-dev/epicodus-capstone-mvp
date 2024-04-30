@@ -27,6 +27,10 @@
       * Confirmed that using the button and then pressing spacebar does not have adverse effects anymore.
       * Remove canvas focus outline using CSS. This removes the white border around the object.
     * Begin brainstorming better player and enemy sprites.
+  * 12:01pm PST - 1:07pm PST
+    * Lunch
+  * 1:07pm PST - 
+    * Continue working on finding spritesheet for player and enemy
 
 
 * 2024-04-29 - 7.82 hours total
