@@ -15,6 +15,7 @@
     * Clean up and reorganize code in `GameRendering.tsx`.
     * Add loading message and auto-hide unneeded elements when loaded. Update CSS with "hidden" class and change the input element to use the button styling.
     * Add Change Track button. Set unused elements to be hidden after load.
+    * Added fonts to HTML elements. Working on adding these to canvas.
 
 
 * 2024-04-29 - 7.82 hours total
