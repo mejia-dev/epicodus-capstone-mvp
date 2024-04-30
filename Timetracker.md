@@ -13,6 +13,8 @@
     * Adjust position of player to be more on the left.
     * Change platform to be the same color as the audio visualizer, using a new function `updateGlobalAudioColor` and new variable `globalAudioColor`. Reduce width of platform.
     * Clean up and reorganize code in `GameRendering.tsx`.
+    * Add loading message and auto-hide unneeded elements when loaded. Update CSS with "hidden" class and change the input element to use the button styling.
+    * Add Change Track button. Set unused elements to be hidden after load.
 
 
 * 2024-04-29 - 7.82 hours total
