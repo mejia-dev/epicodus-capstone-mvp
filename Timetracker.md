@@ -20,6 +20,7 @@
     * Adjust spacing of score and lives display.
     * Make lives indicator turn red when lower than 2 lives remaining.
     * Add sound effect when player loses the game.
+    * Make header logo cycle colors in accordance with `globalAudioColor`.
 
 
 * 2024-04-29 - 7.82 hours total
