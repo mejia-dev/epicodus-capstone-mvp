@@ -33,6 +33,9 @@
     * Continue working on finding spritesheet for player and enemy
       * Attempted to develop my own spritesheet but determined that this might take too much time.
       * Started looking through https://craftpix.net/.
+      * Also exploring https://itch.io/game-assets/free
+      * Also exploring https://kenney.nl/assets
+      * Also exploring https://opengameart.org/
 
 
 * 2024-04-29 - 7.82 hours total
