@@ -1,11 +1,11 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 73.39 hours (see time log below for more details)
+### Total Time Spent: 77.31 hours (see time log below for more details)
 
 
 ### Time Log:
 
-* 2024-04-29 - 3.9 hours total
+* 2024-04-29 - 7.82 hours total
   * 8:06am PST - 12pm PST
     * Continue working on jump technique
       * Doing some more research on YouTube.
@@ -34,7 +34,7 @@
     * Begin working on `AudioHandler.ts`.
   * 12pm PST - 1:05pm PST
     * Lunch
-  * 1pm PST - 
+  * 1:05pm PST - 4:59pm PST
     * Continue working on `AudioHandler.ts`.
     * Remove `AudioHandler.ts` since it appears that many of these functions need to take place without import statements since they need to be applied directly to the variables in `GlobalGameLogic.ts`.
     * Add canvas initialization to `GlobalGameLogic.ts`.
