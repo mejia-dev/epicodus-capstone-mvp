@@ -41,6 +41,7 @@
     * Working on determining which coordinates of the spritesheet needs to be targeted for each animation set.
     * Working on scaling up sprites to be 50x50px since they are currently smaller.
     * After scaling sprite sheet, working on rendering frames of animation.
+    * Animation is not quite working as expected. Appears to be grabbing some data from the next frame in addition to the current frame, and also rendering a 0 frame.
 
 
 * 2024-04-29 - 7.82 hours total
