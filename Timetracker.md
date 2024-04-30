@@ -8,6 +8,7 @@
 * 2024-04-30 -  hours total
   * 7:56am PST - 
     * Begin working on assets for game (sprites, sounds, etc.)
+    * Change platform to white and make it thinner.
 
 * 2024-04-29 - 7.82 hours total
   * 8:06am PST - 12pm PST
