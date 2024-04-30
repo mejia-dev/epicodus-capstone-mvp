@@ -22,6 +22,9 @@
     * Add sound effect when player loses the game.
     * Make header logo cycle colors in accordance with `globalAudioColor`.
     * Noted a potential quality issue - when the play/pause button is pressed, that button is highlighted by default. This isn't a major issue, except that if the SPACE key is being used for jumping, it will pause the game again after playing. May need to change HTML focus.
+      * Used the `.focus()` method on the `globalCanvas` object, but found that it still is not targeting correctly.
+      * Ended up setting a tabIndex property on the canvas which allowed it to work as expected.
+      * Confirmed that using the button and then pressing spacebar does not have adverse effects anymore.
 
 
 * 2024-04-29 - 7.82 hours total
