@@ -21,6 +21,7 @@
     * Make lives indicator turn red when lower than 2 lives remaining.
     * Add sound effect when player loses the game.
     * Make header logo cycle colors in accordance with `globalAudioColor`.
+    * Noted a potential quality issue - when the play/pause button is pressed, that button is highlighted by default. This isn't a major issue, except that if the SPACE key is being used for jumping, it will pause the game again after playing. May need to change HTML focus.
 
 
 * 2024-04-29 - 7.82 hours total
