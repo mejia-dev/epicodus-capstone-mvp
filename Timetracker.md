@@ -40,6 +40,7 @@
     * Begin learning how to animate a spritesheet.
     * Working on determining which coordinates of the spritesheet needs to be targeted for each animation set.
     * Working on scaling up sprites to be 50x50px since they are currently smaller.
+    * After scaling sprite sheet, working on rendering frames of animation.
 
 
 * 2024-04-29 - 7.82 hours total
