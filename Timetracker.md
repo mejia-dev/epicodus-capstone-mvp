@@ -6,7 +6,7 @@
 ### Time Log:
 
 * 2024-04-30 -  hours total
-  * 7:56am PST - 
+  * 7:56am PST - 12:01pm PST
     * Begin working on assets for game (sprites, sounds, etc.). Create `graphics-upgrade` branch.
     * Change platform to white and make it thinner.
     * Add black background for game. Move black background rendering and canvas resetting into separate `resetCanvas` function.
