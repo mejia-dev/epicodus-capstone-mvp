@@ -26,6 +26,7 @@
       * Ended up setting a tabIndex property on the canvas which allowed it to work as expected.
       * Confirmed that using the button and then pressing spacebar does not have adverse effects anymore.
       * Remove canvas focus outline using CSS. This removes the white border around the object.
+    * Begin brainstorming better player and enemy sprites.
 
 
 * 2024-04-29 - 7.82 hours total
