@@ -5,6 +5,10 @@
 
 ### Time Log:
 
+* 2024-04-30 -  hours total
+  * 7:56am PST - 
+    * Begin working on assets for game (sprites, sounds, etc.)
+
 * 2024-04-29 - 7.82 hours total
   * 8:06am PST - 12pm PST
     * Continue working on jump technique
