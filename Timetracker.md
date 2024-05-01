@@ -45,6 +45,8 @@
     * Add working sprite animation for player.
     * Continue animating player after win condition is met so that it appears player is running off-screen.
     * Testing adjusting the visual offset to see if it makes the user experience better.
+      * Removing the offset entirely makes the beat hit at the left side of the screen.
+      * Somewhere in the 200 to 300 range makes the beat hit roughly at the player. Trying to find a more precise song to test with.
 
 
 * 2024-04-29 - 7.82 hours total
