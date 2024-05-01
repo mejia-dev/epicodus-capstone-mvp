@@ -29,7 +29,7 @@
     * Begin brainstorming better player and enemy sprites.
   * 12:01pm PST - 1:07pm PST
     * Lunch
-  * 1:07pm PST - 
+  * 1:07pm PST - 6:39pm PST
     * Continue working on finding spritesheet for player and enemy
       * Attempted to develop my own spritesheet but determined that this might take too much time.
       * Started looking through https://craftpix.net/.
@@ -51,6 +51,8 @@
     * Determined that offset should be set to 250ms in order for the sprite to line up with when the beat hits (200px position + 50px sprite width). Tested in multiple songs and confirmed this amount works well.
     * The offset appears to cause a little bit of the track to be left rendered on the win condition that does not go away. Trying to determine how to get rid of this.
       * Appears that globalRenderX stops incrementing for an unknown reason. Looking into this.
+      * Appears to stop incrementing if increase is lower than 250 for an unknown reason. Likely has to do with offset. Setting increase to 250 resolves the issue. 
+    * Finalize player running off screen.
 
 
 * 2024-04-29 - 7.82 hours total
