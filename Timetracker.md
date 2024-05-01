@@ -41,6 +41,8 @@
         * Appears that it is always returning as true in the brief period that the sprites move after the audio plays. This must be because `updateSpawnedEnemies()` is only called within a conditional loop checking for `globalAudioIsPlaying`, but would've assumed that the timing would be instantaneous. Must just still be processing a few frames of movement in the loop after the audio is paused. Will attempt to make this a requirement in the EnemyObj.
         * Export `globalAudioIsPlaying` from `GameRendering.tsx` and import into `EnemyObj.ts`. Set as a requirement for the position to update.
         * Still not working as expected.
+        * `drawLevel` pauses correctly. This appears to be because the rendering is based directly off of globalRenderX, which doesn't update when the game is paused, whereas EnemyObj uses actual position and moveSpeed variables which do calculations using globalRenderX and globalPreviousRenderX, but also rely on other math that will still move the Enemy even if globalRenderX doesn't necessarily update.
+        * Wondering if the enemy can be refactored to rely solely on globalRenderX. Something like "this.position.x = globalLevelData.length - globalRenderX" (pseudocode is more for conveying concept of a direct reliance on globalRenderX, unlikely that it would actually work). Looking into this.
       
 
 * 2024-04-30 - 11.48 hours total
