@@ -17,6 +17,7 @@
     * Reviewed ESLint and confirmed that the only error is with the `any` type for blob storage on line 36 of `GameRendering.tsx`, as already known. Will fix this bug later if there is time.
     * Began reviewing enemy spawning code.
     * In `EnemyObj`, refactor `updateMoveSpeed` method to be `moveToLeft` method instead of having the single line of movement code exist in the `requestUpdate` method.
+    * Remove `globalEnemySpawnInterval` variable from `GameRendering.tsx`. It is unused. Tested with three different audio tracks and confirmed that the results are still the same.
       
 
 * 2024-04-30 - 11.48 hours total
