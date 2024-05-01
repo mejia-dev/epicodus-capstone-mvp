@@ -65,6 +65,7 @@
       * Will work on modifying the enemy to ensure consistency in spawning. It seems to be better since the timer has been adjusted, but it's still not entirely consistent, and sometimes the enemy does not generate on the audio spikes. 
       * Will potentially find sprite or texture for enemy.
       * Will create a how-to-play menu.
+      * Will update README.
     
 
 
