@@ -16,6 +16,7 @@
     * Created `enemy-upgrade` branch and cloned down.
     * Reviewed ESLint and confirmed that the only error is with the `any` type for blob storage on line 36 of `GameRendering.tsx`, as already known. Will fix this bug later if there is time.
     * Began reviewing enemy spawning code.
+    * In `EnemyObj`, refactor `updateMoveSpeed` method to be `moveToLeft` method instead of having the single line of movement code exist in the `requestUpdate` method.
       
 
 * 2024-04-30 - 11.48 hours total
