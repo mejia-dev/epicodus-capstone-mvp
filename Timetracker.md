@@ -80,6 +80,8 @@
       * Working on filtering objects out of array based on unique object properties.
       * It appears that there are still two of the same object at any given time, and that one reappears in the globalEnemySpawnedList even after one dies.
       * This may be due to how often `checkEnemySpawn` is called. This was originally meant to check at each globalRenderX change, but this may not be necessary anymore given that spawning is handled differently now. Going to attempt to make a secondary function that preloads all enemies and will see how this goes.
+      * Secondary function works much better. Only issue now is that it is all IDs are unique because they are generated at the same time. However, now that all x positions are unique, we can add the x positions to the globalScoreSet instead.
+      * Changing globalScoreSet to accept numbers resolves the issue and score increments as expected now.
       
 
 * 2024-04-30 - 11.48 hours total
