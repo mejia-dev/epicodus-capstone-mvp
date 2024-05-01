@@ -8,8 +8,8 @@
   * Update README.
   * Final run of ESLint.
 
-  * Enemy individualization (if multiple enemies at coordinates, just use one)
-  * Player gets a point for the enemy regardless of whether or not the player was hit by the enemy.
+  * ~~Enemy individualization (if multiple enemies at coordinates, just use one)~~
+  * ~~Player gets a point for the enemy regardless of whether or not the player was hit by the enemy.~~
   * Potentially find sprite or texture for enemy.
 
 
@@ -82,6 +82,7 @@
       * This may be due to how often `checkEnemySpawn` is called. This was originally meant to check at each globalRenderX change, but this may not be necessary anymore given that spawning is handled differently now. Going to attempt to make a secondary function that preloads all enemies and will see how this goes.
       * Secondary function works much better. Only issue now is that it is all IDs are unique because they are generated at the same time. However, now that all x positions are unique, we can add the x positions to the globalScoreSet instead.
       * Changing globalScoreSet to accept numbers resolves the issue and score increments as expected now.
+      * Tweaking the amount of enemies spawned in large datasets. 
       
 
 * 2024-04-30 - 11.48 hours total
