@@ -46,6 +46,7 @@
         * Realized that the main issue is that the enemy currently doesn't have any knowledge of its surroundings, it is only told to update.
         * Completed first working attempt. It seems that it is not affected by deltaTime at all though, so will work on implementing that.
         * Realizing that the enemy might not need to be the one moving. Instead of moving the enemy through the level, we need to move the level through the enemy (similar to how the player behaves statically). Refactoring.
+        * Implementing rudimentary system where player stays at one x position. May be able to pass this in via the x spawn position from `checkEnemySpawn()`.
       
 
 * 2024-04-30 - 11.48 hours total
