@@ -70,6 +70,7 @@
   * 1:10pm PST - 
     * Will first work on resolving enemy scoring as mentioned above.
     * Running into some issues determining what exactly is causing the scoring inconsistency.
+      * After breaking down the code more, realized that the issue is actually just due to the fact that the game is spawning multiple enemies for each position. Will turn globalEnemySpawnedList into a Set instead using the unique id.
       
 
 * 2024-04-30 - 11.48 hours total
