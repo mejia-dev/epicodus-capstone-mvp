@@ -58,7 +58,8 @@
     * Successfully add a "Retry Track" option at the end of level either due to win or loss.
     * Noticed some bugs with Retry Track where HUD keeps rendering regardless of scores being reset.
       * Putting the `resetGame` method in a timeout for 500ms resolves the issue.
-    * Add reset method to player object
+    * Add reset method to player object.
+    * Make player object's sprite animations smooth using the deltaTimeMultiplier.
 
 
 * 2024-04-29 - 7.82 hours total
