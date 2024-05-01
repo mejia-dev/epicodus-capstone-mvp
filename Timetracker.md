@@ -78,6 +78,7 @@
       * May try to make an instance set in the EnemyObj instead and manage set updates there.
       * Instance list did not work as expected, since each enemy would've had to carry the list based on how class is set up. 
       * Working on filtering objects out of array based on unique object properties.
+      * It appears that there are still two of the same object at any given time, and that one reappears in the globalEnemySpawnedList even after one dies.
       
 
 * 2024-04-30 - 11.48 hours total
