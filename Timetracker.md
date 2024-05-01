@@ -24,7 +24,7 @@
         * Appears to be due to the enforcement that `globalEnemyTimer` be set to `globalEnemyTimerPausedState` in `checkEnemySpawn()`. 
         * Added a line to set `globalEnemyTimerPausedState` to 0, since this should set globalEnemyTimer to the same. Testing.
         * Confirmed that this works as expected. Committimg change.
-    * Also noticed that pausing the game seems to throw off the enemy spawn times. 
+    * Also noticed that pausing the game seems to throw off the enemy spawn times. This will likely get addressed in the enemy spawning refactor since the spawn positions seem to be off already.
       
 
 * 2024-04-30 - 11.48 hours total
