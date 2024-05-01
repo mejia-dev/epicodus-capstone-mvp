@@ -66,6 +66,7 @@
       * Will potentially find sprite or texture for enemy.
       * Will create a how-to-play menu.
       * Will update README.
+      * Re-run ESLint.
     * Merged `graphics-upgrade` branch into `main` and deleted `graphics-upgrade` branch.
 
 
