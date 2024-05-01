@@ -74,6 +74,8 @@
       * Even after converting to a Set, duplicate objects can be added. 
       * Did some research. Appears that object uniqueness is not checked for in Sets.
       * Attempting to JSON.stringify() each enemy.
+      * This stringified properly, but the objects did not seem to retain that they are objects. Kept getting errors such as `parsedEnemy.requestUpdate is not a function`.
+      * May try to make an instance set in the EnemyObj instead and manage set updates there.
       
 
 * 2024-04-30 - 11.48 hours total
