@@ -51,6 +51,8 @@
           * Tested and confirmed that it is not the enemy's `this.position.x` or `this.xPositionOnTrack`. Looks like it may be the call of `globalLevelData[this.xPositionOnTrack].x`, but not sure why this would be undefined.
           * Noted that pausing the game does pause the enemies now though, so this solution should work once the variable issue gets sorted out.
           * Appears that the issue occurs when near the second enemy. Not sure if this is relevant or just coincidence.
+          * Appears that with longer songs, more enemies can be spawned before crash. May be exceeding the globalLevelData. 
+          * Attempting to just use `this.xPositionOnTrack` for the calculation instead of `globalLevelData[this.xPositionOnTrack].x` since this may have been redundant. Testing.
       
 
 * 2024-04-30 - 11.48 hours total
