@@ -3,11 +3,15 @@
 ### Total Time Spent: 88.79 hours (see time log below for more details)
 
 ### To-Do List:
-  * Adjust enemy spawning.
-  * Potentially find sprite or texture for enemy.
+  * ~~Adjust enemy spawning.~~
   * Create a how-to-play menu.
   * Update README.
   * Final run of ESLint.
+
+  * Enemy individualization (if multiple enemies at coordinates, just use one)
+  * Player gets a point for the enemy regardless of whether or not the player was hit by the enemy.
+  * Potentially find sprite or texture for enemy.
+
 
 ### Time Log:
 
@@ -58,9 +62,13 @@
           * Sucessfully added delta time. Interestingly, this was very close to my original prediction for the formula stated above.
         * Cleaning up code.
         * Tested game again and confirmed it still works as expected.
-        * Removed some exports from `GameRendering.tsx` that are no longer needed and kept them locally scoped.
-          * Completed removed `globalPreviousRenderX` since calculating moveSpeed was the only thing it was doing for the enemy, which isn't relevant anymore.
+      * Removed some exports from `GameRendering.tsx` that are no longer needed and kept them locally scoped.
+      * Completed removed `globalPreviousRenderX` since calculating moveSpeed was the only thing it was doing for the enemy, which isn't relevant anymore.
         * Noted that the player gets a point for the enemy regardless of whether or not the player was hit by the enemy. Will also need to determine if enemy timer should still be used. Thinking probably not, but will need to test more.
+  * 12:06pm PST - 1:10pm PST
+    * Lunch
+  * 1:10pm PST - 
+    * Will first work on resolving enemy scoring as mentioned above.
       
 
 * 2024-04-30 - 11.48 hours total
