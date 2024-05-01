@@ -53,6 +53,7 @@
           * Appears that the issue occurs when near the second enemy. Not sure if this is relevant or just coincidence.
           * Appears that with longer songs, more enemies can be spawned before crash. May be exceeding the globalLevelData. 
           * Attempting to just use `this.xPositionOnTrack` for the calculation instead of `globalLevelData[this.xPositionOnTrack].x` since this may have been redundant. Testing.
+          * This works for first sample track! Testing with others to ensure it works consistently.
       
 
 * 2024-04-30 - 11.48 hours total
