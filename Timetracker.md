@@ -26,6 +26,7 @@
         * Confirmed that this works as expected. Committimg change.
     * Also noticed that pausing the game seems to throw off the enemy spawn times. This will likely get addressed in the enemy spawning refactor since the spawn positions seem to be off already.
     * Began testing spawning all enemies from the globalEnemyPositionList to ensure that all enemy positions are consistent on each playthrough, and confirm suspicions that it's just the spawning method acting spontaneously.
+      * Interestingly, it seems as though large sections of enemies spawn. 
       
 
 * 2024-04-30 - 11.48 hours total
