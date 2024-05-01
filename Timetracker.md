@@ -60,6 +60,7 @@
       * Putting the `resetGame` method in a timeout for 500ms resolves the issue.
     * Add reset method to player object.
     * Make player object's sprite animations smooth using the deltaTimeMultiplier.
+    * Create custom page icon and add to index.html. Change page title.
 
 
 * 2024-04-29 - 7.82 hours total
