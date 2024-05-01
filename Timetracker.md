@@ -1,11 +1,11 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 77.31 hours (see time log below for more details)
+### Total Time Spent: 88.79 hours (see time log below for more details)
 
 
 ### Time Log:
 
-* 2024-04-30 -  hours total
+* 2024-04-30 - 11.48 hours total
   * 7:56am PST - 12:01pm PST
     * Begin working on assets for game (sprites, sounds, etc.). Create `graphics-upgrade` branch.
     * Change platform to white and make it thinner.
@@ -53,7 +53,7 @@
       * Appears that globalRenderX stops incrementing for an unknown reason. Looking into this.
       * Appears to stop incrementing if increase is lower than 250 for an unknown reason. Likely has to do with offset. Setting increase to 250 resolves the issue. 
     * Finalize player running off screen.
-  * 8:15pm PST - 
+  * 8:15pm PST - 10:07pm PST
     * Looking into adding a restart button.
     * Successfully add a "Retry Track" option at the end of level either due to win or loss.
     * Noticed some bugs with Retry Track where HUD keeps rendering regardless of scores being reset.
@@ -66,7 +66,7 @@
       * Will potentially find sprite or texture for enemy.
       * Will create a how-to-play menu.
       * Will update README.
-    
+    * Merged `graphics-upgrade` branch into `main` and deleted `graphics-upgrade` branch.
 
 
 
