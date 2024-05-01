@@ -69,6 +69,7 @@
     * Lunch
   * 1:10pm PST - 
     * Will first work on resolving enemy scoring as mentioned above.
+    * Running into some issues determining what exactly is causing the scoring inconsistency.
       
 
 * 2024-04-30 - 11.48 hours total
