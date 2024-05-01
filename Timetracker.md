@@ -54,7 +54,8 @@
       * Appears to stop incrementing if increase is lower than 250 for an unknown reason. Likely has to do with offset. Setting increase to 250 resolves the issue. 
     * Finalize player running off screen.
   * 8:15pm PST - 
-    * Looking into adding a restart button
+    * Looking into adding a restart button.
+    * Successfully add a "Retry Track" option at the end of level either due to win or loss.
 
 
 * 2024-04-29 - 7.82 hours total
