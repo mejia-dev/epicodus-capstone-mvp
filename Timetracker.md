@@ -76,6 +76,8 @@
       * Attempting to JSON.stringify() each enemy.
       * This stringified properly, but the objects did not seem to retain that they are objects. Kept getting errors such as `parsedEnemy.requestUpdate is not a function`.
       * May try to make an instance set in the EnemyObj instead and manage set updates there.
+      * Instance list did not work as expected, since each enemy would've had to carry the list based on how class is set up. 
+      * Working on filtering objects out of array based on unique object properties.
       
 
 * 2024-04-30 - 11.48 hours total
