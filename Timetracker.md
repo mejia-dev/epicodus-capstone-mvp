@@ -61,6 +61,12 @@
     * Add reset method to player object.
     * Make player object's sprite animations smooth using the deltaTimeMultiplier.
     * Create custom page icon and add to index.html. Change page title.
+    * For tomorrow, to ensure project is polished before adding stretch goal features:
+      * Will work on modifying the enemy to ensure consistency in spawning. It seems to be better since the timer has been adjusted, but it's still not entirely consistent, and sometimes the enemy does not generate on the audio spikes. 
+      * Will potentially find sprite or texture for enemy.
+      * Will create a how-to-play menu.
+    
+
 
 
 * 2024-04-29 - 7.82 hours total
