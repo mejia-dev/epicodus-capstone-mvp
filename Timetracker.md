@@ -49,6 +49,8 @@
         * Implementing rudimentary system where player stays at one x position. May be able to pass this in via the x spawn position from `checkEnemySpawn()`.
         * Appears to be working to some extent, but there is an x value that keeps going undefined. Not currently sure which x value it is or why this is happening. 
           * Tested and confirmed that it is not the enemy's `this.position.x` or `this.xPositionOnTrack`. Looks like it may be the call of `globalLevelData[this.xPositionOnTrack].x`, but not sure why this would be undefined.
+          * Noted that pausing the game does pause the enemies now though, so this solution should work once the variable issue gets sorted out.
+          * Appears that the issue occurs when near the second enemy. Not sure if this is relevant or just coincidence.
       
 
 * 2024-04-30 - 11.48 hours total
