@@ -2,8 +2,21 @@
 
 ### Total Time Spent: 88.79 hours (see time log below for more details)
 
+### To-Do List:
+  * Adjust enemy spawning.
+  * Potentially find sprite or texture for enemy.
+  * Create a how-to-play menu.
+  * Update README.
+  * Final run of ESLint.
 
 ### Time Log:
+
+* 2024-05-01 -  hours total
+  * 8am PST - 
+    * Created `enemy-upgrade` branch and cloned down.
+    * Reviewed ESLint and confirmed that the only error is with the `any` type for blob storage on line 36 of `GameRendering.tsx`, as already known. Will fix this bug later if there is time.
+    * Began reviewing enemy spawning code.
+      
 
 * 2024-04-30 - 11.48 hours total
   * 7:56am PST - 12:01pm PST
