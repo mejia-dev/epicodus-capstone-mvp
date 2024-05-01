@@ -43,6 +43,7 @@
     * After scaling sprite sheet, working on rendering frames of animation.
     * Animation is not quite working as expected. Appears to be grabbing some data from the next frame in addition to the current frame, and also rendering a 0 frame.
     * Add working sprite animation for player.
+    * Continue animating player after win condition is met so that it appears player is running off-screen.
 
 
 * 2024-04-29 - 7.82 hours total
