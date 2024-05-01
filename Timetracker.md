@@ -79,6 +79,7 @@
       * Instance list did not work as expected, since each enemy would've had to carry the list based on how class is set up. 
       * Working on filtering objects out of array based on unique object properties.
       * It appears that there are still two of the same object at any given time, and that one reappears in the globalEnemySpawnedList even after one dies.
+      * This may be due to how often `checkEnemySpawn` is called. This was originally meant to check at each globalRenderX change, but this may not be necessary anymore given that spawning is handled differently now. Going to attempt to make a secondary function that preloads all enemies and will see how this goes.
       
 
 * 2024-04-30 - 11.48 hours total
