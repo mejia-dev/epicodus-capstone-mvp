@@ -43,6 +43,8 @@
         * Still not working as expected.
         * `drawLevel` pauses correctly. This appears to be because the rendering is based directly off of globalRenderX, which doesn't update when the game is paused, whereas EnemyObj uses actual position and moveSpeed variables which do calculations using globalRenderX and globalPreviousRenderX, but also rely on other math that will still move the Enemy even if globalRenderX doesn't necessarily update.
         * Wondering if the enemy can be refactored to rely solely on globalRenderX. Something like "this.position.x = globalLevelData.length - globalRenderX" (pseudocode is more for conveying concept of a direct reliance on globalRenderX, unlikely that it would actually work). Looking into this.
+        * Realized that the main issue is that the enemy currently doesn't have any knowledge of its surroundings, it is only told to update.
+        * Completed first working attempt. It seems that it is not affected by deltaTime at all though, so will work on implementing that.
       
 
 * 2024-04-30 - 11.48 hours total
