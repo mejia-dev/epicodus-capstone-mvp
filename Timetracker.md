@@ -37,6 +37,10 @@
         * Enemies still appear to be moving. Wondering if this is due to the forEach loop running even after the pause.
         * Placed the conditional *within* the forEach loop and tested again.
         * Still not working. Moved other if statements (collision checks) outside of the conditional to reduce processing time. Testing again.
+        * Still failed. Attempting to console.log `globalAudioIsPlaying` in the loop to see if something is being missed.
+        * Appears that it is always returning as true in the brief period that the sprites move after the audio plays. This must be because `updateSpawnedEnemies()` is only called within a conditional loop checking for `globalAudioIsPlaying`, but would've assumed that the timing would be instantaneous. Must just still be processing a few frames of movement in the loop after the audio is paused. Will attempt to make this a requirement in the EnemyObj.
+        * Export `globalAudioIsPlaying` from `GameRendering.tsx` and import into `EnemyObj.ts`. Set as a requirement for the position to update.
+        * Still not working as expected.
       
 
 * 2024-04-30 - 11.48 hours total
