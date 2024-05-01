@@ -28,6 +28,9 @@
     * Began testing spawning all enemies from the globalEnemyPositionList to ensure that all enemy positions are consistent on each playthrough, and confirm suspicions that it's just the spawning method acting spontaneously.
       * Interestingly, it seems as though large sections of enemies spawn. The enemy spawn blocks *do* always occur on an actual beat, but it appears that they almost have a "tail" of enemies after that. This would explain why sometimes the enemies spawn in off the beat, since the game *is* spawning in one of the enemies for that sequence, just not necessarily the one on the beat.
       * Confirmed that enemies do spawn consistently between rounds and page reloads. With this information, the only thing that likely needs to be changed is figuring out a way to make sure that an enemy will spawn on the beat every time.
+      * Noted that when pausing the game, enemies visually pause, but their movement does not pause, such that when the game is resumed, the enemies are already past the player.
+      * Upon playing a different track, noted that the enemies may be delayed by a small period of time, since there was a large spike at the start of the audio, but the enemies appeared after (perhaps the 250ms offset is responsible?).
+    * This gives enough evidence for now. Will look into some of these things and start revising.
       
 
 * 2024-04-30 - 11.48 hours total
