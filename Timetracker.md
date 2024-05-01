@@ -53,6 +53,8 @@
       * Appears that globalRenderX stops incrementing for an unknown reason. Looking into this.
       * Appears to stop incrementing if increase is lower than 250 for an unknown reason. Likely has to do with offset. Setting increase to 250 resolves the issue. 
     * Finalize player running off screen.
+  * 8:15pm PST - 
+    * Looking into adding a restart button
 
 
 * 2024-04-29 - 7.82 hours total
