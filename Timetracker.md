@@ -18,6 +18,9 @@
     * Began reviewing enemy spawning code.
     * In `EnemyObj`, refactor `updateMoveSpeed` method to be `moveToLeft` method instead of having the single line of movement code exist in the `requestUpdate` method.
     * Remove `globalEnemySpawnInterval` variable from `GameRendering.tsx`. It is unused. Tested with three different audio tracks and confirmed that the results are still the same.
+    * Due to console.logging `globalEnemyTimer`, noted that if the end of the track is reached, this variable is not getting reset if the player restarts the level, leading to inconsistent enemy spawn times between the two versions of the level.
+      * Added a line in `resetGame()` to set this back to 0. Testing.
+        * This does not resolve the issue. Looking into it.
       
 
 * 2024-04-30 - 11.48 hours total
