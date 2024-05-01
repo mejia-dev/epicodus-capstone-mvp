@@ -45,6 +45,7 @@
         * Wondering if the enemy can be refactored to rely solely on globalRenderX. Something like "this.position.x = globalLevelData.length - globalRenderX" (pseudocode is more for conveying concept of a direct reliance on globalRenderX, unlikely that it would actually work). Looking into this.
         * Realized that the main issue is that the enemy currently doesn't have any knowledge of its surroundings, it is only told to update.
         * Completed first working attempt. It seems that it is not affected by deltaTime at all though, so will work on implementing that.
+        * Realizing that the enemy might not need to be the one moving. Instead of moving the enemy through the level, we need to move the level through the enemy (similar to how the player behaves statically). Refactoring.
       
 
 * 2024-04-30 - 11.48 hours total
