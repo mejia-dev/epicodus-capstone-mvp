@@ -49,6 +49,8 @@
       * Somewhere in the 200 to 300 range makes the beat hit roughly at the player. Trying to find a more precise song to test with.
       * Somewhere around 700 makes the beat hit near the right side of the screen, as if the played beat is spawning out of the side of the screen.
     * Determined that offset should be set to 250ms in order for the sprite to line up with when the beat hits (200px position + 50px sprite width). Tested in multiple songs and confirmed this amount works well.
+    * The offset appears to cause a little bit of the track to be left rendered on the win condition that does not go away. Trying to determine how to get rid of this.
+      * Appears that globalRenderX stops incrementing for an unknown reason. Looking into this.
 
 
 * 2024-04-29 - 7.82 hours total
