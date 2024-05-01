@@ -31,6 +31,12 @@
       * Noted that when pausing the game, enemies visually pause, but their movement does not pause, such that when the game is resumed, the enemies are already past the player.
       * Upon playing a different track, noted that the enemies may be delayed by a small period of time, since there was a large spike at the start of the audio, but the enemies appeared after (perhaps the 250ms offset is responsible?).
     * This gives enough evidence for now. Will look into some of these things and start revising.
+      * Starting with enemies moving after pause.
+        * Console logging the EnemyObj's `moveToLeft()` method shows that the enemy does keep moving while the game is paused, but stops whenever it hits the left canvas side (as expected).
+        * In `updateSpawnedEnemies()`, putting the "forEach enemy requestUpdate" loop into an if statement conditional on `globalAudioIsPlaying`. Testing.
+        * Enemies still appear to be moving. Wondering if this is due to the forEach loop running even after the pause.
+        * Placed the conditional *within* the forEach loop and tested again.
+        * Still not working. Moved other if statements (collision checks) outside of the conditional to reduce processing time. Testing again.
       
 
 * 2024-04-30 - 11.48 hours total
