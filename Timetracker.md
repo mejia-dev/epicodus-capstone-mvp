@@ -12,7 +12,7 @@
 ### Time Log:
 
 * 2024-05-01 -  hours total
-  * 8am PST - 
+  * 8am PST - 12:06pm PST
     * Created `enemy-upgrade` branch and cloned down.
     * Reviewed ESLint and confirmed that the only error is with the `any` type for blob storage on line 36 of `GameRendering.tsx`, as already known. Will fix this bug later if there is time.
     * Began reviewing enemy spawning code.
