@@ -54,6 +54,9 @@
           * Appears that with longer songs, more enemies can be spawned before crash. May be exceeding the globalLevelData. 
           * Attempting to just use `this.xPositionOnTrack` for the calculation instead of `globalLevelData[this.xPositionOnTrack].x` since this may have been redundant. Testing.
           * This works for first sample track! Testing with others to ensure it works consistently.
+          * Confirmed it works across several different tracks.
+          * Sucessfully added delta time.
+        * Cleaning up code.
       
 
 * 2024-04-30 - 11.48 hours total
