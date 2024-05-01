@@ -55,8 +55,12 @@
           * Attempting to just use `this.xPositionOnTrack` for the calculation instead of `globalLevelData[this.xPositionOnTrack].x` since this may have been redundant. Testing.
           * This works for first sample track! Testing with others to ensure it works consistently.
           * Confirmed it works across several different tracks.
-          * Sucessfully added delta time.
+          * Sucessfully added delta time. Interestingly, this was very close to my original prediction for the formula stated above.
         * Cleaning up code.
+        * Tested game again and confirmed it still works as expected.
+        * Removed some exports from `GameRendering.tsx` that are no longer needed and kept them locally scoped.
+          * Completed removed `globalPreviousRenderX` since calculating moveSpeed was the only thing it was doing for the enemy, which isn't relevant anymore.
+        * Noted that the player gets a point for the enemy regardless of whether or not the player was hit by the enemy. Will also need to determine if enemy timer should still be used. Thinking probably not, but will need to test more.
       
 
 * 2024-04-30 - 11.48 hours total
