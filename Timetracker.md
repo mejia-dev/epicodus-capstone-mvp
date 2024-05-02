@@ -12,6 +12,12 @@
 
 ### Time Log:
 
+* 2024-05-02 - hours total
+  * 7:48am PST - pm PST
+    * Created `info-and-how-to` branch and cloned down.
+    * Began working on README.
+
+
 * 2024-05-01 - 12.46 hours total
   * 8am PST - 12:06pm PST
     * Created `enemy-upgrade` branch and cloned down.
