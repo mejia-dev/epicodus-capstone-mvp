@@ -20,7 +20,7 @@
     * Scrum
   * 9:15 - 9:45am PST
     * Typing out an interview question I was asked (as well as my answer) for the benefit of my Epicodus cohort.
-  * 9:45am PST - 
+  * 9:45am PST - 12:51pm PST
     * Continue working on README.
     * Continue styling README
     * Add links to my other repositories in README
@@ -28,6 +28,11 @@
     * Finalize setup/install instructions
     * Add separate LICENSE.txt file.
     * Add logo and render logo in README.
+    * Merge `info-and-how-to` branch into `main`. Deleted `info-and-how-to` branch.
+    * Updated my Epicodus Capstone Gallery entry.
+  * 12:51pm PST - 
+    * Lunch
+
 
 
 * 2024-05-01 - 12.46 hours total
