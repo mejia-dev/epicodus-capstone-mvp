@@ -95,6 +95,9 @@
       * Fix bug where enemies do not spawn on Retry Track. `resetGame()` now clears `globalEnemySpawnedList` and then runs `preLoadEnemies()` again.
       * Noted that `globalGravity` export is only used in one line of code in `PlayerObj`. Moved variable there instead since no other part of the game is likely ever going to deal with gravity globally.
       * Gravity of 2 is too much and barely playable. Gravity of .8 was the old default and is fine for levels with less enemies, but it makes precision jumps difficult. 1.5 seems workable but will keep testing. 1.3 feels better and is less heavy. 1.1 is too weightless.
+      * Determined that 1.3 feels right.
+      * Will look into changing the way that the audio track is generated. Curious if there's a way to get only the "beats" out of the audio file.
+      * Still researching beat analysis methods.
       
 
 * 2024-04-30 - 11.48 hours total
