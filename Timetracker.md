@@ -7,6 +7,7 @@
   * Create a how-to-play menu.
   * Update README.
   * Final run of ESLint.
+  * Ensure all variables are statically typed
 
   * ~~Enemy individualization (if multiple enemies at coordinates, just use one)~~
   * ~~Player gets a point for the enemy regardless of whether or not the player was hit by the enemy.~~
@@ -86,19 +87,24 @@
       * Added a `reduceEnemiesByNThousand()` method that gets called as part of the `preLoadEnemies()` method for sets larger than 10000 and 5000 respectively.
       * Also added a check for 2000.
       * Everything appears to be functioning now.
-      * Noted that on some tracks, large clusters of enemies can lead to some difficulty jumping over them without getting hit. A few thoughts on how to fix this:
-        * Do a check in pre-rendering to see if there are any x positions that are close to each other (this would likely be a long loop which isn't optimal -- foreach xPos, check the next xPos after it, if they are within close range to each other, remove the second one).
-        * Increase player health in relation to number of enemies spawned (maybe set lives to 5% of total enemies, minimum of 3).
-        * Add power-ups to restore health
-        * Make invincibility last longer
-      * Testing adjusting the gravity instead so that player falls back faster which makes for better precision jumping.
-      * Fix bug where enemies do not spawn on Retry Track. `resetGame()` now clears `globalEnemySpawnedList` and then runs `preLoadEnemies()` again.
-      * Noted that `globalGravity` export is only used in one line of code in `PlayerObj`. Moved variable there instead since no other part of the game is likely ever going to deal with gravity globally.
-      * Gravity of 2 is too much and barely playable. Gravity of .8 was the old default and is fine for levels with less enemies, but it makes precision jumps difficult. 1.5 seems workable but will keep testing. 1.3 feels better and is less heavy. 1.1 is too weightless.
-      * Determined that 1.3 feels right.
-      * Will look into changing the way that the audio track is generated. Curious if there's a way to get only the "beats" out of the audio file.
-      * Still researching beat analysis methods.
-      * Not finding many good ways to go about this. Will look into it more later.
+    * Noted that on some tracks, large clusters of enemies can lead to some difficulty jumping over them without getting hit. A few thoughts on how to fix this:
+      * Do a check in pre-rendering to see if there are any x positions that are close to each other (this would likely be a long loop which isn't optimal -- foreach xPos, check the next xPos after it, if they are within close range to each other, remove the second one).
+      * Increase player health in relation to number of enemies spawned (maybe set lives to 5% of total enemies, minimum of 3).
+      * Add power-ups to restore health
+      * Make invincibility last longer
+    * Testing adjusting the gravity instead so that player falls back faster which makes for better precision jumping.
+    * Fix bug where enemies do not spawn on Retry Track. `resetGame()` now clears `globalEnemySpawnedList` and then runs `preLoadEnemies()` again.
+    * Noted that `globalGravity` export is only used in one line of code in `PlayerObj`. Moved variable there instead since no other part of the game is likely ever going to deal with gravity globally.
+    * Gravity of 2 is too much and barely playable. Gravity of .8 was the old default and is fine for levels with less enemies, but it makes precision jumps difficult. 1.5 seems workable but will keep testing. 1.3 feels better and is less heavy. 1.1 is too weightless.
+    * Determined that 1.3 feels right.
+    * Will look into changing the way that the audio track is generated. Curious if there's a way to get only the "beats" out of the audio file.
+    * Still researching beat analysis methods.
+    * Not finding many good ways to go about this. Will look into it more later.
+  * 8:48pm PST - pm PST
+    * Ensure all variables are statically typed except for `blob`.
+    * Continue working on making enemy spacing fair.
+    * Determined that I could add a new method in the position generator (`createLevelData`) that declares a `lastEnemyXpos` variable, then only allows enemies to be added if their x position value is greater than that `lastEnemyXPos` plus a predetermined integer. If true, the `lastEnemyXPos` will update, ensuring that the enemies are spaced out evenly.
+      * Tested this and it appears to be working as desired. Tweaking it now.
       
 
 * 2024-04-30 - 11.48 hours total
