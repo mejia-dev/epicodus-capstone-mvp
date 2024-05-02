@@ -16,6 +16,7 @@
   * 7:48am PST - pm PST
     * Created `info-and-how-to` branch and cloned down.
     * Began working on README.
+    * Add basic README structure.
 
 
 * 2024-05-01 - 12.46 hours total
