@@ -36,6 +36,7 @@
     * Created `enemy-graphic-update` branch and cloned down.
     * Working on converting the square into a triangle ("spike").
     * Enemy renders as a triangle, but is hovering above the track for some reason. Looking into it.
+    * Make enemies render in the middle of the audio spike now, not to the right like they were previously.
 
 
 
