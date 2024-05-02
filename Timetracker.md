@@ -114,7 +114,8 @@
         * After some more research, it appears that this was close but should actually be `const enemyReducer: number = globalEnemySpawnedList.length / maxEnemyLimit;`, as this returns a decimal greater than 1. Can use `Math.round` on this to convert it to a larger number.
           * Also changed `maxEnemyLimit` to use `Math.round` instead of `Math.ceil`.
         * Got the reducer working. Noted that upon playing the adjusted levels, they feel a bit boring because each jump is spaced out relatively evenly (due to removing 1 enemy every N point in the array). May need to do the mass bulk thousands-place reducers first, then worry about the limit after that.
-        * Running the thousands-reducers first is not fixing the issue. Attempting to increase the maxEnemyLimit from 20 enemies per section to 30.
+        * Running the thousands-reducers first is not fixing the issue. Attempting to increase the `maxEnemyLimit` from 20 enemies per section to 30. This did not work as desired, longer songs still feel boring.
+        * Ended up increasing the `lastEnemyXPos` checker to be 400 instead of 300, which seemed to do a lot for making the jumps manageable without instantly becoming too easy. Temporarily disabled the `maxEnemyLimit` entirely to test and confirmed that it is a pretty good amount. Longer tracks are still *slightly* too difficult, but nowhere near what they used to be, and could easily be fixed by adding a few more lives or similar easy fix.
       
 
 * 2024-04-30 - 11.48 hours total
