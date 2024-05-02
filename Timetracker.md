@@ -34,7 +34,8 @@
     * Lunch + appointment
   * 2:09pm PST - pm PST
     * Created `enemy-graphic-update` branch and cloned down.
-    * Working on converting the square into a triangle ("spike")
+    * Working on converting the square into a triangle ("spike").
+    * Enemy renders as a triangle, but is hovering above the track for some reason. Looking into it.
 
 
 
