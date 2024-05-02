@@ -17,8 +17,10 @@
     * Created `info-and-how-to` branch and cloned down.
     * Began working on README.
     * Add basic README structure.
-  * 9am PST - am PST
+  * 9am PST - 9:15am PST
     * Scrum
+  * 9:15 - 9:45am PST
+    * Typing out an interview question I was asked (as well as my answer) for the benefit of my Epicodus cohort.
 
 
 * 2024-05-01 - 12.46 hours total
