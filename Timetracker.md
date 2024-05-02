@@ -1,6 +1,6 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 88.79 hours (see time log below for more details)
+### Total Time Spent: 101.25 hours (see time log below for more details)
 
 ### To-Do List:
   * Create a how-to-play menu.
@@ -12,7 +12,7 @@
 
 ### Time Log:
 
-* 2024-05-01 -  hours total
+* 2024-05-01 - 12.46 hours total
   * 8am PST - 12:06pm PST
     * Created `enemy-upgrade` branch and cloned down.
     * Reviewed ESLint and confirmed that the only error is with the `any` type for blob storage on line 36 of `GameRendering.tsx`, as already known. Will fix this bug later if there is time.
@@ -96,7 +96,7 @@
     * Will look into changing the way that the audio track is generated. Curious if there's a way to get only the "beats" out of the audio file.
     * Still researching beat analysis methods.
     * Not finding many good ways to go about this. Will look into it more later.
-  * 8:48pm PST - pm PST
+  * 8:48pm PST - 11:32pm PST
     * Ensure all variables are statically typed except for `blob`.
     * Continue working on making enemy spacing fair.
     * Determined that I could add a new method in the position generator (`createLevelData`) that declares a `lastEnemyXpos` variable, then only allows enemies to be added if their x position value is greater than that `lastEnemyXPos` plus a predetermined integer. If true, the `lastEnemyXPos` will update, ensuring that the enemies are spaced out evenly.
@@ -117,7 +117,8 @@
         * Changed removal function to not be random in order to maintain consistency in experience between players. Confirmed via playthrough that the game is challenging but playable, as desired.
     * Add new variable `globalEnemiesPerLevelDisplay` that will render the total number of enemies in the level (for use in the HUD, since the previous variable was incorrect after reductions).
     * Clean up code.
-    * Ran ESLint and found that `globalEnemyTimer` is no longer being used. Removed it and the timeout that it was attached to.
+      * Ran ESLint and found that `globalEnemyTimer` is no longer being used. Removed it and the timeout that it was attached to.
+    * Merge `enemy-upgrade` branch into `main`. Delete `enemy-upgrade` branch.
       
 
 * 2024-04-30 - 11.48 hours total
