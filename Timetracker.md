@@ -110,7 +110,7 @@
       * Will attempt to adjust by length of audio track. The best track so far has 40 enemies for ~2 minutes. Will see if the number can be scaled and still work well.
         * Working on adding this functionality. Should be able to use `Math.ceil()` against the duration of the audio. Something like `const desiredAmount = Math.ceil(globalAudioBuffer.duration/50) * 20`, as this should return 40 in the case of the ~2 minute track.
         * Appears desired formula is actually slightly different, but basically the same: `const maxEnemyLimit: number = Math.ceil((globalAudioBuffer.duration/50) * 20);`.
-        * 
+        * Working on enemy reducer for iterator. Not sure what this number should be. Initially trying `const enemyReducer: number = maxEnemyLimit / globalEnemySpawnedList.length;` but this always ends up being a decimal. Need to determine if this should be something else.
       
 
 * 2024-04-30 - 11.48 hours total
