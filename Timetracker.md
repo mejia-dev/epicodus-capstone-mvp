@@ -23,6 +23,7 @@
     * Typing out an interview question I was asked (as well as my answer) for the benefit of my Epicodus cohort.
   * 9:45am PST - 
     * Continue working on README.
+    * Continue styling README
 
 
 * 2024-05-01 - 12.46 hours total
