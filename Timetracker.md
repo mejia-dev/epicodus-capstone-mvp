@@ -114,6 +114,7 @@
         * After some more research, it appears that this was close but should actually be `const enemyReducer: number = globalEnemySpawnedList.length / maxEnemyLimit;`, as this returns a decimal greater than 1. Can use `Math.round` on this to convert it to a larger number.
           * Also changed `maxEnemyLimit` to use `Math.round` instead of `Math.ceil`.
         * Got the reducer working. Noted that upon playing the adjusted levels, they feel a bit boring because each jump is spaced out relatively evenly (due to removing 1 enemy every N point in the array). May need to do the mass bulk thousands-place reducers first, then worry about the limit after that.
+        * Running the thousands-reducers first is not fixing the issue. Attempting to increase the maxEnemyLimit from 20 enemies per section to 30.
       
 
 * 2024-04-30 - 11.48 hours total
