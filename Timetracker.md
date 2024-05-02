@@ -4,7 +4,6 @@
 
 ### To-Do List:
   * Create a how-to-play menu.
-  * Update README.
   * Final run of ESLint.
   * Ensure all variables are statically typed
   * Potentially find sprite or texture for enemy. May just make it a red spike since it's a spike in the audio.
@@ -28,6 +27,7 @@
     * Update Controls section and Known Bugs section.
     * Finalize setup/install instructions
     * Add separate LICENSE.txt file.
+    * Add logo and render logo in README.
 
 
 * 2024-05-01 - 12.46 hours total
