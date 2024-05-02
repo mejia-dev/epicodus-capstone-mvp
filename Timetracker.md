@@ -13,10 +13,12 @@
 ### Time Log:
 
 * 2024-05-02 - hours total
-  * 7:48am PST - pm PST
+  * 7:48am PST - 9am PST
     * Created `info-and-how-to` branch and cloned down.
     * Began working on README.
     * Add basic README structure.
+  * 9am PST - am PST
+    * Scrum
 
 
 * 2024-05-01 - 12.46 hours total
