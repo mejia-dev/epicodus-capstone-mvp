@@ -37,6 +37,7 @@
     * Working on converting the square into a triangle ("spike").
     * Enemy renders as a triangle, but is hovering above the track for some reason. Looking into it.
     * Make enemies render in the middle of the audio spike now, not to the right like they were previously.
+    * Fixed rendering position. Appears that spawning the enemy on line 188 of `GameRendering.tsx` was also subtracting 50, moving the enemy upwards. Resolved this.
 
 
 
