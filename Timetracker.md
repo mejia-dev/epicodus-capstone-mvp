@@ -119,6 +119,7 @@
         * Set `maxEnemyLimit` up to 75 enemies per section to reduce as few as possible.
         * Added a random remover so that the removals aren't periodic.
         * Changed removal function to not be random in order to maintain consistency in experience between players. Confirmed via playthrough that the game is challenging but playable, as desired.
+    * Add new variable `globalEnemiesPerLevelDisplay` that will render the total number of enemies in the level (for use in the HUD, since the previous variable was incorrect after reductions).
       
 
 * 2024-04-30 - 11.48 hours total
