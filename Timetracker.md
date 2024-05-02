@@ -30,8 +30,9 @@
     * Add logo and render logo in README.
     * Merge `info-and-how-to` branch into `main`. Deleted `info-and-how-to` branch.
     * Updated my Epicodus Capstone Gallery entry.
-  * 12:51pm PST - 
-    * Lunch
+  * 12:51pm PST - 2:09pm PST
+    * Lunch + appointment
+  * 2:09pm PST- 
 
 
 
