@@ -91,6 +91,8 @@
         * Increase player health in relation to number of enemies spawned (maybe set lives to 5% of total enemies, minimum of 3).
         * Add power-ups to restore health
         * Make invincibility last longer
+      * Testing adjusting the gravity instead so that player falls back faster which makes for better precision jumping.
+      * Fix bug where enemies do not spawn on Retry Track. `resetGame()` now clears `globalEnemySpawnedList` and then runs `preLoadEnemies()` again.
       
 
 * 2024-04-30 - 11.48 hours total
