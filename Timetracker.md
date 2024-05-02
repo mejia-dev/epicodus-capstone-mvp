@@ -24,6 +24,7 @@
   * 9:45am PST - 
     * Continue working on README.
     * Continue styling README
+    * Add links to my other repositories in README
 
 
 * 2024-05-01 - 12.46 hours total
