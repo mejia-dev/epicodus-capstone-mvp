@@ -67,7 +67,7 @@
         * Noted that the player gets a point for the enemy regardless of whether or not the player was hit by the enemy. Will also need to determine if enemy timer should still be used. Thinking probably not, but will need to test more.
   * 12:06pm PST - 1:10pm PST
     * Lunch
-  * 1:10pm PST - 
+  * 1:10pm PST - 6:48pm PST
     * Will first work on resolving enemy scoring as mentioned above.
     * Running into some issues determining what exactly is causing the scoring inconsistency.
       * After breaking down the code more, realized that the issue is actually just due to the fact that the game is spawning multiple enemies for each position. Will turn globalEnemySpawnedList into a Set instead using the unique id.
@@ -98,6 +98,7 @@
       * Determined that 1.3 feels right.
       * Will look into changing the way that the audio track is generated. Curious if there's a way to get only the "beats" out of the audio file.
       * Still researching beat analysis methods.
+      * Not finding many good ways to go about this. Will look into it more later.
       
 
 * 2024-04-30 - 11.48 hours total
