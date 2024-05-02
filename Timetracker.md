@@ -85,6 +85,12 @@
       * Tweaking the amount of enemies spawned in large datasets. 
       * Added a `reduceEnemiesByNThousand()` method that gets called as part of the `preLoadEnemies()` method for sets larger than 10000 and 5000 respectively.
       * Also added a check for 2000.
+      * Everything appears to be functioning now.
+      * Noted that on some tracks, large clusters of enemies can lead to some difficulty jumping over them without getting hit. A few thoughts on how to fix this:
+        * Do a check in pre-rendering to see if there are any x positions that are close to each other (this would likely be a long loop which isn't optimal -- foreach xPos, check the next xPos after it, if they are within close range to each other, remove the second one).
+        * Increase player health in relation to number of enemies spawned (maybe set lives to 5% of total enemies, minimum of 3).
+        * Add power-ups to restore health
+        * Make invincibility last longer
       
 
 * 2024-04-30 - 11.48 hours total
