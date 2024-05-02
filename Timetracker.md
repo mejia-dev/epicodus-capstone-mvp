@@ -105,6 +105,9 @@
     * Continue working on making enemy spacing fair.
     * Determined that I could add a new method in the position generator (`createLevelData`) that declares a `lastEnemyXpos` variable, then only allows enemies to be added if their x position value is greater than that `lastEnemyXPos` plus a predetermined integer. If true, the `lastEnemyXPos` will update, ensuring that the enemies are spaced out evenly.
       * Tested this and it appears to be working as desired. Tweaking it now.
+      * Added text to HUD for total possible points per level.
+      * Works very well for some tracks and just okay for others (still a few too many enemies that make it difficult for jumping over).
+      * Will attempt to adjust by length of audio track. The best track so far has 40 enemies for ~2 minutes. Will see if the number can be scaled and still work well.
       
 
 * 2024-04-30 - 11.48 hours total
