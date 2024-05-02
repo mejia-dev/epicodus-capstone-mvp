@@ -32,7 +32,9 @@
     * Updated my Epicodus Capstone Gallery entry.
   * 12:51pm PST - 2:09pm PST
     * Lunch + appointment
-  * 2:09pm PST- 
+  * 2:09pm PST - pm PST
+    * Created `enemy-graphic-update` branch and cloned down.
+    * Working on converting the square into a triangle ("spike")
 
 
 
