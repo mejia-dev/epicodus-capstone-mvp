@@ -38,6 +38,7 @@
     * Enemy renders as a triangle, but is hovering above the track for some reason. Looking into it.
     * Make enemies render in the middle of the audio spike now, not to the right like they were previously.
     * Fixed rendering position. Appears that spawning the enemy on line 188 of `GameRendering.tsx` was also subtracting 50, moving the enemy upwards. Resolved this.
+    * Noticed that `globalEnemiesPerLevelDisplay` was not getting set on shorter tracks. Appears that this was because it is in the conditional that reduces large enemy sets. Removed it from this and confirmed it now works for short tracks as well as long ones.
 
 
 
