@@ -93,6 +93,7 @@
         * Make invincibility last longer
       * Testing adjusting the gravity instead so that player falls back faster which makes for better precision jumping.
       * Fix bug where enemies do not spawn on Retry Track. `resetGame()` now clears `globalEnemySpawnedList` and then runs `preLoadEnemies()` again.
+      * Noted that `globalGravity` export is only used in one line of code in `PlayerObj`. Moved variable there instead since no other part of the game is likely ever going to deal with gravity globally.
       
 
 * 2024-04-30 - 11.48 hours total
