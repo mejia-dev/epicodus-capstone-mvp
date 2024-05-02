@@ -40,6 +40,9 @@
     * Update README.
     * Merge `enemy-graphic-update` branch into `main`. Deleted `enemy-graphic-update` branch.
     * Update topics on GH repo.
+    * Created `how-to-play` branch and cloned down.
+      * Add `GameInfo.tsx`.
+      * Add slice of state to `GameRendering.tsx` for displaying `GameInfo`
 
 
 
