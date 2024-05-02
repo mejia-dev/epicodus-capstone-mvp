@@ -25,6 +25,7 @@
     * Continue working on README.
     * Continue styling README
     * Add links to my other repositories in README
+    * Update Controls section and Known Bugs section.
 
 
 * 2024-05-01 - 12.46 hours total
