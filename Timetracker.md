@@ -108,6 +108,7 @@
       * Added text to HUD for total possible points per level.
       * Works very well for some tracks and just okay for others (still a few too many enemies that make it difficult for jumping over).
       * Will attempt to adjust by length of audio track. The best track so far has 40 enemies for ~2 minutes. Will see if the number can be scaled and still work well.
+        * Working on adding this functionality. Should be able to use `Math.ceil()` against the duration of the audio. Something like `const desiredAmount = Math.ceil(globalAudioBuffer.duration/50) * 20`, as this should return 40 in the case of the ~2 minute track.
       
 
 * 2024-04-30 - 11.48 hours total
