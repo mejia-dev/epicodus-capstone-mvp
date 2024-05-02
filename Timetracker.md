@@ -3,15 +3,11 @@
 ### Total Time Spent: 88.79 hours (see time log below for more details)
 
 ### To-Do List:
-  * ~~Adjust enemy spawning.~~
   * Create a how-to-play menu.
   * Update README.
   * Final run of ESLint.
   * Ensure all variables are statically typed
-
-  * ~~Enemy individualization (if multiple enemies at coordinates, just use one)~~
-  * ~~Player gets a point for the enemy regardless of whether or not the player was hit by the enemy.~~
-  * Potentially find sprite or texture for enemy.
+  * Potentially find sprite or texture for enemy. May just make it a red spike since it's a spike in the audio.
 
 
 ### Time Log:
@@ -120,6 +116,8 @@
         * Added a random remover so that the removals aren't periodic.
         * Changed removal function to not be random in order to maintain consistency in experience between players. Confirmed via playthrough that the game is challenging but playable, as desired.
     * Add new variable `globalEnemiesPerLevelDisplay` that will render the total number of enemies in the level (for use in the HUD, since the previous variable was incorrect after reductions).
+    * Clean up code.
+    * Ran ESLint and found that `globalEnemyTimer` is no longer being used. Removed it and the timeout that it was attached to.
       
 
 * 2024-04-30 - 11.48 hours total
