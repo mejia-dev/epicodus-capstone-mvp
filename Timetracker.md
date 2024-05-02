@@ -116,6 +116,9 @@
         * Got the reducer working. Noted that upon playing the adjusted levels, they feel a bit boring because each jump is spaced out relatively evenly (due to removing 1 enemy every N point in the array). May need to do the mass bulk thousands-place reducers first, then worry about the limit after that.
         * Running the thousands-reducers first is not fixing the issue. Attempting to increase the `maxEnemyLimit` from 20 enemies per section to 30. This did not work as desired, longer songs still feel boring.
         * Ended up increasing the `lastEnemyXPos` checker to be 400 instead of 300, which seemed to do a lot for making the jumps manageable without instantly becoming too easy. Temporarily disabled the `maxEnemyLimit` entirely to test and confirmed that it is a pretty good amount. Longer tracks are still *slightly* too difficult, but nowhere near what they used to be, and could easily be fixed by adding a few more lives or similar easy fix.
+        * Set `maxEnemyLimit` up to 75 enemies per section to reduce as few as possible.
+        * Added a random remover so that the removals aren't periodic.
+        * Changed removal function to not be random in order to maintain consistency in experience between players. Confirmed via playthrough that the game is challenging but playable, as desired.
       
 
 * 2024-04-30 - 11.48 hours total
