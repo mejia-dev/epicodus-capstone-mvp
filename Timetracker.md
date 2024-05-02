@@ -83,6 +83,8 @@
       * Secondary function works much better. Only issue now is that it is all IDs are unique because they are generated at the same time. However, now that all x positions are unique, we can add the x positions to the globalScoreSet instead.
       * Changing globalScoreSet to accept numbers resolves the issue and score increments as expected now.
       * Tweaking the amount of enemies spawned in large datasets. 
+      * Added a `reduceEnemiesByNThousand()` method that gets called as part of the `preLoadEnemies()` method for sets larger than 10000 and 5000 respectively.
+      * Also added a check for 2000.
       
 
 * 2024-04-30 - 11.48 hours total
