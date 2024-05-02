@@ -39,6 +39,8 @@
     * Make enemies render in the middle of the audio spike now, not to the right like they were previously.
     * Fixed rendering position. Appears that spawning the enemy on line 188 of `GameRendering.tsx` was also subtracting 50, moving the enemy upwards. Resolved this.
     * Noticed that `globalEnemiesPerLevelDisplay` was not getting set on shorter tracks. Appears that this was because it is in the conditional that reduces large enemy sets. Removed it from this and confirmed it now works for short tracks as well as long ones.
+    * Add custom types for png and mp3 files in `vite-env.d.ts`. Noticed that the import statements were now throwing errors about those files being imported despite them not showing errors yesterday. Confirmed that adding custom types fixed the issue and the game still functions.
+    * Re-ran ESLint and confirmed that there were no unexpected errors. Did some more looking into the `any` assignment on the `blob` variable declaration but not finding anything apart from one [TypeScript Issue](https://github.com/microsoft/TypeScript/issues/3753) from 2015 that I wasn't able to find a resolution on.
 
 
 
