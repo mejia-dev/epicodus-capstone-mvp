@@ -38,6 +38,8 @@
     * Add custom types for png and mp3 files in `vite-env.d.ts`. Noticed that the import statements were now throwing errors about those files being imported despite them not showing errors yesterday. Confirmed that adding custom types fixed the issue and the game still functions.
     * Re-ran ESLint and confirmed that there were no unexpected errors. Did some more looking into the `any` assignment on the `blob` variable declaration but not finding anything apart from one [TypeScript Issue](https://github.com/microsoft/TypeScript/issues/3753) from 2015 that I wasn't able to find a resolution on.
     * Update README.
+    * Merge `enemy-graphic-update` branch into `main`. Deleted `enemy-graphic-update` branch.
+    * Update topics on GH repo.
 
 
 
