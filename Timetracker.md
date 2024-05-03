@@ -2,9 +2,6 @@
 
 ### Total Time Spent: 101.25 hours (see time log below for more details)
 
-### To-Do List:
-  * Create a how-to-play menu.
-
 ### Time Log:
 
 * 2024-05-02 - hours total
@@ -61,7 +58,7 @@
     * Finish initial version of How to Play information.
     * Add developer information.
     * Finalize styling for GameInfo section.
-
+    * Reran ESLint and confirmed that issues had not been introduced.
 
 
 * 2024-05-01 - 12.46 hours total
