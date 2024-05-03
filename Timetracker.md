@@ -58,6 +58,7 @@
     * Add finished images to project.
     * Noted an error that the Modal's parent app element hasn't been set in `GameRendering.tsx`. Set the parent app Element to the rest of the page.
     * Begin writing How to Play information.
+    * Finish initial version of How to Play information.
 
 
 
