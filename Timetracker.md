@@ -1,10 +1,10 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 101.25 hours (see time log below for more details)
+### Total Time Spent: 112.45 hours (see time log below for more details)
 
 ### Time Log:
 
-* 2024-05-02 - hours total
+* 2024-05-02 - 11.2 hours total
   * 7:48am PST - 9am PST
     * Created `info-and-how-to` branch and cloned down.
     * Began working on README.
@@ -49,7 +49,7 @@
       * Appears that type of "Style" can be imported from react-modal library. Imported it and used it for a stylesheet successfully.
       * Begin writing instructions for "how to play" section.
       * Take screenshots of player, invincibility, and spike. Add to assets folder in project. Will crop them to make them square.
-  * 9:08pm PST - pm PST
+  * 9:08pm PST - 11:02pm PST
     * Beta testing of the game with family. Confirmed that everything is behaving smoothly.
     * Begin working on cropping images for HowTo section.
     * Add finished images to project.
@@ -60,6 +60,16 @@
     * Finalize styling for GameInfo section.
     * Reran ESLint and confirmed that issues had not been introduced.
     * Merge `how-to-play` branch into `main`. Deleted `how-to-play` branch.
+    * Attempted to get the page deployed on my website.
+      * First attempt failed due to relative path of the assets folder.
+      * Second attempt failed due to relative path of some of the images inside. Some work, but some do not.
+      * Reviewed Vite [documentation for static deployment](https://vitejs.dev/guide/static-deploy).
+      * Set the base in vite.config.ts
+      * Redeployed to https://mejia.dev/rhythm-runner/ and it works!
+    * Updated Epicodus Capstone Gallery entry.
+    * Updated repo README and website link.
+    * Pinned repo to profile on GitHub.
+    * Project is ready for presenting tomorrow.
 
 
 * 2024-05-01 - 12.46 hours total
