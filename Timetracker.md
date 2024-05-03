@@ -44,6 +44,7 @@
       * Add `GameInfo.tsx`.
       * Add slice of state to `GameRendering.tsx` for displaying `GameInfo`.
       * Add info button.
+      * Attempted to manually make a modal-like element but determined it would be easier to use the built-in react-modal library. Installed this.
 
 
 
