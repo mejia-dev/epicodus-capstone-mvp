@@ -49,6 +49,7 @@
       * Install `react-modal`
       * Install `@types/react-modal`
       * Running into some issues styling the modal. Appears that Typescript doesn't play well with the inline stylesheets that are recommended.
+      * Appears that type of "Style" can be imported from react-modal library. Imported it and used it for a stylesheet successfully.
 
 
 
