@@ -55,6 +55,8 @@
   * 9:08pm PST - pm PST
     * Beta testing of the game with family. Confirmed that everything is behaving smoothly.
     * Begin working on cropping images for HowTo section.
+    * Add finished images to project.
+    * Noted an error that the Modal's parent app element hasn't been set in `GameRendering.tsx`. Set the parent app Element to the rest of the page.
 
 
 
