@@ -52,8 +52,9 @@
       * Appears that type of "Style" can be imported from react-modal library. Imported it and used it for a stylesheet successfully.
       * Begin writing instructions for "how to play" section.
       * Take screenshots of player, invincibility, and spike. Add to assets folder in project. Will crop them to make them square.
-  * 9:08pm PST
+  * 9:08pm PST - pm PST
     * Beta testing of the game with family. Confirmed that everything is behaving smoothly.
+    * Begin working on cropping images for HowTo section.
 
 
 
