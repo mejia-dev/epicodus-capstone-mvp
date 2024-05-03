@@ -42,7 +42,8 @@
     * Update topics on GH repo.
     * Created `how-to-play` branch and cloned down.
       * Add `GameInfo.tsx`.
-      * Add slice of state to `GameRendering.tsx` for displaying `GameInfo`
+      * Add slice of state to `GameRendering.tsx` for displaying `GameInfo`.
+      * Add info button.
 
 
 
