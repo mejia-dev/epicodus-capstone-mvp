@@ -59,6 +59,7 @@
     * Add developer information.
     * Finalize styling for GameInfo section.
     * Reran ESLint and confirmed that issues had not been introduced.
+    * Merge `how-to-play` branch into `main`. Deleted `how-to-play` branch.
 
 
 * 2024-05-01 - 12.46 hours total
