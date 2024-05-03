@@ -46,6 +46,9 @@
       * Add info button.
       * Attempted to manually make a modal-like element but determined it would be easier to use the built-in react-modal library. Installed this.
       * Update button styling.
+      * Install `react-modal`
+      * Install `@types/react-modal`
+      * Running into some issues styling the modal. Appears that Typescript doesn't play well with the inline stylesheets that are recommended.
 
 
 
