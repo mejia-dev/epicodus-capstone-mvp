@@ -1,8 +1,12 @@
 # Epicodus Capstone Timetracker & Devlog
 
-### Total Time Spent: 112.45 hours (see time log below for more details)
+### Total Time Spent: 116.90 hours (see time log below for more details)
 
 ### Time Log:
+
+* 2024-05-02 - 4.45 hours total
+  * 7:45am PST - 12:12pm PST
+    * Epicodus Capstone Presentations. Demoed Rhythm Runner.
 
 * 2024-05-02 - 11.2 hours total
   * 7:48am PST - 9am PST
