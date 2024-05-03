@@ -28,7 +28,7 @@
     * Updated my Epicodus Capstone Gallery entry.
   * 12:51pm PST - 2:09pm PST
     * Lunch + appointment
-  * 2:09pm PST - pm PST
+  * 2:09pm PST - 6:24pm PST
     * Created `enemy-graphic-update` branch and cloned down.
     * Working on converting the square into a triangle ("spike").
     * Enemy renders as a triangle, but is hovering above the track for some reason. Looking into it.
@@ -51,6 +51,7 @@
       * Running into some issues styling the modal. Appears that Typescript doesn't play well with the inline stylesheets that are recommended.
       * Appears that type of "Style" can be imported from react-modal library. Imported it and used it for a stylesheet successfully.
       * Begin writing instructions for "how to play" section.
+      * Take screenshots of player, invincibility, and spike. Add to assets folder in project. Will crop them to make them square.
 
 
 
